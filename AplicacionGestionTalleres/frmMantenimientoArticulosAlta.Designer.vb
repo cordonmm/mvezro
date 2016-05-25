@@ -22,198 +22,295 @@ Partial Class frmMantenimientoArticulosAlta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox12 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox6 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.components = New System.ComponentModel.Container()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
+        Me.lblObservaciones = New MetroFramework.Controls.MetroLabel()
+        Me.txtObservaciones = New MetroFramework.Controls.MetroTextBox()
+        Me.txtPVP = New MetroFramework.Controls.MetroTextBox()
+        Me.lblPVP = New MetroFramework.Controls.MetroLabel()
+        Me.lblFamilia = New MetroFramework.Controls.MetroLabel()
+        Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.txtReferencia = New MetroFramework.Controls.MetroTextBox()
+        Me.lblReferencia = New MetroFramework.Controls.MetroLabel()
+        Me.txtDescripcion = New MetroFramework.Controls.MetroTextBox()
+        Me.lblDescripcion = New MetroFramework.Controls.MetroLabel()
+        Me.txtCodigo = New MetroFramework.Controls.MetroTextBox()
+        Me.lblCodigo = New MetroFramework.Controls.MetroLabel()
+        Me.txtPrecioCosto = New MetroFramework.Controls.MetroTextBox()
+        Me.lblPrecioCosto = New MetroFramework.Controls.MetroLabel()
+        Me.FamiliaTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.FamiliaTableAdapter()
+        Me.lblStock = New MetroFramework.Controls.MetroLabel()
+        Me.txtStock = New MetroFramework.Controls.MetroTextBox()
+        Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProductoTableAdapter()
+        Me.TableAdapterManager = New AplicacionGestionTalleres.tallerDataSetTableAdapters.TableAdapterManager()
+        Me.cmbFamilia = New System.Windows.Forms.ComboBox()
+        CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MetroButton2
+        'btnCancelar
         '
-        Me.MetroButton2.Location = New System.Drawing.Point(479, 406)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton2.TabIndex = 93
-        Me.MetroButton2.Text = "Cancelar"
+        Me.btnCancelar.Location = New System.Drawing.Point(597, 497)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
+        Me.btnCancelar.TabIndex = 74
+        Me.btnCancelar.Text = "Cancelar"
         '
-        'MetroButton1
+        'btnAceptar
         '
-        Me.MetroButton1.Location = New System.Drawing.Point(597, 406)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton1.TabIndex = 92
-        Me.MetroButton1.Text = "Aceptar"
+        Me.btnAceptar.Location = New System.Drawing.Point(470, 497)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
+        Me.btnAceptar.TabIndex = 73
+        Me.btnAceptar.Text = "Aceptar"
         '
-        'MetroLabel14
+        'lblObservaciones
         '
-        Me.MetroLabel14.AutoSize = True
-        Me.MetroLabel14.Location = New System.Drawing.Point(23, 287)
-        Me.MetroLabel14.Name = "MetroLabel14"
-        Me.MetroLabel14.Size = New System.Drawing.Size(95, 19)
-        Me.MetroLabel14.TabIndex = 91
-        Me.MetroLabel14.Text = "Observaciones"
+        Me.lblObservaciones.AutoSize = True
+        Me.lblObservaciones.Location = New System.Drawing.Point(23, 359)
+        Me.lblObservaciones.Name = "lblObservaciones"
+        Me.lblObservaciones.Size = New System.Drawing.Size(95, 19)
+        Me.lblObservaciones.TabIndex = 91
+        Me.lblObservaciones.Text = "Observaciones"
         '
-        'MetroTextBox12
+        'txtObservaciones
         '
-        Me.MetroTextBox12.Location = New System.Drawing.Point(23, 317)
-        Me.MetroTextBox12.Multiline = True
-        Me.MetroTextBox12.Name = "MetroTextBox12"
-        Me.MetroTextBox12.Size = New System.Drawing.Size(676, 65)
-        Me.MetroTextBox12.TabIndex = 90
+        Me.txtObservaciones.Location = New System.Drawing.Point(23, 389)
+        Me.txtObservaciones.Multiline = True
+        Me.txtObservaciones.Name = "txtObservaciones"
+        Me.txtObservaciones.Size = New System.Drawing.Size(676, 65)
+        Me.txtObservaciones.TabIndex = 72
         '
-        'MetroTextBox6
+        'txtPVP
         '
-        Me.MetroTextBox6.Location = New System.Drawing.Point(385, 239)
-        Me.MetroTextBox6.Name = "MetroTextBox6"
-        Me.MetroTextBox6.Size = New System.Drawing.Size(314, 25)
-        Me.MetroTextBox6.TabIndex = 79
+        Me.txtPVP.Location = New System.Drawing.Point(385, 239)
+        Me.txtPVP.Name = "txtPVP"
+        Me.txtPVP.Size = New System.Drawing.Size(314, 25)
+        Me.txtPVP.TabIndex = 70
         '
-        'MetroLabel8
+        'lblPVP
         '
-        Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(385, 215)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(83, 19)
-        Me.MetroLabel8.TabIndex = 78
-        Me.MetroLabel8.Text = "PVP (sin IVA)"
+        Me.lblPVP.AutoSize = True
+        Me.lblPVP.Location = New System.Drawing.Point(385, 215)
+        Me.lblPVP.Name = "lblPVP"
+        Me.lblPVP.Size = New System.Drawing.Size(83, 19)
+        Me.lblPVP.TabIndex = 78
+        Me.lblPVP.Text = "PVP (sin IVA)"
         '
-        'MetroLabel5
+        'lblFamilia
         '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(178, 73)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(50, 19)
-        Me.MetroLabel5.TabIndex = 73
-        Me.MetroLabel5.Text = "Familia"
+        Me.lblFamilia.AutoSize = True
+        Me.lblFamilia.Location = New System.Drawing.Point(178, 73)
+        Me.lblFamilia.Name = "lblFamilia"
+        Me.lblFamilia.Size = New System.Drawing.Size(50, 19)
+        Me.lblFamilia.TabIndex = 73
+        Me.lblFamilia.Text = "Familia"
         '
-        'MetroComboBox1
+        'FamiliaBindingSource
         '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(178, 95)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(256, 29)
-        Me.MetroComboBox1.TabIndex = 72
+        Me.FamiliaBindingSource.DataMember = "Familia"
+        Me.FamiliaBindingSource.DataSource = Me.TallerDataSetBindingSource
         '
-        'MetroTextBox3
+        'TallerDataSetBindingSource
         '
-        Me.MetroTextBox3.Location = New System.Drawing.Point(479, 99)
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.Size = New System.Drawing.Size(220, 25)
-        Me.MetroTextBox3.TabIndex = 69
+        Me.TallerDataSetBindingSource.DataSource = Me.TallerDataSet
+        Me.TallerDataSetBindingSource.Position = 0
         '
-        'MetroLabel3
+        'TallerDataSet
         '
-        Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(479, 75)
-        Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(70, 19)
-        Me.MetroLabel3.TabIndex = 68
-        Me.MetroLabel3.Text = "Referencia"
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MetroTextBox2
+        'txtReferencia
         '
-        Me.MetroTextBox2.Location = New System.Drawing.Point(23, 165)
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.Size = New System.Drawing.Size(676, 25)
-        Me.MetroTextBox2.TabIndex = 67
+        Me.txtReferencia.Location = New System.Drawing.Point(479, 99)
+        Me.txtReferencia.Name = "txtReferencia"
+        Me.txtReferencia.Size = New System.Drawing.Size(220, 25)
+        Me.txtReferencia.TabIndex = 67
         '
-        'MetroLabel2
+        'lblReferencia
         '
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(23, 141)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(76, 19)
-        Me.MetroLabel2.TabIndex = 66
-        Me.MetroLabel2.Text = "Descripción"
+        Me.lblReferencia.AutoSize = True
+        Me.lblReferencia.Location = New System.Drawing.Point(479, 75)
+        Me.lblReferencia.Name = "lblReferencia"
+        Me.lblReferencia.Size = New System.Drawing.Size(70, 19)
+        Me.lblReferencia.TabIndex = 68
+        Me.lblReferencia.Text = "Referencia"
         '
-        'MetroTextBox1
+        'txtDescripcion
         '
-        Me.MetroTextBox1.Location = New System.Drawing.Point(23, 97)
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.Size = New System.Drawing.Size(112, 25)
-        Me.MetroTextBox1.TabIndex = 65
+        Me.txtDescripcion.Location = New System.Drawing.Point(23, 165)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(676, 25)
+        Me.txtDescripcion.TabIndex = 68
         '
-        'MetroLabel1
+        'lblDescripcion
         '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(23, 73)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(53, 19)
-        Me.MetroLabel1.TabIndex = 64
-        Me.MetroLabel1.Text = "Código"
+        Me.lblDescripcion.AutoSize = True
+        Me.lblDescripcion.Location = New System.Drawing.Point(23, 141)
+        Me.lblDescripcion.Name = "lblDescripcion"
+        Me.lblDescripcion.Size = New System.Drawing.Size(76, 19)
+        Me.lblDescripcion.TabIndex = 66
+        Me.lblDescripcion.Text = "Descripción"
         '
-        'MetroTextBox4
+        'txtCodigo
         '
-        Me.MetroTextBox4.Location = New System.Drawing.Point(23, 239)
-        Me.MetroTextBox4.Name = "MetroTextBox4"
-        Me.MetroTextBox4.Size = New System.Drawing.Size(313, 25)
-        Me.MetroTextBox4.TabIndex = 95
+        Me.txtCodigo.Location = New System.Drawing.Point(23, 97)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(112, 25)
+        Me.txtCodigo.TabIndex = 65
         '
-        'MetroLabel4
+        'lblCodigo
         '
-        Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(23, 215)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(120, 19)
-        Me.MetroLabel4.TabIndex = 94
-        Me.MetroLabel4.Text = "Precio Costo + IVA"
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Location = New System.Drawing.Point(23, 73)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(53, 19)
+        Me.lblCodigo.TabIndex = 64
+        Me.lblCodigo.Text = "Código"
+        '
+        'txtPrecioCosto
+        '
+        Me.txtPrecioCosto.Location = New System.Drawing.Point(23, 239)
+        Me.txtPrecioCosto.Name = "txtPrecioCosto"
+        Me.txtPrecioCosto.Size = New System.Drawing.Size(313, 25)
+        Me.txtPrecioCosto.TabIndex = 69
+        '
+        'lblPrecioCosto
+        '
+        Me.lblPrecioCosto.AutoSize = True
+        Me.lblPrecioCosto.Location = New System.Drawing.Point(23, 215)
+        Me.lblPrecioCosto.Name = "lblPrecioCosto"
+        Me.lblPrecioCosto.Size = New System.Drawing.Size(120, 19)
+        Me.lblPrecioCosto.TabIndex = 94
+        Me.lblPrecioCosto.Text = "Precio Costo + IVA"
+        '
+        'FamiliaTableAdapter
+        '
+        Me.FamiliaTableAdapter.ClearBeforeFill = True
+        '
+        'lblStock
+        '
+        Me.lblStock.AutoSize = True
+        Me.lblStock.Location = New System.Drawing.Point(22, 285)
+        Me.lblStock.Name = "lblStock"
+        Me.lblStock.Size = New System.Drawing.Size(40, 19)
+        Me.lblStock.TabIndex = 96
+        Me.lblStock.Text = "Stock"
+        '
+        'txtStock
+        '
+        Me.txtStock.Location = New System.Drawing.Point(22, 309)
+        Me.txtStock.Name = "txtStock"
+        Me.txtStock.Size = New System.Drawing.Size(113, 25)
+        Me.txtStock.TabIndex = 71
+        '
+        'ProductoBindingSource
+        '
+        Me.ProductoBindingSource.DataMember = "Producto"
+        Me.ProductoBindingSource.DataSource = Me.TallerDataSet
+        '
+        'ProductoTableAdapter
+        '
+        Me.ProductoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AlbaranTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ClienteTableAdapter = Nothing
+        Me.TableAdapterManager.ConfiguracionTableAdapter = Nothing
+        Me.TableAdapterManager.FacturaETableAdapter = Nothing
+        Me.TableAdapterManager.FacturaRTableAdapter = Nothing
+        Me.TableAdapterManager.FamiliaTableAdapter = Me.FamiliaTableAdapter
+        Me.TableAdapterManager.LineaAlbaranTableAdapter = Nothing
+        Me.TableAdapterManager.LineaFacturaETableAdapter = Nothing
+        Me.TableAdapterManager.LineaFacturaRTableAdapter = Nothing
+        Me.TableAdapterManager.LineaPresupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.PresupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.ProductoTableAdapter = Me.ProductoTableAdapter
+        Me.TableAdapterManager.ProveedorTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = AplicacionGestionTalleres.tallerDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'cmbFamilia
+        '
+        Me.cmbFamilia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbFamilia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbFamilia.DataSource = Me.FamiliaBindingSource
+        Me.cmbFamilia.DisplayMember = "descripcion"
+        Me.cmbFamilia.DropDownHeight = 103
+        Me.cmbFamilia.FormattingEnabled = True
+        Me.cmbFamilia.IntegralHeight = False
+        Me.cmbFamilia.Location = New System.Drawing.Point(178, 99)
+        Me.cmbFamilia.Name = "cmbFamilia"
+        Me.cmbFamilia.Size = New System.Drawing.Size(256, 21)
+        Me.cmbFamilia.TabIndex = 97
+        Me.cmbFamilia.ValueMember = "Id"
         '
         'frmMantenimientoArticulosAlta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
-        Me.ClientSize = New System.Drawing.Size(727, 475)
-        Me.Controls.Add(Me.MetroTextBox4)
-        Me.Controls.Add(Me.MetroLabel4)
-        Me.Controls.Add(Me.MetroButton2)
-        Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroLabel14)
-        Me.Controls.Add(Me.MetroTextBox12)
-        Me.Controls.Add(Me.MetroTextBox6)
-        Me.Controls.Add(Me.MetroLabel8)
-        Me.Controls.Add(Me.MetroLabel5)
-        Me.Controls.Add(Me.MetroComboBox1)
-        Me.Controls.Add(Me.MetroTextBox3)
-        Me.Controls.Add(Me.MetroLabel3)
-        Me.Controls.Add(Me.MetroTextBox2)
-        Me.Controls.Add(Me.MetroLabel2)
-        Me.Controls.Add(Me.MetroTextBox1)
-        Me.Controls.Add(Me.MetroLabel1)
+        Me.ClientSize = New System.Drawing.Size(736, 570)
+        Me.Controls.Add(Me.lblCodigo)
+        Me.Controls.Add(Me.txtCodigo)
+        Me.Controls.Add(Me.lblFamilia)
+        Me.Controls.Add(Me.cmbFamilia)
+        Me.Controls.Add(Me.lblReferencia)
+        Me.Controls.Add(Me.txtReferencia)
+        Me.Controls.Add(Me.lblDescripcion)
+        Me.Controls.Add(Me.txtDescripcion)
+        Me.Controls.Add(Me.lblPrecioCosto)
+        Me.Controls.Add(Me.txtPrecioCosto)
+        Me.Controls.Add(Me.lblPVP)
+        Me.Controls.Add(Me.txtPVP)
+        Me.Controls.Add(Me.lblStock)
+        Me.Controls.Add(Me.txtStock)
+        Me.Controls.Add(Me.lblObservaciones)
+        Me.Controls.Add(Me.txtObservaciones)
+        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Name = "frmMantenimientoArticulosAlta"
         Me.Text = "Nuevo Artículo"
+        CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox12 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton
+    Friend WithEvents lblObservaciones As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtObservaciones As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtPVP As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblPVP As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblFamilia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtReferencia As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtDescripcion As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblDescripcion As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtCodigo As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblCodigo As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtPrecioCosto As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblPrecioCosto As MetroFramework.Controls.MetroLabel
+    Friend WithEvents TallerDataSetBindingSource As BindingSource
+    Friend WithEvents TallerDataSet As tallerDataSet
+    Friend WithEvents FamiliaBindingSource As BindingSource
+    Friend WithEvents FamiliaTableAdapter As tallerDataSetTableAdapters.FamiliaTableAdapter
+    Friend WithEvents lblStock As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtStock As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents ProductoBindingSource As BindingSource
+    Friend WithEvents ProductoTableAdapter As tallerDataSetTableAdapters.ProductoTableAdapter
+    Friend WithEvents TableAdapterManager As tallerDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents cmbFamilia As ComboBox
 End Class

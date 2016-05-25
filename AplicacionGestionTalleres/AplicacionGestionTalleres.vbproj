@@ -238,6 +238,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="bbdd\tallerDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tallerDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAcercaDe.resx">
@@ -328,8 +333,22 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="bbdd\tallerDataSet.xsc">
+      <DependentUpon>tallerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bbdd\tallerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tallerDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bbdd\tallerDataSet.xss">
+      <DependentUpon>tallerDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bbdd\taller.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MetroFramework.txt" />
     <Content Include="src\logoo.png" />
   </ItemGroup>

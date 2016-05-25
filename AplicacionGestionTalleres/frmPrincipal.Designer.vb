@@ -58,10 +58,10 @@ Partial Class Form1
         Me.ReorganizaciónInformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtilidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónPatrimonioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevaEntradaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -295,6 +295,18 @@ Partial Class Form1
         Me.GestiónPatrimonioToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.GestiónPatrimonioToolStripMenuItem.Text = "Gestión Patrimonio"
         '
+        'NuevaEntradaToolStripMenuItem
+        '
+        Me.NuevaEntradaToolStripMenuItem.Name = "NuevaEntradaToolStripMenuItem"
+        Me.NuevaEntradaToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.NuevaEntradaToolStripMenuItem.Text = "Nueva entrada"
+        '
+        'ListadoToolStripMenuItem3
+        '
+        Me.ListadoToolStripMenuItem3.Name = "ListadoToolStripMenuItem3"
+        Me.ListadoToolStripMenuItem3.Size = New System.Drawing.Size(151, 22)
+        Me.ListadoToolStripMenuItem3.Text = "Listado"
+        '
         'ConfiguraciónToolStripMenuItem
         '
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
@@ -306,18 +318,6 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de..."
-        '
-        'NuevaEntradaToolStripMenuItem
-        '
-        Me.NuevaEntradaToolStripMenuItem.Name = "NuevaEntradaToolStripMenuItem"
-        Me.NuevaEntradaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.NuevaEntradaToolStripMenuItem.Text = "Nueva entrada"
-        '
-        'ListadoToolStripMenuItem3
-        '
-        Me.ListadoToolStripMenuItem3.Name = "ListadoToolStripMenuItem3"
-        Me.ListadoToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
-        Me.ListadoToolStripMenuItem3.Text = "Listado"
         '
         'Form1
         '

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMantenimientoClientesAlta
     Inherits MetroFramework.Forms.MetroForm
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,248 +20,280 @@ Partial Class frmMantenimientoClientesAlta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox12 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox9 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox8 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox6 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.components = New System.ComponentModel.Container()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
+        Me.lblObservaciones = New MetroFramework.Controls.MetroLabel()
+        Me.txtObservaciones = New MetroFramework.Controls.MetroTextBox()
+        Me.txtEmail = New MetroFramework.Controls.MetroTextBox()
+        Me.lblEmail = New MetroFramework.Controls.MetroLabel()
+        Me.lblFax = New MetroFramework.Controls.MetroLabel()
+        Me.lblTlfMovil = New MetroFramework.Controls.MetroLabel()
+        Me.lblTlfFijo = New MetroFramework.Controls.MetroLabel()
+        Me.txtCP = New MetroFramework.Controls.MetroTextBox()
+        Me.lblCP = New MetroFramework.Controls.MetroLabel()
+        Me.lblProvincia = New MetroFramework.Controls.MetroLabel()
+        Me.lblPoblacion = New MetroFramework.Controls.MetroLabel()
+        Me.txtDomicilio = New MetroFramework.Controls.MetroTextBox()
+        Me.lblDomicilio = New MetroFramework.Controls.MetroLabel()
+        Me.txtDNI = New MetroFramework.Controls.MetroTextBox()
+        Me.lblDNI = New MetroFramework.Controls.MetroLabel()
+        Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
+        Me.lblNombre = New MetroFramework.Controls.MetroLabel()
+        Me.txtCodigo = New MetroFramework.Controls.MetroTextBox()
+        Me.lblCodigo = New MetroFramework.Controls.MetroLabel()
+        Me.txtProvincia = New System.Windows.Forms.TextBox()
+        Me.txtPoblacion = New System.Windows.Forms.TextBox()
+        Me.txtTlfFijo = New System.Windows.Forms.MaskedTextBox()
+        Me.txtTlfMovil = New System.Windows.Forms.MaskedTextBox()
+        Me.txtFax = New System.Windows.Forms.MaskedTextBox()
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ClienteTableAdapter()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MetroButton2
+        'btnCancelar
         '
-        Me.MetroButton2.Location = New System.Drawing.Point(711, 459)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton2.TabIndex = 93
-        Me.MetroButton2.Text = "Cancelar"
+        Me.btnCancelar.Location = New System.Drawing.Point(711, 459)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
+        Me.btnCancelar.TabIndex = 93
+        Me.btnCancelar.Text = "Cancelar"
         '
-        'MetroButton1
+        'btnAceptar
         '
-        Me.MetroButton1.Location = New System.Drawing.Point(711, 419)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton1.TabIndex = 92
-        Me.MetroButton1.Text = "Aceptar"
+        Me.btnAceptar.Location = New System.Drawing.Point(711, 419)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
+        Me.btnAceptar.TabIndex = 92
+        Me.btnAceptar.Text = "Aceptar"
         '
-        'MetroLabel14
+        'lblObservaciones
         '
-        Me.MetroLabel14.AutoSize = True
-        Me.MetroLabel14.Location = New System.Drawing.Point(23, 393)
-        Me.MetroLabel14.Name = "MetroLabel14"
-        Me.MetroLabel14.Size = New System.Drawing.Size(95, 19)
-        Me.MetroLabel14.TabIndex = 91
-        Me.MetroLabel14.Text = "Observaciones"
+        Me.lblObservaciones.AutoSize = True
+        Me.lblObservaciones.Location = New System.Drawing.Point(23, 393)
+        Me.lblObservaciones.Name = "lblObservaciones"
+        Me.lblObservaciones.Size = New System.Drawing.Size(95, 19)
+        Me.lblObservaciones.TabIndex = 91
+        Me.lblObservaciones.Text = "Observaciones"
         '
-        'MetroTextBox12
+        'txtObservaciones
         '
-        Me.MetroTextBox12.Location = New System.Drawing.Point(23, 419)
-        Me.MetroTextBox12.Multiline = True
-        Me.MetroTextBox12.Name = "MetroTextBox12"
-        Me.MetroTextBox12.Size = New System.Drawing.Size(641, 65)
-        Me.MetroTextBox12.TabIndex = 90
+        Me.txtObservaciones.Location = New System.Drawing.Point(23, 419)
+        Me.txtObservaciones.Multiline = True
+        Me.txtObservaciones.Name = "txtObservaciones"
+        Me.txtObservaciones.Size = New System.Drawing.Size(641, 65)
+        Me.txtObservaciones.TabIndex = 90
         '
-        'MetroTextBox9
+        'txtEmail
         '
-        Me.MetroTextBox9.Location = New System.Drawing.Point(597, 341)
-        Me.MetroTextBox9.Name = "MetroTextBox9"
-        Me.MetroTextBox9.Size = New System.Drawing.Size(216, 25)
-        Me.MetroTextBox9.TabIndex = 85
+        Me.txtEmail.Location = New System.Drawing.Point(552, 341)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(261, 25)
+        Me.txtEmail.TabIndex = 85
         '
-        'MetroTextBox8
+        'lblEmail
         '
-        Me.MetroTextBox8.Location = New System.Drawing.Point(403, 341)
-        Me.MetroTextBox8.Name = "MetroTextBox8"
-        Me.MetroTextBox8.Size = New System.Drawing.Size(164, 25)
-        Me.MetroTextBox8.TabIndex = 84
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Location = New System.Drawing.Point(552, 317)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(47, 19)
+        Me.lblEmail.TabIndex = 82
+        Me.lblEmail.Text = "E-mail"
         '
-        'MetroTextBox7
+        'lblFax
         '
-        Me.MetroTextBox7.Location = New System.Drawing.Point(215, 341)
-        Me.MetroTextBox7.Name = "MetroTextBox7"
-        Me.MetroTextBox7.Size = New System.Drawing.Size(164, 25)
-        Me.MetroTextBox7.TabIndex = 83
+        Me.lblFax.AutoSize = True
+        Me.lblFax.Location = New System.Drawing.Point(307, 317)
+        Me.lblFax.Name = "lblFax"
+        Me.lblFax.Size = New System.Drawing.Size(28, 19)
+        Me.lblFax.TabIndex = 81
+        Me.lblFax.Text = "Fax"
         '
-        'MetroLabel11
+        'lblTlfMovil
         '
-        Me.MetroLabel11.AutoSize = True
-        Me.MetroLabel11.Location = New System.Drawing.Point(597, 317)
-        Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(47, 19)
-        Me.MetroLabel11.TabIndex = 82
-        Me.MetroLabel11.Text = "E-mail"
+        Me.lblTlfMovil.AutoSize = True
+        Me.lblTlfMovil.Location = New System.Drawing.Point(165, 317)
+        Me.lblTlfMovil.Name = "lblTlfMovil"
+        Me.lblTlfMovil.Size = New System.Drawing.Size(104, 19)
+        Me.lblTlfMovil.TabIndex = 80
+        Me.lblTlfMovil.Text = "Teléfono Móvil *"
         '
-        'MetroLabel10
+        'lblTlfFijo
         '
-        Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(403, 317)
-        Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(28, 19)
-        Me.MetroLabel10.TabIndex = 81
-        Me.MetroLabel10.Text = "Fax"
+        Me.lblTlfFijo.AutoSize = True
+        Me.lblTlfFijo.Location = New System.Drawing.Point(23, 317)
+        Me.lblTlfFijo.Name = "lblTlfFijo"
+        Me.lblTlfFijo.Size = New System.Drawing.Size(83, 19)
+        Me.lblTlfFijo.TabIndex = 78
+        Me.lblTlfFijo.Text = "Teléfono Fijo"
         '
-        'MetroLabel9
+        'txtCP
         '
-        Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(215, 317)
-        Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(94, 19)
-        Me.MetroLabel9.TabIndex = 80
-        Me.MetroLabel9.Text = "Teléfono Móvil"
+        Me.txtCP.Location = New System.Drawing.Point(552, 256)
+        Me.txtCP.Name = "txtCP"
+        Me.txtCP.Size = New System.Drawing.Size(149, 25)
+        Me.txtCP.TabIndex = 77
         '
-        'MetroTextBox6
+        'lblCP
         '
-        Me.MetroTextBox6.Location = New System.Drawing.Point(23, 341)
-        Me.MetroTextBox6.Name = "MetroTextBox6"
-        Me.MetroTextBox6.Size = New System.Drawing.Size(164, 25)
-        Me.MetroTextBox6.TabIndex = 79
+        Me.lblCP.AutoSize = True
+        Me.lblCP.Location = New System.Drawing.Point(552, 234)
+        Me.lblCP.Name = "lblCP"
+        Me.lblCP.Size = New System.Drawing.Size(91, 19)
+        Me.lblCP.TabIndex = 76
+        Me.lblCP.Text = "Código Postal"
         '
-        'MetroLabel8
+        'lblProvincia
         '
-        Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(23, 317)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(83, 19)
-        Me.MetroLabel8.TabIndex = 78
-        Me.MetroLabel8.Text = "Teléfono Fijo"
+        Me.lblProvincia.AutoSize = True
+        Me.lblProvincia.Location = New System.Drawing.Point(307, 230)
+        Me.lblProvincia.Name = "lblProvincia"
+        Me.lblProvincia.Size = New System.Drawing.Size(62, 19)
+        Me.lblProvincia.TabIndex = 75
+        Me.lblProvincia.Text = "Provincia"
         '
-        'MetroTextBox5
+        'lblPoblacion
         '
-        Me.MetroTextBox5.Location = New System.Drawing.Point(617, 256)
-        Me.MetroTextBox5.Name = "MetroTextBox5"
-        Me.MetroTextBox5.Size = New System.Drawing.Size(196, 25)
-        Me.MetroTextBox5.TabIndex = 77
+        Me.lblPoblacion.AutoSize = True
+        Me.lblPoblacion.Location = New System.Drawing.Point(23, 230)
+        Me.lblPoblacion.Name = "lblPoblacion"
+        Me.lblPoblacion.Size = New System.Drawing.Size(66, 19)
+        Me.lblPoblacion.TabIndex = 73
+        Me.lblPoblacion.Text = "Población"
         '
-        'MetroLabel7
+        'txtDomicilio
         '
-        Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.Location = New System.Drawing.Point(617, 232)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(91, 19)
-        Me.MetroLabel7.TabIndex = 76
-        Me.MetroLabel7.Text = "Codigo Postal"
+        Me.txtDomicilio.Location = New System.Drawing.Point(23, 178)
+        Me.txtDomicilio.Name = "txtDomicilio"
+        Me.txtDomicilio.Size = New System.Drawing.Size(790, 25)
+        Me.txtDomicilio.TabIndex = 71
         '
-        'MetroLabel6
+        'lblDomicilio
         '
-        Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(307, 230)
-        Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(62, 19)
-        Me.MetroLabel6.TabIndex = 75
-        Me.MetroLabel6.Text = "Provincia"
+        Me.lblDomicilio.AutoSize = True
+        Me.lblDomicilio.Location = New System.Drawing.Point(23, 154)
+        Me.lblDomicilio.Name = "lblDomicilio"
+        Me.lblDomicilio.Size = New System.Drawing.Size(64, 19)
+        Me.lblDomicilio.TabIndex = 70
+        Me.lblDomicilio.Text = "Domicilio"
         '
-        'MetroComboBox2
+        'txtDNI
         '
-        Me.MetroComboBox2.FormattingEnabled = True
-        Me.MetroComboBox2.ItemHeight = 23
-        Me.MetroComboBox2.Location = New System.Drawing.Point(307, 252)
-        Me.MetroComboBox2.Name = "MetroComboBox2"
-        Me.MetroComboBox2.Size = New System.Drawing.Size(278, 29)
-        Me.MetroComboBox2.TabIndex = 74
+        Me.txtDNI.Location = New System.Drawing.Point(617, 102)
+        Me.txtDNI.Name = "txtDNI"
+        Me.txtDNI.Size = New System.Drawing.Size(196, 25)
+        Me.txtDNI.TabIndex = 69
         '
-        'MetroLabel5
+        'lblDNI
         '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(23, 230)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(66, 19)
-        Me.MetroLabel5.TabIndex = 73
-        Me.MetroLabel5.Text = "Población"
+        Me.lblDNI.AutoSize = True
+        Me.lblDNI.Location = New System.Drawing.Point(617, 78)
+        Me.lblDNI.Name = "lblDNI"
+        Me.lblDNI.Size = New System.Drawing.Size(55, 19)
+        Me.lblDNI.TabIndex = 68
+        Me.lblDNI.Text = "CIF/DNI"
         '
-        'MetroComboBox1
+        'txtNombre
         '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(23, 252)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(256, 29)
-        Me.MetroComboBox1.TabIndex = 72
+        Me.txtNombre.Location = New System.Drawing.Point(176, 102)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(409, 25)
+        Me.txtNombre.TabIndex = 67
         '
-        'MetroTextBox4
+        'lblNombre
         '
-        Me.MetroTextBox4.Location = New System.Drawing.Point(23, 178)
-        Me.MetroTextBox4.Name = "MetroTextBox4"
-        Me.MetroTextBox4.Size = New System.Drawing.Size(790, 25)
-        Me.MetroTextBox4.TabIndex = 71
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Location = New System.Drawing.Point(176, 78)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(69, 19)
+        Me.lblNombre.TabIndex = 66
+        Me.lblNombre.Text = "Nombre *"
         '
-        'MetroLabel4
+        'txtCodigo
         '
-        Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(23, 154)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(64, 19)
-        Me.MetroLabel4.TabIndex = 70
-        Me.MetroLabel4.Text = "Domicilio"
+        Me.txtCodigo.Location = New System.Drawing.Point(23, 102)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(112, 25)
+        Me.txtCodigo.TabIndex = 65
         '
-        'MetroTextBox3
+        'lblCodigo
         '
-        Me.MetroTextBox3.Location = New System.Drawing.Point(617, 102)
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.Size = New System.Drawing.Size(196, 25)
-        Me.MetroTextBox3.TabIndex = 69
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Location = New System.Drawing.Point(23, 78)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(63, 19)
+        Me.lblCodigo.TabIndex = 64
+        Me.lblCodigo.Text = "Código *"
         '
-        'MetroLabel3
+        'txtProvincia
         '
-        Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(617, 78)
-        Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(55, 19)
-        Me.MetroLabel3.TabIndex = 68
-        Me.MetroLabel3.Text = "CIF/DNI"
+        Me.txtProvincia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtProvincia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtProvincia.Location = New System.Drawing.Point(307, 256)
+        Me.txtProvincia.Name = "txtProvincia"
+        Me.txtProvincia.Size = New System.Drawing.Size(164, 20)
+        Me.txtProvincia.TabIndex = 73
         '
-        'MetroTextBox2
+        'txtPoblacion
         '
-        Me.MetroTextBox2.Location = New System.Drawing.Point(176, 102)
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.Size = New System.Drawing.Size(409, 25)
-        Me.MetroTextBox2.TabIndex = 67
+        Me.txtPoblacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtPoblacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtPoblacion.Location = New System.Drawing.Point(23, 256)
+        Me.txtPoblacion.Name = "txtPoblacion"
+        Me.txtPoblacion.Size = New System.Drawing.Size(237, 20)
+        Me.txtPoblacion.TabIndex = 72
         '
-        'MetroLabel2
+        'txtTlfFijo
         '
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(176, 78)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(59, 19)
-        Me.MetroLabel2.TabIndex = 66
-        Me.MetroLabel2.Text = "Nombre"
+        Me.txtTlfFijo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTlfFijo.Location = New System.Drawing.Point(23, 341)
+        Me.txtTlfFijo.Mask = "000-000-000"
+        Me.txtTlfFijo.Name = "txtTlfFijo"
+        Me.txtTlfFijo.Size = New System.Drawing.Size(95, 23)
+        Me.txtTlfFijo.TabIndex = 82
+        Me.txtTlfFijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTlfFijo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
-        'MetroTextBox1
+        'txtTlfMovil
         '
-        Me.MetroTextBox1.Location = New System.Drawing.Point(23, 102)
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.Size = New System.Drawing.Size(112, 25)
-        Me.MetroTextBox1.TabIndex = 65
+        Me.txtTlfMovil.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTlfMovil.Location = New System.Drawing.Point(165, 341)
+        Me.txtTlfMovil.Mask = "000-000-000"
+        Me.txtTlfMovil.Name = "txtTlfMovil"
+        Me.txtTlfMovil.Size = New System.Drawing.Size(95, 23)
+        Me.txtTlfMovil.TabIndex = 83
+        Me.txtTlfMovil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTlfMovil.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
-        'MetroLabel1
+        'txtFax
         '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(23, 78)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(53, 19)
-        Me.MetroLabel1.TabIndex = 64
-        Me.MetroLabel1.Text = "Código"
+        Me.txtFax.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFax.Location = New System.Drawing.Point(307, 341)
+        Me.txtFax.Mask = "000-000-000"
+        Me.txtFax.Name = "txtFax"
+        Me.txtFax.Size = New System.Drawing.Size(95, 23)
+        Me.txtFax.TabIndex = 94
+        Me.txtFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtFax.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClienteBindingSource
+        '
+        Me.ClienteBindingSource.DataMember = "Cliente"
+        Me.ClienteBindingSource.DataSource = Me.TallerDataSet
+        '
+        'ClienteTableAdapter
+        '
+        Me.ClienteTableAdapter.ClearBeforeFill = True
         '
         'frmMantenimientoClientesAlta
         '
@@ -269,63 +301,68 @@ Partial Class frmMantenimientoClientesAlta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(854, 533)
-        Me.Controls.Add(Me.MetroButton2)
-        Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroLabel14)
-        Me.Controls.Add(Me.MetroTextBox12)
-        Me.Controls.Add(Me.MetroTextBox9)
-        Me.Controls.Add(Me.MetroTextBox8)
-        Me.Controls.Add(Me.MetroTextBox7)
-        Me.Controls.Add(Me.MetroLabel11)
-        Me.Controls.Add(Me.MetroLabel10)
-        Me.Controls.Add(Me.MetroLabel9)
-        Me.Controls.Add(Me.MetroTextBox6)
-        Me.Controls.Add(Me.MetroLabel8)
-        Me.Controls.Add(Me.MetroTextBox5)
-        Me.Controls.Add(Me.MetroLabel7)
-        Me.Controls.Add(Me.MetroLabel6)
-        Me.Controls.Add(Me.MetroComboBox2)
-        Me.Controls.Add(Me.MetroLabel5)
-        Me.Controls.Add(Me.MetroComboBox1)
-        Me.Controls.Add(Me.MetroTextBox4)
-        Me.Controls.Add(Me.MetroLabel4)
-        Me.Controls.Add(Me.MetroTextBox3)
-        Me.Controls.Add(Me.MetroLabel3)
-        Me.Controls.Add(Me.MetroTextBox2)
-        Me.Controls.Add(Me.MetroLabel2)
-        Me.Controls.Add(Me.MetroTextBox1)
-        Me.Controls.Add(Me.MetroLabel1)
+        Me.Controls.Add(Me.lblCodigo)
+        Me.Controls.Add(Me.txtCodigo)
+        Me.Controls.Add(Me.lblNombre)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.lblDNI)
+        Me.Controls.Add(Me.txtDNI)
+        Me.Controls.Add(Me.lblDomicilio)
+        Me.Controls.Add(Me.txtDomicilio)
+        Me.Controls.Add(Me.lblPoblacion)
+        Me.Controls.Add(Me.txtPoblacion)
+        Me.Controls.Add(Me.lblProvincia)
+        Me.Controls.Add(Me.txtProvincia)
+        Me.Controls.Add(Me.lblCP)
+        Me.Controls.Add(Me.txtCP)
+        Me.Controls.Add(Me.lblTlfFijo)
+        Me.Controls.Add(Me.txtTlfFijo)
+        Me.Controls.Add(Me.lblTlfMovil)
+        Me.Controls.Add(Me.txtTlfMovil)
+        Me.Controls.Add(Me.lblFax)
+        Me.Controls.Add(Me.txtFax)
+        Me.Controls.Add(Me.lblEmail)
+        Me.Controls.Add(Me.txtEmail)
+        Me.Controls.Add(Me.lblObservaciones)
+        Me.Controls.Add(Me.txtObservaciones)
+        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Name = "frmMantenimientoClientesAlta"
         Me.Text = "Nuevo Cliente"
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox12 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox9 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox8 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox7 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton
+    Friend WithEvents lblObservaciones As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtObservaciones As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtEmail As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblEmail As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblFax As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblTlfMovil As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblTlfFijo As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtCP As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblCP As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblProvincia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblPoblacion As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtDomicilio As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblDomicilio As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtDNI As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblDNI As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblNombre As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtCodigo As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblCodigo As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtProvincia As TextBox
+    Friend WithEvents txtPoblacion As TextBox
+    Friend WithEvents TallerDataSet As tallerDataSet
+    Friend WithEvents ClienteBindingSource As BindingSource
+    Friend WithEvents ClienteTableAdapter As tallerDataSetTableAdapters.ClienteTableAdapter
+    Friend WithEvents txtTlfFijo As MaskedTextBox
+    Friend WithEvents txtTlfMovil As MaskedTextBox
+    Friend WithEvents txtFax As MaskedTextBox
 End Class

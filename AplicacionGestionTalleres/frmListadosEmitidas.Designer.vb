@@ -22,6 +22,7 @@ Partial Class frmListadosEmitidas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MetroRadioButton2 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroRadioButton1 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
@@ -31,6 +32,11 @@ Partial Class frmListadosEmitidas
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ClienteTableAdapter()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroRadioButton2
@@ -49,7 +55,7 @@ Partial Class frmListadosEmitidas
         Me.MetroRadioButton1.Checked = True
         Me.MetroRadioButton1.Location = New System.Drawing.Point(43, 166)
         Me.MetroRadioButton1.Name = "MetroRadioButton1"
-        Me.MetroRadioButton1.Size = New System.Drawing.Size(119, 15)
+        Me.MetroRadioButton1.Size = New System.Drawing.Size(118, 15)
         Me.MetroRadioButton1.TabIndex = 46
         Me.MetroRadioButton1.TabStop = True
         Me.MetroRadioButton1.Text = "Todos los Clientes"
@@ -57,12 +63,15 @@ Partial Class frmListadosEmitidas
         '
         'MetroComboBox1
         '
+        Me.MetroComboBox1.DataSource = Me.ClienteBindingSource
+        Me.MetroComboBox1.DisplayMember = "nombre"
         Me.MetroComboBox1.FormattingEnabled = True
         Me.MetroComboBox1.ItemHeight = 23
         Me.MetroComboBox1.Location = New System.Drawing.Point(175, 197)
         Me.MetroComboBox1.Name = "MetroComboBox1"
         Me.MetroComboBox1.Size = New System.Drawing.Size(290, 29)
         Me.MetroComboBox1.TabIndex = 48
+        Me.MetroComboBox1.ValueMember = "Id"
         '
         'MetroButton2
         '
@@ -114,6 +123,20 @@ Partial Class frmListadosEmitidas
         Me.DateTimePicker2.Size = New System.Drawing.Size(175, 20)
         Me.DateTimePicker2.TabIndex = 71
         '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClienteBindingSource
+        '
+        Me.ClienteBindingSource.DataMember = "Cliente"
+        Me.ClienteBindingSource.DataSource = Me.TallerDataSet
+        '
+        'ClienteTableAdapter
+        '
+        Me.ClienteTableAdapter.ClearBeforeFill = True
+        '
         'frmListadosEmitidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,6 +154,8 @@ Partial Class frmListadosEmitidas
         Me.Controls.Add(Me.MetroRadioButton1)
         Me.Name = "frmListadosEmitidas"
         Me.Text = "Facturas Emitidas"
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -145,4 +170,7 @@ Partial Class frmListadosEmitidas
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents TallerDataSet As tallerDataSet
+    Friend WithEvents ClienteBindingSource As BindingSource
+    Friend WithEvents ClienteTableAdapter As tallerDataSetTableAdapters.ClienteTableAdapter
 End Class
