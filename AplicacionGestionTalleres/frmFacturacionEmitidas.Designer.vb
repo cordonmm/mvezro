@@ -23,18 +23,22 @@ Partial Class frmFacturacionEmitidas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.MetroButton5 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.btnModificar = New MetroFramework.Controls.MetroButton()
+        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
+        Me.btnEliminar = New MetroFramework.Controls.MetroButton()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
         Me.txtVehiculo = New MetroFramework.Controls.MetroTextBox()
         Me.txtIVA = New MetroFramework.Controls.MetroTextBox()
         Me.txtFactura = New MetroFramework.Controls.MetroTextBox()
         Me.dtpFechaFac = New System.Windows.Forms.DateTimePicker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgLinea = New System.Windows.Forms.DataGridView()
+        Me.idProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,6 +62,7 @@ Partial Class frmFacturacionEmitidas
         Me.lblArticulo = New MetroFramework.Controls.MetroLabel()
         Me.btnAnadir = New MetroFramework.Controls.MetroButton()
         Me.gbArticulo = New System.Windows.Forms.GroupBox()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
         Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReferenciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,13 +71,13 @@ Partial Class frmFacturacionEmitidas
         Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConsProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
-        Me.MetroButton7 = New MetroFramework.Controls.MetroButton()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
+        Me.gbLineas = New System.Windows.Forms.GroupBox()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.txtTotalFactura = New MetroFramework.Controls.MetroTextBox()
         Me.lblTotalFactura = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox6 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtIVATotal = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.txtBaseImponible = New MetroFramework.Controls.MetroTextBox()
         Me.lblBaseImponible = New MetroFramework.Controls.MetroLabel()
@@ -80,76 +85,83 @@ Partial Class frmFacturacionEmitidas
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ClienteTableAdapter()
-        Me.MetroButton8 = New MetroFramework.Controls.MetroButton()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnEliminarLinea = New MetroFramework.Controls.MetroButton()
+        Me.ConfiguracionTableAdapter1 = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConfiguracionTableAdapter()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.FacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.FacturaETableAdapter()
+        Me.cbContado = New System.Windows.Forms.CheckBox()
+        Me.LineaFacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.LineaFacturaETableAdapter()
+        Me.ProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProductoTableAdapter()
+        CType(Me.dgLinea, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbArticulo.SuspendLayout()
         CType(Me.dgArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.gbLineas.SuspendLayout()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MetroButton5
+        'btnModificar
         '
-        Me.MetroButton5.Location = New System.Drawing.Point(1109, 714)
-        Me.MetroButton5.Name = "MetroButton5"
-        Me.MetroButton5.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton5.TabIndex = 47
-        Me.MetroButton5.Text = "Modificar"
+        Me.btnModificar.Location = New System.Drawing.Point(1109, 714)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(102, 25)
+        Me.btnModificar.TabIndex = 26
+        Me.btnModificar.Text = "Modificar"
         '
-        'MetroButton4
+        'btnImprimir
         '
-        Me.MetroButton4.Location = New System.Drawing.Point(1109, 683)
-        Me.MetroButton4.Name = "MetroButton4"
-        Me.MetroButton4.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton4.TabIndex = 46
-        Me.MetroButton4.Text = "Imprimir"
+        Me.btnImprimir.Location = New System.Drawing.Point(1109, 683)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(102, 25)
+        Me.btnImprimir.TabIndex = 25
+        Me.btnImprimir.Text = "Imprimir"
         '
-        'MetroButton3
+        'btnEliminar
         '
-        Me.MetroButton3.Location = New System.Drawing.Point(981, 843)
-        Me.MetroButton3.Name = "MetroButton3"
-        Me.MetroButton3.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton3.TabIndex = 45
-        Me.MetroButton3.Text = "Eliminar"
+        Me.btnEliminar.Location = New System.Drawing.Point(1112, 841)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(102, 25)
+        Me.btnEliminar.TabIndex = 33
+        Me.btnEliminar.Text = "Eliminar"
         '
-        'MetroButton2
+        'btnCancelar
         '
-        Me.MetroButton2.Location = New System.Drawing.Point(850, 843)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton2.TabIndex = 44
-        Me.MetroButton2.Text = "Cancelar"
+        Me.btnCancelar.Location = New System.Drawing.Point(981, 841)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
+        Me.btnCancelar.TabIndex = 32
+        Me.btnCancelar.Text = "Cancelar"
         '
-        'MetroButton1
+        'btnAceptar
         '
-        Me.MetroButton1.Location = New System.Drawing.Point(715, 843)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton1.TabIndex = 43
-        Me.MetroButton1.Text = "Aceptar"
+        Me.btnAceptar.Location = New System.Drawing.Point(846, 841)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
+        Me.btnAceptar.TabIndex = 31
+        Me.btnAceptar.Text = "Aceptar"
         '
         'txtVehiculo
         '
         Me.txtVehiculo.Location = New System.Drawing.Point(771, 94)
         Me.txtVehiculo.Name = "txtVehiculo"
         Me.txtVehiculo.Size = New System.Drawing.Size(152, 25)
-        Me.txtVehiculo.TabIndex = 34
+        Me.txtVehiculo.TabIndex = 14
         '
         'txtIVA
         '
         Me.txtIVA.Location = New System.Drawing.Point(158, 94)
         Me.txtIVA.Name = "txtIVA"
-        Me.txtIVA.Size = New System.Drawing.Size(68, 25)
-        Me.txtIVA.TabIndex = 32
+        Me.txtIVA.Size = New System.Drawing.Size(62, 25)
+        Me.txtIVA.TabIndex = 11
         '
         'txtFactura
         '
         Me.txtFactura.Location = New System.Drawing.Point(23, 94)
         Me.txtFactura.Name = "txtFactura"
+        Me.txtFactura.ReadOnly = True
         Me.txtFactura.Size = New System.Drawing.Size(112, 25)
-        Me.txtFactura.TabIndex = 31
+        Me.txtFactura.TabIndex = 10
         '
         'dtpFechaFac
         '
@@ -157,28 +169,37 @@ Partial Class frmFacturacionEmitidas
         Me.dtpFechaFac.Location = New System.Drawing.Point(252, 97)
         Me.dtpFechaFac.Name = "dtpFechaFac"
         Me.dtpFechaFac.Size = New System.Drawing.Size(175, 20)
-        Me.dtpFechaFac.TabIndex = 30
+        Me.dtpFechaFac.TabIndex = 12
         '
-        'DataGridView1
+        'dgLinea
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.WindowFrame
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cantidad, Me.descripcion, Me.precio, Me.total})
-        Me.DataGridView1.Location = New System.Drawing.Point(25, 30)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1019, 215)
-        Me.DataGridView1.TabIndex = 29
+        Me.dgLinea.AllowUserToAddRows = False
+        Me.dgLinea.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgLinea.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgLinea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgLinea.BackgroundColor = System.Drawing.SystemColors.WindowFrame
+        Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.cantidad, Me.descripcion, Me.precio, Me.total})
+        Me.dgLinea.Location = New System.Drawing.Point(25, 30)
+        Me.dgLinea.Name = "dgLinea"
+        Me.dgLinea.ReadOnly = True
+        Me.dgLinea.RowHeadersVisible = False
+        Me.dgLinea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgLinea.Size = New System.Drawing.Size(1019, 215)
+        Me.dgLinea.TabIndex = 29
+        '
+        'idProducto
+        '
+        Me.idProducto.HeaderText = "idProducto"
+        Me.idProducto.Name = "idProducto"
+        Me.idProducto.ReadOnly = True
+        Me.idProducto.Visible = False
         '
         'cantidad
         '
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle2
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
@@ -191,12 +212,18 @@ Partial Class frmFacturacionEmitidas
         '
         'precio
         '
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.precio.DefaultCellStyle = DataGridViewCellStyle3
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
         '
         'total
         '
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.total.DefaultCellStyle = DataGridViewCellStyle4
         Me.total.HeaderText = "Total"
         Me.total.Name = "total"
         Me.total.ReadOnly = True
@@ -251,7 +278,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtMatricula.Location = New System.Drawing.Point(939, 94)
         Me.txtMatricula.Name = "txtMatricula"
         Me.txtMatricula.Size = New System.Drawing.Size(144, 25)
-        Me.txtMatricula.TabIndex = 49
+        Me.txtMatricula.TabIndex = 15
         '
         'lblMatricula
         '
@@ -267,7 +294,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtKM.Location = New System.Drawing.Point(1104, 94)
         Me.txtKM.Name = "txtKM"
         Me.txtKM.Size = New System.Drawing.Size(107, 25)
-        Me.txtKM.TabIndex = 51
+        Me.txtKM.TabIndex = 16
         '
         'lblKM
         '
@@ -282,29 +309,29 @@ Partial Class frmFacturacionEmitidas
         '
         Me.txtDescuento.Location = New System.Drawing.Point(860, 61)
         Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.Size = New System.Drawing.Size(152, 25)
-        Me.txtDescuento.TabIndex = 60
+        Me.txtDescuento.Size = New System.Drawing.Size(89, 25)
+        Me.txtDescuento.TabIndex = 21
         '
         'txtPVP
         '
         Me.txtPVP.Location = New System.Drawing.Point(743, 61)
         Me.txtPVP.Name = "txtPVP"
         Me.txtPVP.Size = New System.Drawing.Size(97, 25)
-        Me.txtPVP.TabIndex = 59
+        Me.txtPVP.TabIndex = 20
         '
         'txtCantidad
         '
         Me.txtCantidad.Location = New System.Drawing.Point(597, 61)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(124, 25)
-        Me.txtCantidad.TabIndex = 58
+        Me.txtCantidad.TabIndex = 19
         '
         'txtArticulo
         '
         Me.txtArticulo.Location = New System.Drawing.Point(25, 61)
         Me.txtArticulo.Name = "txtArticulo"
         Me.txtArticulo.Size = New System.Drawing.Size(551, 25)
-        Me.txtArticulo.TabIndex = 57
+        Me.txtArticulo.TabIndex = 18
         '
         'lblDescuento
         '
@@ -347,11 +374,12 @@ Partial Class frmFacturacionEmitidas
         Me.btnAnadir.Location = New System.Drawing.Point(1029, 61)
         Me.btnAnadir.Name = "btnAnadir"
         Me.btnAnadir.Size = New System.Drawing.Size(159, 25)
-        Me.btnAnadir.TabIndex = 61
+        Me.btnAnadir.TabIndex = 22
         Me.btnAnadir.Text = "Añadir"
         '
         'gbArticulo
         '
+        Me.gbArticulo.Controls.Add(Me.MetroLabel1)
         Me.gbArticulo.Controls.Add(Me.dgArticulos)
         Me.gbArticulo.Controls.Add(Me.btnAnadir)
         Me.gbArticulo.Controls.Add(Me.txtArticulo)
@@ -366,9 +394,18 @@ Partial Class frmFacturacionEmitidas
         Me.gbArticulo.Location = New System.Drawing.Point(23, 141)
         Me.gbArticulo.Name = "gbArticulo"
         Me.gbArticulo.Size = New System.Drawing.Size(1210, 378)
-        Me.gbArticulo.TabIndex = 62
+        Me.gbArticulo.TabIndex = 17
         Me.gbArticulo.TabStop = False
         Me.gbArticulo.Text = "Añadir artículo"
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(949, 61)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(20, 19)
+        Me.MetroLabel1.TabIndex = 74
+        Me.MetroLabel1.Text = "%"
         '
         'dgArticulos
         '
@@ -384,9 +421,10 @@ Partial Class frmFacturacionEmitidas
         Me.dgArticulos.MultiSelect = False
         Me.dgArticulos.Name = "dgArticulos"
         Me.dgArticulos.ReadOnly = True
+        Me.dgArticulos.RowHeadersVisible = False
         Me.dgArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgArticulos.Size = New System.Drawing.Size(1163, 240)
-        Me.dgArticulos.TabIndex = 64
+        Me.dgArticulos.TabIndex = 23
         '
         'FamiliaDataGridViewTextBoxColumn
         '
@@ -412,6 +450,9 @@ Partial Class frmFacturacionEmitidas
         'PrecioDataGridViewTextBoxColumn
         '
         Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
         Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
         Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
         Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
@@ -433,24 +474,24 @@ Partial Class frmFacturacionEmitidas
         Me.TallerDataSet.DataSetName = "tallerDataSet"
         Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MetroButton7
+        'btnBuscar
         '
-        Me.MetroButton7.Location = New System.Drawing.Point(1109, 746)
-        Me.MetroButton7.Name = "MetroButton7"
-        Me.MetroButton7.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton7.TabIndex = 63
-        Me.MetroButton7.Text = "Buscar"
+        Me.btnBuscar.Location = New System.Drawing.Point(1109, 746)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(102, 25)
+        Me.btnBuscar.TabIndex = 27
+        Me.btnBuscar.Text = "Buscar"
         '
-        'GroupBox2
+        'gbLineas
         '
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(23, 526)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1060, 264)
-        Me.GroupBox2.TabIndex = 65
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Líneas"
+        Me.gbLineas.Controls.Add(Me.dgLinea)
+        Me.gbLineas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbLineas.Location = New System.Drawing.Point(23, 526)
+        Me.gbLineas.Name = "gbLineas"
+        Me.gbLineas.Size = New System.Drawing.Size(1060, 264)
+        Me.gbLineas.TabIndex = 65
+        Me.gbLineas.TabStop = False
+        Me.gbLineas.Text = "Líneas"
         '
         'MetroLabel9
         '
@@ -459,14 +500,15 @@ Partial Class frmFacturacionEmitidas
         Me.MetroLabel9.Name = "MetroLabel9"
         Me.MetroLabel9.Size = New System.Drawing.Size(18, 19)
         Me.MetroLabel9.TabIndex = 73
-        Me.MetroLabel9.Text = "+"
+        Me.MetroLabel9.Text = "="
         '
         'txtTotalFactura
         '
         Me.txtTotalFactura.Location = New System.Drawing.Point(402, 841)
         Me.txtTotalFactura.Name = "txtTotalFactura"
+        Me.txtTotalFactura.ReadOnly = True
         Me.txtTotalFactura.Size = New System.Drawing.Size(131, 25)
-        Me.txtTotalFactura.TabIndex = 72
+        Me.txtTotalFactura.TabIndex = 30
         '
         'lblTotalFactura
         '
@@ -486,12 +528,12 @@ Partial Class frmFacturacionEmitidas
         Me.MetroLabel8.TabIndex = 70
         Me.MetroLabel8.Text = "+"
         '
-        'MetroTextBox6
+        'txtIVATotal
         '
-        Me.MetroTextBox6.Location = New System.Drawing.Point(212, 841)
-        Me.MetroTextBox6.Name = "MetroTextBox6"
-        Me.MetroTextBox6.Size = New System.Drawing.Size(112, 25)
-        Me.MetroTextBox6.TabIndex = 69
+        Me.txtIVATotal.Location = New System.Drawing.Point(212, 841)
+        Me.txtIVATotal.Name = "txtIVATotal"
+        Me.txtIVATotal.Size = New System.Drawing.Size(112, 25)
+        Me.txtIVATotal.TabIndex = 29
         '
         'MetroLabel7
         '
@@ -506,8 +548,9 @@ Partial Class frmFacturacionEmitidas
         '
         Me.txtBaseImponible.Location = New System.Drawing.Point(23, 841)
         Me.txtBaseImponible.Name = "txtBaseImponible"
+        Me.txtBaseImponible.ReadOnly = True
         Me.txtBaseImponible.Size = New System.Drawing.Size(112, 25)
-        Me.txtBaseImponible.TabIndex = 67
+        Me.txtBaseImponible.TabIndex = 28
         '
         'lblBaseImponible
         '
@@ -531,7 +574,7 @@ Partial Class frmFacturacionEmitidas
         Me.cmbCliente.Location = New System.Drawing.Point(450, 95)
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(294, 21)
-        Me.cmbCliente.TabIndex = 74
+        Me.cmbCliente.TabIndex = 13
         Me.cmbCliente.ValueMember = "Id"
         '
         'ClienteBindingSource
@@ -543,20 +586,57 @@ Partial Class frmFacturacionEmitidas
         '
         Me.ClienteTableAdapter.ClearBeforeFill = True
         '
-        'MetroButton8
+        'btnEliminarLinea
         '
-        Me.MetroButton8.Location = New System.Drawing.Point(1109, 568)
-        Me.MetroButton8.Name = "MetroButton8"
-        Me.MetroButton8.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton8.TabIndex = 75
-        Me.MetroButton8.Text = "Eliminar linea"
+        Me.btnEliminarLinea.Location = New System.Drawing.Point(1109, 568)
+        Me.btnEliminarLinea.Name = "btnEliminarLinea"
+        Me.btnEliminarLinea.Size = New System.Drawing.Size(102, 25)
+        Me.btnEliminarLinea.TabIndex = 24
+        Me.btnEliminarLinea.Text = "Eliminar linea"
+        '
+        'ConfiguracionTableAdapter1
+        '
+        Me.ConfiguracionTableAdapter1.ClearBeforeFill = True
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.Location = New System.Drawing.Point(220, 97)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(20, 19)
+        Me.MetroLabel2.TabIndex = 75
+        Me.MetroLabel2.Text = "%"
+        '
+        'FacturaETableAdapter
+        '
+        Me.FacturaETableAdapter.ClearBeforeFill = True
+        '
+        'cbContado
+        '
+        Me.cbContado.AutoSize = True
+        Me.cbContado.Location = New System.Drawing.Point(598, 845)
+        Me.cbContado.Name = "cbContado"
+        Me.cbContado.Size = New System.Drawing.Size(116, 17)
+        Me.cbContado.TabIndex = 76
+        Me.cbContado.Text = "Pagada al contado"
+        Me.cbContado.UseVisualStyleBackColor = True
+        '
+        'LineaFacturaETableAdapter
+        '
+        Me.LineaFacturaETableAdapter.ClearBeforeFill = True
+        '
+        'ProductoTableAdapter
+        '
+        Me.ProductoTableAdapter.ClearBeforeFill = True
         '
         'frmFacturacionEmitidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1244, 884)
-        Me.Controls.Add(Me.MetroButton8)
+        Me.Controls.Add(Me.cbContado)
+        Me.Controls.Add(Me.MetroLabel2)
+        Me.Controls.Add(Me.btnEliminarLinea)
         Me.Controls.Add(Me.lblNFactura)
         Me.Controls.Add(Me.txtFactura)
         Me.Controls.Add(Me.lblIVA)
@@ -572,48 +652,48 @@ Partial Class frmFacturacionEmitidas
         Me.Controls.Add(Me.lblKM)
         Me.Controls.Add(Me.txtKM)
         Me.Controls.Add(Me.gbArticulo)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.gbLineas)
         Me.Controls.Add(Me.MetroLabel9)
         Me.Controls.Add(Me.lblTotalFactura)
         Me.Controls.Add(Me.MetroLabel8)
-        Me.Controls.Add(Me.MetroTextBox6)
+        Me.Controls.Add(Me.txtIVATotal)
         Me.Controls.Add(Me.txtTotalFactura)
         Me.Controls.Add(Me.MetroLabel7)
         Me.Controls.Add(Me.txtBaseImponible)
         Me.Controls.Add(Me.lblBaseImponible)
-        Me.Controls.Add(Me.MetroButton7)
-        Me.Controls.Add(Me.MetroButton5)
-        Me.Controls.Add(Me.MetroButton4)
-        Me.Controls.Add(Me.MetroButton3)
-        Me.Controls.Add(Me.MetroButton2)
-        Me.Controls.Add(Me.MetroButton1)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnAceptar)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "frmFacturacionEmitidas"
         Me.Padding = New System.Windows.Forms.Padding(20, 65, 20, 22)
         Me.Text = "Facturas Emitidas"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgLinea, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbArticulo.ResumeLayout(False)
         Me.gbArticulo.PerformLayout()
         CType(Me.dgArticulos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
+        Me.gbLineas.ResumeLayout(False)
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MetroButton5 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton4 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnModificar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnImprimir As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnEliminar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton
     Friend WithEvents txtVehiculo As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtIVA As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtFactura As MetroFramework.Controls.MetroTextBox
     Friend WithEvents dtpFechaFac As DateTimePicker
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgLinea As DataGridView
     Friend WithEvents lblVehiculo As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblCliente As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblFecha As MetroFramework.Controls.MetroLabel
@@ -634,30 +714,38 @@ Partial Class frmFacturacionEmitidas
     Friend WithEvents btnAnadir As MetroFramework.Controls.MetroButton
     Friend WithEvents gbArticulo As GroupBox
     Friend WithEvents dgArticulos As DataGridView
-    Friend WithEvents MetroButton7 As MetroFramework.Controls.MetroButton
-    Friend WithEvents cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents total As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnBuscar As MetroFramework.Controls.MetroButton
+    Friend WithEvents gbLineas As GroupBox
     Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtTotalFactura As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblTotalFactura As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtIVATotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtBaseImponible As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblBaseImponible As MetroFramework.Controls.MetroLabel
     Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents ConsProductoBindingSource As BindingSource
     Friend WithEvents ConsProductoTableAdapter As tallerDataSetTableAdapters.ConsProductoTableAdapter
+    Friend WithEvents cmbCliente As ComboBox
+    Friend WithEvents ClienteBindingSource As BindingSource
+    Friend WithEvents ClienteTableAdapter As tallerDataSetTableAdapters.ClienteTableAdapter
+    Friend WithEvents btnEliminarLinea As MetroFramework.Controls.MetroButton
     Friend WithEvents FamiliaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ReferenciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescripciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents cmbCliente As ComboBox
-    Friend WithEvents ClienteBindingSource As BindingSource
-    Friend WithEvents ClienteTableAdapter As tallerDataSetTableAdapters.ClienteTableAdapter
-    Friend WithEvents MetroButton8 As MetroFramework.Controls.MetroButton
+    Friend WithEvents idProducto As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents total As DataGridViewTextBoxColumn
+    Friend WithEvents ConfiguracionTableAdapter1 As tallerDataSetTableAdapters.ConfiguracionTableAdapter
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents FacturaETableAdapter As tallerDataSetTableAdapters.FacturaETableAdapter
+    Friend WithEvents cbContado As CheckBox
+    Friend WithEvents LineaFacturaETableAdapter As tallerDataSetTableAdapters.LineaFacturaETableAdapter
+    Friend WithEvents ProductoTableAdapter As tallerDataSetTableAdapters.ProductoTableAdapter
 End Class

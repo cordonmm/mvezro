@@ -74,5 +74,7 @@
         End If
     End Sub
 
+    Private Sub txtBuscar_Click_1(sender As Object, e As EventArgs) Handles txtBuscar.Click
 
+    End Sub
 End Class

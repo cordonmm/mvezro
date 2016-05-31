@@ -19,4 +19,8 @@
         frmMantenimientoProveedoresAlta.ShowDialog()
         Me.ProveedorTableAdapter.Fill(Me.TallerDataSet.Proveedor)
     End Sub
+
+    Private Sub txtBuscar_Click(sender As Object, e As EventArgs) Handles txtBuscar.Click
+
+    End Sub
 End Class

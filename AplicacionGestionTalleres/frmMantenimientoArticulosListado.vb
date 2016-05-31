@@ -22,4 +22,7 @@
 
     End Sub
 
+    Private Sub txtArticulo_Click_1(sender As Object, e As EventArgs) Handles txtArticulo.Click
+
+    End Sub
 End Class
