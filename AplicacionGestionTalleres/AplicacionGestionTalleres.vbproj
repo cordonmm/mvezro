@@ -59,10 +59,13 @@
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -100,6 +103,18 @@
       <DependentUpon>frmFacturacionRecibidas.vb</DependentUpon>
     </Compile>
     <Compile Include="frmFacturacionRecibidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoClientes.Designer.vb">
+      <DependentUpon>frmListadoClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoProveedores.Designer.vb">
+      <DependentUpon>frmListadoProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmListadosArticulos.Designer.vb">
@@ -260,6 +275,12 @@
     <EmbeddedResource Include="frmFacturacionRecibidas.resx">
       <DependentUpon>frmFacturacionRecibidas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoClientes.resx">
+      <DependentUpon>frmListadoClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoProveedores.resx">
+      <DependentUpon>frmListadoProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListadosArticulos.resx">
       <DependentUpon>frmListadosArticulos.vb</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +350,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

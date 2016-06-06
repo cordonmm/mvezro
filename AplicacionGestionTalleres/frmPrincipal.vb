@@ -129,7 +129,13 @@
         frmUtilidadesPatrimonio.Show()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ListadoClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoClientesToolStripMenuItem.Click
+        Dim frmListadoClientes As frmListadoClientes
+        frmListadoClientes = New frmListadoClientes
+        frmListadoClientes.Show()
+    End Sub
+
+    Private Sub ListadoProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoProveedoresToolStripMenuItem.Click
 
     End Sub
 End Class
