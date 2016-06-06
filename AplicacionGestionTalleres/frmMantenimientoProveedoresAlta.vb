@@ -41,6 +41,8 @@ Public Class frmMantenimientoProveedoresAlta
             txtPersonaContacto.Text = dtProveedor(0).contacto
             txtTlfPersonaContacto.Text = dtProveedor(0).telefonoContacto
             Me.Text = "Guardar Proveedor"
+
+
         End If
 
     End Sub
@@ -86,6 +88,9 @@ Public Class frmMantenimientoProveedoresAlta
                     Me.ProveedorTableAdapter.Update(Me.TallerDataSet.Proveedor)
                     MessageBox.Show("Proveedor guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
+                    If (TypeOf Me.Tag Is frmFacturacionEmitidas) Or (TypeOf Me.Tag Is frmFacturacionRecibidas) Then
+                        Me.Close()
+                    End If
                 End If
 
 

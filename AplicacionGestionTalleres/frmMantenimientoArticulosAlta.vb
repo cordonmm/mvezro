@@ -42,8 +42,10 @@
                     Me.ProductoTableAdapter.Update(Me.TallerDataSet.Producto)
                     MessageBox.Show("Articulo guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
+                    If (TypeOf Me.Tag Is frmFacturacionEmitidas) Or (TypeOf Me.Tag Is frmFacturacionRecibidas) Then
+                        Me.Close()
+                    End If
                 End If
-
 
             Catch ex As Exception
                 MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
