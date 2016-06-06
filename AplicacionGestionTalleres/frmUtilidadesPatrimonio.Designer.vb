@@ -31,33 +31,38 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroButton4 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
+        Me.btnCancelar = New MetroFramework.Controls.MetroButton()
+        Me.btnAceptar = New MetroFramework.Controls.MetroButton()
+        Me.txtIVA = New MetroFramework.Controls.MetroTextBox()
+        Me.txtFactura = New MetroFramework.Controls.MetroTextBox()
+        Me.dtpFechaFac = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.cmbIdentificador = New MetroFramework.Controls.MetroComboBox()
         Me.MetroTextBox12 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTextBox11 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTextBox10 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTextBox13 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTextBox8 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtConcepto = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox9 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtImporte = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
+        Me.cmbProveedor = New System.Windows.Forms.ComboBox()
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
         CType(Me.MetroTextBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroTextBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroTextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroTextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroTextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel9
@@ -126,58 +131,51 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel6.TabIndex = 122
         Me.MetroLabel6.Text = "Base Imponible"
         '
-        'MetroButton4
+        'btnImprimir
         '
-        Me.MetroButton4.Location = New System.Drawing.Point(604, 201)
-        Me.MetroButton4.Name = "MetroButton4"
-        Me.MetroButton4.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton4.TabIndex = 117
-        Me.MetroButton4.Text = "Imprimir"
+        Me.btnImprimir.Location = New System.Drawing.Point(604, 201)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(102, 25)
+        Me.btnImprimir.TabIndex = 117
+        Me.btnImprimir.Text = "Imprimir"
         '
-        'MetroButton2
+        'btnCancelar
         '
-        Me.MetroButton2.Location = New System.Drawing.Point(712, 201)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton2.TabIndex = 115
-        Me.MetroButton2.Text = "Cancelar"
+        Me.btnCancelar.Location = New System.Drawing.Point(823, 201)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
+        Me.btnCancelar.TabIndex = 115
+        Me.btnCancelar.Text = "Cancelar"
         '
-        'MetroButton1
+        'btnAceptar
         '
-        Me.MetroButton1.Location = New System.Drawing.Point(820, 201)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton1.TabIndex = 114
-        Me.MetroButton1.Text = "Aceptar"
+        Me.btnAceptar.Location = New System.Drawing.Point(712, 201)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
+        Me.btnAceptar.TabIndex = 114
+        Me.btnAceptar.Text = "Aceptar"
         '
-        'MetroTextBox3
+        'txtIVA
         '
-        Me.MetroTextBox3.Location = New System.Drawing.Point(613, 90)
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.Size = New System.Drawing.Size(309, 25)
-        Me.MetroTextBox3.TabIndex = 112
+        Me.txtIVA.Location = New System.Drawing.Point(158, 90)
+        Me.txtIVA.Name = "txtIVA"
+        Me.txtIVA.Size = New System.Drawing.Size(68, 25)
+        Me.txtIVA.TabIndex = 111
         '
-        'MetroTextBox2
+        'txtFactura
         '
-        Me.MetroTextBox2.Location = New System.Drawing.Point(158, 90)
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.Size = New System.Drawing.Size(68, 25)
-        Me.MetroTextBox2.TabIndex = 111
+        Me.txtFactura.Location = New System.Drawing.Point(23, 90)
+        Me.txtFactura.Name = "txtFactura"
+        Me.txtFactura.Size = New System.Drawing.Size(112, 25)
+        Me.txtFactura.TabIndex = 110
         '
-        'MetroTextBox1
+        'dtpFechaFac
         '
-        Me.MetroTextBox1.Location = New System.Drawing.Point(23, 90)
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.Size = New System.Drawing.Size(112, 25)
-        Me.MetroTextBox1.TabIndex = 110
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(252, 93)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(175, 20)
-        Me.DateTimePicker1.TabIndex = 109
+        Me.dtpFechaFac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaFac.Location = New System.Drawing.Point(252, 93)
+        Me.dtpFechaFac.Name = "dtpFechaFac"
+        Me.dtpFechaFac.Size = New System.Drawing.Size(175, 20)
+        Me.dtpFechaFac.TabIndex = 109
         '
         'MetroLabel4
         '
@@ -224,14 +222,15 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel12.TabIndex = 131
         Me.MetroLabel12.Text = "Identificador"
         '
-        'MetroComboBox1
+        'cmbIdentificador
         '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(443, 90)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(147, 29)
-        Me.MetroComboBox1.TabIndex = 130
+        Me.cmbIdentificador.FormattingEnabled = True
+        Me.cmbIdentificador.ItemHeight = 23
+        Me.cmbIdentificador.Items.AddRange(New Object() {"Opción 1", "Opción 2"})
+        Me.cmbIdentificador.Location = New System.Drawing.Point(443, 90)
+        Me.cmbIdentificador.Name = "cmbIdentificador"
+        Me.cmbIdentificador.Size = New System.Drawing.Size(147, 29)
+        Me.cmbIdentificador.TabIndex = 130
         '
         'MetroTextBox12
         '
@@ -253,12 +252,12 @@ Partial Class frmUtilidadesPatrimonio
         '
         Me.MetroTextBox8.Owner = Nothing
         '
-        'MetroTextBox4
+        'txtConcepto
         '
-        Me.MetroTextBox4.Location = New System.Drawing.Point(23, 157)
-        Me.MetroTextBox4.Name = "MetroTextBox4"
-        Me.MetroTextBox4.Size = New System.Drawing.Size(645, 25)
-        Me.MetroTextBox4.TabIndex = 133
+        Me.txtConcepto.Location = New System.Drawing.Point(23, 157)
+        Me.txtConcepto.Name = "txtConcepto"
+        Me.txtConcepto.Size = New System.Drawing.Size(645, 25)
+        Me.txtConcepto.TabIndex = 133
         '
         'MetroLabel5
         '
@@ -269,12 +268,12 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel5.TabIndex = 132
         Me.MetroLabel5.Text = "Concepto"
         '
-        'MetroTextBox9
+        'txtImporte
         '
-        Me.MetroTextBox9.Location = New System.Drawing.Point(691, 157)
-        Me.MetroTextBox9.Name = "MetroTextBox9"
-        Me.MetroTextBox9.Size = New System.Drawing.Size(231, 25)
-        Me.MetroTextBox9.TabIndex = 135
+        Me.txtImporte.Location = New System.Drawing.Point(691, 157)
+        Me.txtImporte.Name = "txtImporte"
+        Me.txtImporte.Size = New System.Drawing.Size(231, 25)
+        Me.txtImporte.TabIndex = 135
         '
         'MetroLabel11
         '
@@ -285,19 +284,47 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel11.TabIndex = 134
         Me.MetroLabel11.Text = "Importe"
         '
+        'cmbProveedor
+        '
+        Me.cmbProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbProveedor.DataSource = Me.ProveedorBindingSource
+        Me.cmbProveedor.DisplayMember = "nombre"
+        Me.cmbProveedor.FormattingEnabled = True
+        Me.cmbProveedor.Location = New System.Drawing.Point(613, 96)
+        Me.cmbProveedor.Name = "cmbProveedor"
+        Me.cmbProveedor.Size = New System.Drawing.Size(275, 21)
+        Me.cmbProveedor.TabIndex = 136
+        Me.cmbProveedor.ValueMember = "Id"
+        '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProveedorBindingSource
+        '
+        Me.ProveedorBindingSource.DataMember = "Proveedor"
+        Me.ProveedorBindingSource.DataSource = Me.TallerDataSet
+        '
+        'ProveedorTableAdapter
+        '
+        Me.ProveedorTableAdapter.ClearBeforeFill = True
+        '
         'frmUtilidadesPatrimonio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
-        Me.ClientSize = New System.Drawing.Size(947, 301)
-        Me.Controls.Add(Me.MetroTextBox9)
+        Me.ClientSize = New System.Drawing.Size(948, 267)
+        Me.Controls.Add(Me.cmbProveedor)
+        Me.Controls.Add(Me.txtImporte)
         Me.Controls.Add(Me.MetroLabel11)
-        Me.Controls.Add(Me.MetroTextBox4)
+        Me.Controls.Add(Me.txtConcepto)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.MetroLabel12)
         Me.Controls.Add(Me.MetroLabel9)
-        Me.Controls.Add(Me.MetroComboBox1)
+        Me.Controls.Add(Me.cmbIdentificador)
         Me.Controls.Add(Me.MetroTextBox7)
         Me.Controls.Add(Me.MetroLabel10)
         Me.Controls.Add(Me.MetroLabel8)
@@ -305,13 +332,12 @@ Partial Class frmUtilidadesPatrimonio
         Me.Controls.Add(Me.MetroLabel7)
         Me.Controls.Add(Me.MetroTextBox5)
         Me.Controls.Add(Me.MetroLabel6)
-        Me.Controls.Add(Me.MetroButton4)
-        Me.Controls.Add(Me.MetroButton2)
-        Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroTextBox3)
-        Me.Controls.Add(Me.MetroTextBox2)
-        Me.Controls.Add(Me.MetroTextBox1)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.txtIVA)
+        Me.Controls.Add(Me.txtFactura)
+        Me.Controls.Add(Me.dtpFechaFac)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
@@ -323,6 +349,8 @@ Partial Class frmUtilidadesPatrimonio
         CType(Me.MetroTextBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetroTextBox13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetroTextBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -336,26 +364,29 @@ Partial Class frmUtilidadesPatrimonio
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroButton4 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents btnImprimir As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtIVA As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtFactura As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents dtpFechaFac As DateTimePicker
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents cmbIdentificador As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroTextBox12 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroTextBox11 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroTextBox10 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroTextBox13 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroTextBox8 As MetroFramework.Components.MetroStyleManager
-    Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtConcepto As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox9 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtImporte As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents cmbProveedor As ComboBox
+    Friend WithEvents TallerDataSet As tallerDataSet
+    Friend WithEvents ProveedorBindingSource As BindingSource
+    Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter
 End Class

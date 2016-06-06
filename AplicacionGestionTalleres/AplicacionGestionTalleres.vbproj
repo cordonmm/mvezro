@@ -87,10 +87,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bbdd\tallerDataSet.vb">
+      <DependentUpon>tallerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAcercaDe.Designer.vb">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </Compile>
     <Compile Include="frmAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaFacturaRecibidas.Designer.vb">
+      <DependentUpon>frmBusquedaFacturaRecibidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaFacturaRecibidas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFacturacionEmitidas.Designer.vb">
@@ -268,6 +277,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaFacturaRecibidas.resx">
+      <DependentUpon>frmBusquedaFacturaRecibidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacionEmitidas.resx">
       <DependentUpon>frmFacturacionEmitidas.vb</DependentUpon>

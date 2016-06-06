@@ -70,6 +70,9 @@ Public Class frmMantenimientoClientesAlta
                     Me.ClienteTableAdapter.Update(Me.TallerDataSet.Cliente)
                     MessageBox.Show("Cliente guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
+                    If (TypeOf Me.Tag Is frmFacturacionEmitidas) Or (TypeOf Me.Tag Is frmFacturacionRecibidas) Then
+                        Me.Close()
+                    End If
                 End If
 
 

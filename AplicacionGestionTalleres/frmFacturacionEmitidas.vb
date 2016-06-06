@@ -20,8 +20,14 @@ Public Class frmFacturacionEmitidas
             dtpFechaFac.Value = dtFactura(0).fecha
             txtMatricula.Text = dtFactura(0).matricula
             txtKM.Text = dtFactura(0).km
-            cmbCliente.SelectedValue = dtFactura(0).idCliente
+            If dtFactura(0).contado Then
+                cbContado.Checked = True
+            Else
+                cbContado.Checked = False
+            End If
 
+            cmbCliente.SelectedValue = dtFactura(0).idCliente
+            dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
                 dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
             Next
@@ -137,13 +143,18 @@ Public Class frmFacturacionEmitidas
             Try
                 actualizarTotales()
                 If (dtFactura IsNot Nothing) Then
-                    dtFactura(0).fecha = dtpFechaFac.Value
+                    dtFactura(0).fecha = dtpFechaFac.Value.ToShortDateString
                     dtFactura(0).idCliente = cmbCliente.SelectedValue
                     dtFactura(0).baseImponible = txtBaseImponible.Text
                     dtFactura(0).total = txtTotalFactura.Text
                     dtFactura(0).km = txtKM.Text
                     dtFactura(0).modeloVehiculo = txtVehiculo.Text
                     dtFactura(0).matricula = txtMatricula.Text
+                    If cbContado.Checked Then
+                        dtFactura(0).contado = True
+                    Else
+                        dtFactura(0).contado = False
+                    End If
 
                     LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
                     For Each row As DataGridViewRow In dgLinea.Rows
@@ -152,24 +163,23 @@ Public Class frmFacturacionEmitidas
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
                     Me.FacturaETableAdapter.Update(dtFactura)
-                    If (MessageBox.Show("Factura guardada correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK) Then
-                        Me.Close()
-                    End If
+                    MessageBox.Show("Factura guardada correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    limpiar()
 
 
                 Else
 
-                    Me.TallerDataSet.FacturaE.AddFacturaERow(cmbCliente.SelectedValue, txtFactura.Text, Convert.ToDouble(txtBaseImponible.Text), Convert.ToDouble(txtTotalFactura.Text), cbContado.Checked, dtpFechaFac.Value, txtVehiculo.Text, txtMatricula.Text, txtKM.Text, txtIVA.Text)
+                    Me.TallerDataSet.FacturaE.AddFacturaERow(cmbCliente.SelectedValue, txtFactura.Text, Convert.ToDouble(txtBaseImponible.Text), Convert.ToDouble(txtTotalFactura.Text), cbContado.Checked, dtpFechaFac.Value.ToShortDateString, txtVehiculo.Text, txtMatricula.Text, txtKM.Text, txtIVA.Text)
 
                     Me.FacturaETableAdapter.Update(Me.TallerDataSet.FacturaE)
-                    dtFactura = FacturaETableAdapter.GetDataBy2(txtFactura.Text)
+                    Me.FacturaETableAdapter.Fill(Me.TallerDataSet.FacturaE)
+                    Dim idFactura As Integer = FacturaETableAdapter.GetId(txtFactura.Text)
 
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), dtFactura(0).Id)
-
+                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), idFactura)
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
-                    dtFactura = Nothing
+
 
                     MessageBox.Show("Factura guardada correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
@@ -187,6 +197,12 @@ Public Class frmFacturacionEmitidas
     End Sub
 
     Private Sub limpiar()
+        txtVehiculo.Text = ""
+        txtMatricula.Text = ""
+        txtKM.Text = ""
+        dgLinea.Rows.Clear()
+        Me.FacturaETableAdapter.Fill(Me.TallerDataSet.FacturaE)
+        txtFactura.Text = Me.FacturaETableAdapter.numeroFac() + 1
 
     End Sub
 
@@ -211,6 +227,7 @@ Public Class frmFacturacionEmitidas
             txtMatricula.Text = dtFactura(0).matricula
             txtKM.Text = dtFactura(0).km
             cmbCliente.SelectedValue = dtFactura(0).idCliente
+            dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
                 dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
             Next
@@ -219,5 +236,21 @@ Public Class frmFacturacionEmitidas
 
         End If
 
+    End Sub
+
+    Private Sub btnNuevoArticulo_Click(sender As Object, e As EventArgs) Handles btnNuevoArticulo.Click
+        Dim frmMantenimientoArticulosAlta As frmMantenimientoArticulosAlta
+        frmMantenimientoArticulosAlta = New frmMantenimientoArticulosAlta
+        frmMantenimientoArticulosAlta.Tag = Me
+        frmMantenimientoArticulosAlta.ShowDialog()
+        ConsProductoTableAdapter.Fill(Me.TallerDataSet.ConsProducto)
+    End Sub
+
+    Private Sub btnAñadirCliente_Click(sender As Object, e As EventArgs) Handles btnAñadirCliente.Click
+        Dim frmMantenimientoClientesAlta As frmMantenimientoClientesAlta
+        frmMantenimientoClientesAlta = New frmMantenimientoClientesAlta
+        frmMantenimientoClientesAlta.Tag = Me
+        frmMantenimientoClientesAlta.ShowDialog()
+        ClienteTableAdapter.Fill(Me.TallerDataSet.Cliente)
     End Sub
 End Class
