@@ -136,6 +136,8 @@
     End Sub
 
     Private Sub ListadoProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoProveedoresToolStripMenuItem.Click
-
+        Dim frmListadoProveedores As frmListadoProveedores
+        frmListadoProveedores = New frmListadoProveedores
+        frmListadoProveedores.Show()
     End Sub
 End Class

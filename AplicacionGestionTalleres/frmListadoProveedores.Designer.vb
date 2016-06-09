@@ -24,34 +24,35 @@ Partial Class frmListadoProveedores
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'ProveedorBindingSource
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.ProveedorBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.Report3.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(684, 474)
-        Me.ReportViewer1.TabIndex = 0
+        Me.ProveedorBindingSource.DataMember = "Proveedor"
+        Me.ProveedorBindingSource.DataSource = Me.tallerDataSet
         '
         'tallerDataSet
         '
         Me.tallerDataSet.DataSetName = "tallerDataSet"
         Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ProveedorBindingSource
+        'ReportViewer1
         '
-        Me.ProveedorBindingSource.DataMember = "Proveedor"
-        Me.ProveedorBindingSource.DataSource = Me.tallerDataSet
+        Me.ReportViewer1.AutoSize = True
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.ProveedorBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.Report3.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(896, 482)
+        Me.ReportViewer1.TabIndex = 0
         '
         'ProveedorTableAdapter
         '
@@ -61,13 +62,14 @@ Partial Class frmListadoProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(741, 581)
+        Me.ClientSize = New System.Drawing.Size(942, 568)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frmListadoProveedores"
         Me.Text = "Listado Proveedores"
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

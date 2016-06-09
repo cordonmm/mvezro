@@ -22,13 +22,21 @@ Partial Class frmListadosArticulos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroRadioButton1 = New MetroFramework.Controls.MetroRadioButton()
-        Me.MetroRadioButton2 = New MetroFramework.Controls.MetroRadioButton()
-        Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
+        Me.alfabetico = New MetroFramework.Controls.MetroRadioButton()
+        Me.referencia = New MetroFramework.Controls.MetroRadioButton()
+        Me.precioCompra = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.TallerDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FamiliaTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.FamiliaTableAdapter()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel5
@@ -42,44 +50,47 @@ Partial Class frmListadosArticulos
         '
         'MetroComboBox1
         '
+        Me.MetroComboBox1.DataSource = Me.FamiliaBindingSource
+        Me.MetroComboBox1.DisplayMember = "descripcion"
         Me.MetroComboBox1.FormattingEnabled = True
         Me.MetroComboBox1.ItemHeight = 23
         Me.MetroComboBox1.Location = New System.Drawing.Point(23, 96)
         Me.MetroComboBox1.Name = "MetroComboBox1"
         Me.MetroComboBox1.Size = New System.Drawing.Size(256, 29)
         Me.MetroComboBox1.TabIndex = 42
+        Me.MetroComboBox1.ValueMember = "Id"
         '
-        'MetroRadioButton1
+        'alfabetico
         '
-        Me.MetroRadioButton1.AutoSize = True
-        Me.MetroRadioButton1.Location = New System.Drawing.Point(337, 96)
-        Me.MetroRadioButton1.Name = "MetroRadioButton1"
-        Me.MetroRadioButton1.Size = New System.Drawing.Size(77, 15)
-        Me.MetroRadioButton1.TabIndex = 44
-        Me.MetroRadioButton1.TabStop = True
-        Me.MetroRadioButton1.Text = "Alfabético"
-        Me.MetroRadioButton1.UseVisualStyleBackColor = True
+        Me.alfabetico.AutoSize = True
+        Me.alfabetico.Location = New System.Drawing.Point(337, 96)
+        Me.alfabetico.Name = "alfabetico"
+        Me.alfabetico.Size = New System.Drawing.Size(77, 15)
+        Me.alfabetico.TabIndex = 44
+        Me.alfabetico.TabStop = True
+        Me.alfabetico.Text = "Alfabético"
+        Me.alfabetico.UseVisualStyleBackColor = True
         '
-        'MetroRadioButton2
+        'referencia
         '
-        Me.MetroRadioButton2.AutoSize = True
-        Me.MetroRadioButton2.Location = New System.Drawing.Point(337, 129)
-        Me.MetroRadioButton2.Name = "MetroRadioButton2"
-        Me.MetroRadioButton2.Size = New System.Drawing.Size(99, 15)
-        Me.MetroRadioButton2.TabIndex = 45
-        Me.MetroRadioButton2.TabStop = True
-        Me.MetroRadioButton2.Text = "Por Referencia"
-        Me.MetroRadioButton2.UseVisualStyleBackColor = True
+        Me.referencia.AutoSize = True
+        Me.referencia.Location = New System.Drawing.Point(337, 129)
+        Me.referencia.Name = "referencia"
+        Me.referencia.Size = New System.Drawing.Size(99, 15)
+        Me.referencia.TabIndex = 45
+        Me.referencia.TabStop = True
+        Me.referencia.Text = "Por Referencia"
+        Me.referencia.UseVisualStyleBackColor = True
         '
-        'MetroCheckBox1
+        'precioCompra
         '
-        Me.MetroCheckBox1.AutoSize = True
-        Me.MetroCheckBox1.Location = New System.Drawing.Point(23, 188)
-        Me.MetroCheckBox1.Name = "MetroCheckBox1"
-        Me.MetroCheckBox1.Size = New System.Drawing.Size(165, 15)
-        Me.MetroCheckBox1.TabIndex = 46
-        Me.MetroCheckBox1.Text = "Imprimir precio de compra"
-        Me.MetroCheckBox1.UseVisualStyleBackColor = True
+        Me.precioCompra.AutoSize = True
+        Me.precioCompra.Location = New System.Drawing.Point(23, 188)
+        Me.precioCompra.Name = "precioCompra"
+        Me.precioCompra.Size = New System.Drawing.Size(165, 15)
+        Me.precioCompra.TabIndex = 46
+        Me.precioCompra.Text = "Imprimir precio de compra"
+        Me.precioCompra.UseVisualStyleBackColor = True
         '
         'MetroButton2
         '
@@ -97,6 +108,25 @@ Partial Class frmListadosArticulos
         Me.MetroButton1.TabIndex = 64
         Me.MetroButton1.Text = "Imprimir"
         '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TallerDataSetBindingSource
+        '
+        Me.TallerDataSetBindingSource.DataSource = Me.TallerDataSet
+        Me.TallerDataSetBindingSource.Position = 0
+        '
+        'FamiliaBindingSource
+        '
+        Me.FamiliaBindingSource.DataMember = "Familia"
+        Me.FamiliaBindingSource.DataSource = Me.TallerDataSetBindingSource
+        '
+        'FamiliaTableAdapter
+        '
+        Me.FamiliaTableAdapter.ClearBeforeFill = True
+        '
         'frmListadosArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -105,13 +135,16 @@ Partial Class frmListadosArticulos
         Me.ClientSize = New System.Drawing.Size(465, 267)
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroCheckBox1)
-        Me.Controls.Add(Me.MetroRadioButton2)
-        Me.Controls.Add(Me.MetroRadioButton1)
+        Me.Controls.Add(Me.precioCompra)
+        Me.Controls.Add(Me.referencia)
+        Me.Controls.Add(Me.alfabetico)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.MetroComboBox1)
         Me.Name = "frmListadosArticulos"
         Me.Text = "Listado Artículos"
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -119,9 +152,13 @@ Partial Class frmListadosArticulos
 
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroRadioButton1 As MetroFramework.Controls.MetroRadioButton
-    Friend WithEvents MetroRadioButton2 As MetroFramework.Controls.MetroRadioButton
-    Friend WithEvents MetroCheckBox1 As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents alfabetico As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents referencia As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents precioCompra As MetroFramework.Controls.MetroCheckBox
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
+    Friend WithEvents TallerDataSetBindingSource As BindingSource
+    Friend WithEvents TallerDataSet As tallerDataSet
+    Friend WithEvents FamiliaBindingSource As BindingSource
+    Friend WithEvents FamiliaTableAdapter As tallerDataSetTableAdapters.FamiliaTableAdapter
 End Class
