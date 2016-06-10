@@ -70,6 +70,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(20, 60)
         Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.MenuStrip1.Size = New System.Drawing.Size(1201, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
@@ -298,13 +299,13 @@ Partial Class Form1
         'NuevaEntradaToolStripMenuItem
         '
         Me.NuevaEntradaToolStripMenuItem.Name = "NuevaEntradaToolStripMenuItem"
-        Me.NuevaEntradaToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.NuevaEntradaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaEntradaToolStripMenuItem.Text = "Nueva entrada"
         '
         'ListadoToolStripMenuItem3
         '
         Me.ListadoToolStripMenuItem3.Name = "ListadoToolStripMenuItem3"
-        Me.ListadoToolStripMenuItem3.Size = New System.Drawing.Size(151, 22)
+        Me.ListadoToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
         Me.ListadoToolStripMenuItem3.Text = "Listado"
         '
         'ConfiguraciónToolStripMenuItem

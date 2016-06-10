@@ -140,4 +140,10 @@
         frmListadoProveedores = New frmListadoProveedores
         frmListadoProveedores.Show()
     End Sub
+
+    Private Sub ListadoToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ListadoToolStripMenuItem3.Click
+        Dim frmUtilidadesPatrimonioListado As frmUtilidadesPatrimonioListado
+        frmUtilidadesPatrimonioListado = New frmUtilidadesPatrimonioListado
+        frmUtilidadesPatrimonioListado.Show()
+    End Sub
 End Class

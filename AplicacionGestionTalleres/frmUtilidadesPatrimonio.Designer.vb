@@ -42,27 +42,19 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
-        Me.cmbIdentificador = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroTextBox12 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.MetroTextBox11 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.MetroTextBox10 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.MetroTextBox13 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.MetroTextBox8 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.txtConcepto = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.txtImporte = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.cmbProveedor = New System.Windows.Forms.ComboBox()
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
-        CType(Me.MetroTextBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetroTextBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetroTextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetroTextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetroTextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ConfiguracionTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConfiguracionTableAdapter()
+        Me.PatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.PatrimonioTableAdapter()
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.txtIdentificador = New System.Windows.Forms.TextBox()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel9
@@ -157,7 +149,7 @@ Partial Class frmUtilidadesPatrimonio
         '
         'txtIVA
         '
-        Me.txtIVA.Location = New System.Drawing.Point(158, 90)
+        Me.txtIVA.Location = New System.Drawing.Point(162, 90)
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.Size = New System.Drawing.Size(68, 25)
         Me.txtIVA.TabIndex = 111
@@ -172,7 +164,7 @@ Partial Class frmUtilidadesPatrimonio
         'dtpFechaFac
         '
         Me.dtpFechaFac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaFac.Location = New System.Drawing.Point(252, 93)
+        Me.dtpFechaFac.Location = New System.Drawing.Point(245, 90)
         Me.dtpFechaFac.Name = "dtpFechaFac"
         Me.dtpFechaFac.Size = New System.Drawing.Size(175, 20)
         Me.dtpFechaFac.TabIndex = 109
@@ -180,7 +172,7 @@ Partial Class frmUtilidadesPatrimonio
         'MetroLabel4
         '
         Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(613, 66)
+        Me.MetroLabel4.Location = New System.Drawing.Point(630, 66)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(71, 19)
         Me.MetroLabel4.TabIndex = 107
@@ -189,7 +181,7 @@ Partial Class frmUtilidadesPatrimonio
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(252, 66)
+        Me.MetroLabel3.Location = New System.Drawing.Point(245, 63)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(43, 19)
         Me.MetroLabel3.TabIndex = 106
@@ -216,41 +208,11 @@ Partial Class frmUtilidadesPatrimonio
         'MetroLabel12
         '
         Me.MetroLabel12.AutoSize = True
-        Me.MetroLabel12.Location = New System.Drawing.Point(443, 68)
+        Me.MetroLabel12.Location = New System.Drawing.Point(442, 67)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(82, 19)
         Me.MetroLabel12.TabIndex = 131
         Me.MetroLabel12.Text = "Identificador"
-        '
-        'cmbIdentificador
-        '
-        Me.cmbIdentificador.FormattingEnabled = True
-        Me.cmbIdentificador.ItemHeight = 23
-        Me.cmbIdentificador.Items.AddRange(New Object() {"Opción 1", "Opción 2"})
-        Me.cmbIdentificador.Location = New System.Drawing.Point(443, 90)
-        Me.cmbIdentificador.Name = "cmbIdentificador"
-        Me.cmbIdentificador.Size = New System.Drawing.Size(147, 29)
-        Me.cmbIdentificador.TabIndex = 130
-        '
-        'MetroTextBox12
-        '
-        Me.MetroTextBox12.Owner = Nothing
-        '
-        'MetroTextBox11
-        '
-        Me.MetroTextBox11.Owner = Nothing
-        '
-        'MetroTextBox10
-        '
-        Me.MetroTextBox10.Owner = Nothing
-        '
-        'MetroTextBox13
-        '
-        Me.MetroTextBox13.Owner = Nothing
-        '
-        'MetroTextBox8
-        '
-        Me.MetroTextBox8.Owner = Nothing
         '
         'txtConcepto
         '
@@ -291,25 +253,35 @@ Partial Class frmUtilidadesPatrimonio
         Me.cmbProveedor.DataSource = Me.ProveedorBindingSource
         Me.cmbProveedor.DisplayMember = "nombre"
         Me.cmbProveedor.FormattingEnabled = True
-        Me.cmbProveedor.Location = New System.Drawing.Point(613, 96)
+        Me.cmbProveedor.Location = New System.Drawing.Point(630, 90)
         Me.cmbProveedor.Name = "cmbProveedor"
         Me.cmbProveedor.Size = New System.Drawing.Size(275, 21)
         Me.cmbProveedor.TabIndex = 136
         Me.cmbProveedor.ValueMember = "Id"
+        '
+        'ProveedorTableAdapter
+        '
+        Me.ProveedorTableAdapter.ClearBeforeFill = True
+        '
+        'ConfiguracionTableAdapter
+        '
+        Me.ConfiguracionTableAdapter.ClearBeforeFill = True
+        '
+        'PatrimonioTableAdapter
+        '
+        Me.PatrimonioTableAdapter.ClearBeforeFill = True
         '
         'TallerDataSet
         '
         Me.TallerDataSet.DataSetName = "tallerDataSet"
         Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ProveedorBindingSource
+        'txtIdentificador
         '
-        Me.ProveedorBindingSource.DataMember = "Proveedor"
-        Me.ProveedorBindingSource.DataSource = Me.TallerDataSet
-        '
-        'ProveedorTableAdapter
-        '
-        Me.ProveedorTableAdapter.ClearBeforeFill = True
+        Me.txtIdentificador.Location = New System.Drawing.Point(442, 90)
+        Me.txtIdentificador.Name = "txtIdentificador"
+        Me.txtIdentificador.Size = New System.Drawing.Size(164, 20)
+        Me.txtIdentificador.TabIndex = 137
         '
         'frmUtilidadesPatrimonio
         '
@@ -317,6 +289,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(948, 267)
+        Me.Controls.Add(Me.txtIdentificador)
         Me.Controls.Add(Me.cmbProveedor)
         Me.Controls.Add(Me.txtImporte)
         Me.Controls.Add(Me.MetroLabel11)
@@ -324,7 +297,6 @@ Partial Class frmUtilidadesPatrimonio
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.MetroLabel12)
         Me.Controls.Add(Me.MetroLabel9)
-        Me.Controls.Add(Me.cmbIdentificador)
         Me.Controls.Add(Me.MetroTextBox7)
         Me.Controls.Add(Me.MetroLabel10)
         Me.Controls.Add(Me.MetroLabel8)
@@ -344,13 +316,8 @@ Partial Class frmUtilidadesPatrimonio
         Me.Controls.Add(Me.MetroLabel1)
         Me.Name = "frmUtilidadesPatrimonio"
         Me.Text = "Patrimonio"
-        CType(Me.MetroTextBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetroTextBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetroTextBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetroTextBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetroTextBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -375,18 +342,15 @@ Partial Class frmUtilidadesPatrimonio
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents cmbIdentificador As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroTextBox12 As MetroFramework.Components.MetroStyleManager
-    Friend WithEvents MetroTextBox11 As MetroFramework.Components.MetroStyleManager
-    Friend WithEvents MetroTextBox10 As MetroFramework.Components.MetroStyleManager
-    Friend WithEvents MetroTextBox13 As MetroFramework.Components.MetroStyleManager
-    Friend WithEvents MetroTextBox8 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents txtConcepto As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtImporte As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents cmbProveedor As ComboBox
-    Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents ProveedorBindingSource As BindingSource
     Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter
+    Friend WithEvents ConfiguracionTableAdapter As tallerDataSetTableAdapters.ConfiguracionTableAdapter
+    Friend WithEvents PatrimonioTableAdapter As tallerDataSetTableAdapters.PatrimonioTableAdapter
+    Friend WithEvents TallerDataSet As tallerDataSet
+    Friend WithEvents txtIdentificador As TextBox
 End Class
