@@ -3,6 +3,8 @@
     Private Sub frmUtilidadesPatrimonio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'TallerDataSet.Proveedor' Puede moverla o quitarla según sea necesario.
         Me.ProveedorTableAdapter.Fill(Me.TallerDataSet.Proveedor)
+        'TODO: esta línea de código carga datos en la tabla 'TallerDataSet.Proveedor' Puede moverla o quitarla según sea necesario.
+        Me.PatrimonioTableAdapter.Fill(Me.TallerDataSet.Patrimonio)
         Me.ConfiguracionTableAdapter.Fill(Me.TallerDataSet.Configuracion)
         txtIdentificador.AutoCompleteSource = AutoCompleteSource.CustomSource
         Dim identificador As New AutoCompleteStringCollection
@@ -46,8 +48,9 @@
                     dtPatrimonio(0).concepto = txtConcepto.Text
                     dtPatrimonio(0).iva = txtIVA.Text
                     dtPatrimonio(0).importe = txtImporte.Text
-                    dtPatrimonio(0).identificador = txtIdentificador.text
+                    dtPatrimonio(0).identificador = txtIdentificador.Text
                     dtPatrimonio(0).idProveedor = cmbProveedor.SelectedValue
+                    dtPatrimonio(0).fecha = dtpFechaFac.Value.ToShortDateString
                     Me.PatrimonioTableAdapter.Update(dtPatrimonio)
                     If (MessageBox.Show("Patrimonio guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK) Then
                         Me.Close()
@@ -56,7 +59,7 @@
 
                 Else
 
-                    Me.TallerDataSet.Patrimonio.AddPatrimonioRow(cmbProveedor.SelectedValue, txtFactura.Text, txtIdentificador.Text, dtpFechaFac.Value.ToShortDateString, txtConcepto.Text, txtImporte.Text, Convert.ToDouble(txtImporte.Text) * Convert.ToDouble(txtIVA.Text), txtIVA.Text)
+                    Me.TallerDataSet.Patrimonio.AddPatrimonioRow(cmbProveedor.SelectedValue, txtFactura.Text, txtIdentificador.Text, txtConcepto.Text, txtImporte.Text, Convert.ToDouble(txtImporte.Text) * Convert.ToDouble(txtIVA.Text), txtIVA.Text, dtpFechaFac.Value.ToShortDateString)
                     Me.PatrimonioTableAdapter.Update(Me.TallerDataSet.Patrimonio)
                     MessageBox.Show("Patrimonio guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
@@ -98,7 +101,7 @@
     End Function
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        If (MessageBox.Show("¿Está seguro que desea cerrar el formulario?", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK) Then
+        If (MessageBox.Show("¿Está seguro que desea cerrar Patrimonio?", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK) Then
             Me.Close()
         End If
     End Sub

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmPresupuestos
+Partial Class frmPresupuestos1
     Inherits MetroFramework.Forms.MetroForm
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.

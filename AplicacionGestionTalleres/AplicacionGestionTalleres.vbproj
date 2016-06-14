@@ -96,10 +96,22 @@
     <Compile Include="frmAcercaDe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmBusquedaPresupuesto.Designer.vb">
+      <DependentUpon>frmBusquedaPresupuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusquedaPresupuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBusquedaFacturaRecibidas.Designer.vb">
       <DependentUpon>frmBusquedaFacturaRecibidas.vb</DependentUpon>
     </Compile>
     <Compile Include="frmBusquedaFacturaRecibidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPresupuesto.Designer.vb">
+      <DependentUpon>frmPresupuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPresupuesto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFacturacionEmitidas.Designer.vb">
@@ -222,10 +234,10 @@
     <Compile Include="frmMantenimientoUsuariosAlta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPresupuestos.Designer.vb">
-      <DependentUpon>frmPresupuestos.vb</DependentUpon>
+    <Compile Include="frmPresupuestos1.Designer.vb">
+      <DependentUpon>frmPresupuestos1.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPresupuestos.vb">
+    <Compile Include="frmPresupuestos1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.vb">
@@ -278,8 +290,14 @@
     <EmbeddedResource Include="frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaPresupuesto.resx">
+      <DependentUpon>frmBusquedaPresupuesto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaFacturaRecibidas.resx">
       <DependentUpon>frmBusquedaFacturaRecibidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresupuesto.resx">
+      <DependentUpon>frmPresupuesto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacionEmitidas.resx">
       <DependentUpon>frmFacturacionEmitidas.vb</DependentUpon>
@@ -341,8 +359,8 @@
     <EmbeddedResource Include="frmMantenimientoUsuariosAlta.resx">
       <DependentUpon>frmMantenimientoUsuariosAlta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPresupuestos.resx">
-      <DependentUpon>frmPresupuestos.vb</DependentUpon>
+    <EmbeddedResource Include="frmPresupuestos1.resx">
+      <DependentUpon>frmPresupuestos1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>

@@ -48,11 +48,11 @@ Partial Class frmUtilidadesPatrimonio
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.cmbProveedor = New System.Windows.Forms.ComboBox()
         Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ConfiguracionTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConfiguracionTableAdapter()
         Me.PatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.PatrimonioTableAdapter()
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.txtIdentificador = New System.Windows.Forms.TextBox()
+        Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -152,14 +152,14 @@ Partial Class frmUtilidadesPatrimonio
         Me.txtIVA.Location = New System.Drawing.Point(162, 90)
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.Size = New System.Drawing.Size(68, 25)
-        Me.txtIVA.TabIndex = 111
+        Me.txtIVA.TabIndex = 4
         '
         'txtFactura
         '
         Me.txtFactura.Location = New System.Drawing.Point(23, 90)
         Me.txtFactura.Name = "txtFactura"
         Me.txtFactura.Size = New System.Drawing.Size(112, 25)
-        Me.txtFactura.TabIndex = 110
+        Me.txtFactura.TabIndex = 2
         '
         'dtpFechaFac
         '
@@ -167,7 +167,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.dtpFechaFac.Location = New System.Drawing.Point(245, 90)
         Me.dtpFechaFac.Name = "dtpFechaFac"
         Me.dtpFechaFac.Size = New System.Drawing.Size(175, 20)
-        Me.dtpFechaFac.TabIndex = 109
+        Me.dtpFechaFac.TabIndex = 6
         '
         'MetroLabel4
         '
@@ -219,7 +219,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.txtConcepto.Location = New System.Drawing.Point(23, 157)
         Me.txtConcepto.Name = "txtConcepto"
         Me.txtConcepto.Size = New System.Drawing.Size(645, 25)
-        Me.txtConcepto.TabIndex = 133
+        Me.txtConcepto.TabIndex = 12
         '
         'MetroLabel5
         '
@@ -235,7 +235,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.txtImporte.Location = New System.Drawing.Point(691, 157)
         Me.txtImporte.Name = "txtImporte"
         Me.txtImporte.Size = New System.Drawing.Size(231, 25)
-        Me.txtImporte.TabIndex = 135
+        Me.txtImporte.TabIndex = 16
         '
         'MetroLabel11
         '
@@ -256,12 +256,18 @@ Partial Class frmUtilidadesPatrimonio
         Me.cmbProveedor.Location = New System.Drawing.Point(630, 90)
         Me.cmbProveedor.Name = "cmbProveedor"
         Me.cmbProveedor.Size = New System.Drawing.Size(275, 21)
-        Me.cmbProveedor.TabIndex = 136
+        Me.cmbProveedor.TabIndex = 10
         Me.cmbProveedor.ValueMember = "Id"
         '
-        'ProveedorTableAdapter
+        'ProveedorBindingSource
         '
-        Me.ProveedorTableAdapter.ClearBeforeFill = True
+        Me.ProveedorBindingSource.DataMember = "Proveedor"
+        Me.ProveedorBindingSource.DataSource = Me.TallerDataSet
+        '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ConfiguracionTableAdapter
         '
@@ -271,17 +277,18 @@ Partial Class frmUtilidadesPatrimonio
         '
         Me.PatrimonioTableAdapter.ClearBeforeFill = True
         '
-        'TallerDataSet
-        '
-        Me.TallerDataSet.DataSetName = "tallerDataSet"
-        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'txtIdentificador
         '
+        Me.txtIdentificador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtIdentificador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtIdentificador.Location = New System.Drawing.Point(442, 90)
         Me.txtIdentificador.Name = "txtIdentificador"
         Me.txtIdentificador.Size = New System.Drawing.Size(164, 20)
-        Me.txtIdentificador.TabIndex = 137
+        Me.txtIdentificador.TabIndex = 8
+        '
+        'ProveedorTableAdapter
+        '
+        Me.ProveedorTableAdapter.ClearBeforeFill = True
         '
         'frmUtilidadesPatrimonio
         '
@@ -347,10 +354,10 @@ Partial Class frmUtilidadesPatrimonio
     Friend WithEvents txtImporte As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents cmbProveedor As ComboBox
-    Friend WithEvents ProveedorBindingSource As BindingSource
-    Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter
     Friend WithEvents ConfiguracionTableAdapter As tallerDataSetTableAdapters.ConfiguracionTableAdapter
     Friend WithEvents PatrimonioTableAdapter As tallerDataSetTableAdapters.PatrimonioTableAdapter
     Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents txtIdentificador As TextBox
+    Friend WithEvents ProveedorBindingSource As BindingSource
+    Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter
 End Class

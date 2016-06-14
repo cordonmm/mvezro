@@ -10,8 +10,8 @@
     End Sub
 
     Private Sub PresupuestosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PresupuestosToolStripMenuItem.Click
-        Dim frmPresupuestos As frmPresupuestos
-        frmPresupuestos = New frmPresupuestos
+        Dim frmPresupuestos As frmPresupuestos1
+        frmPresupuestos = New frmPresupuestos1
         frmPresupuestos.Show()
     End Sub
 

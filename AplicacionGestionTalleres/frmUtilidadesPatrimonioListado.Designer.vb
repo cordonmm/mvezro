@@ -23,35 +23,35 @@ Partial Class frmUtilidadesPatrimonioListado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.dgPatrimonio = New System.Windows.Forms.DataGridView()
-        Me.ConsPatrimonioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.ConsPatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.consPatrimonioTableAdapter()
-        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chkFiltrar = New System.Windows.Forms.CheckBox()
         Me.NumeroFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdentificadorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConceptoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImporteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chkFiltrar = New System.Windows.Forms.CheckBox()
+        Me.ConsPatrimonioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ConsPatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.consPatrimonioTableAdapter()
         CType(Me.dgPatrimonio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsPatrimonioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MetroTextBox3
+        'txtBuscar
         '
-        Me.MetroTextBox3.Location = New System.Drawing.Point(173, 71)
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.Size = New System.Drawing.Size(302, 25)
-        Me.MetroTextBox3.TabIndex = 73
+        Me.txtBuscar.Location = New System.Drawing.Point(106, 71)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(369, 25)
+        Me.txtBuscar.TabIndex = 73
         '
         'MetroLabel4
         '
@@ -80,15 +80,13 @@ Partial Class frmUtilidadesPatrimonioListado
         Me.dgPatrimonio.Size = New System.Drawing.Size(965, 240)
         Me.dgPatrimonio.TabIndex = 71
         '
-        'ConsPatrimonioBindingSource
+        'Id
         '
-        Me.ConsPatrimonioBindingSource.DataMember = "consPatrimonio"
-        Me.ConsPatrimonioBindingSource.DataSource = Me.TallerDataSet
-        '
-        'TallerDataSet
-        '
-        Me.TallerDataSet.DataSetName = "tallerDataSet"
-        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.Id.DataPropertyName = "Id"
+        Me.Id.HeaderText = "Id"
+        Me.Id.Name = "Id"
+        Me.Id.ReadOnly = True
+        Me.Id.Visible = False
         '
         'dtpFechaFin
         '
@@ -124,17 +122,15 @@ Partial Class frmUtilidadesPatrimonioListado
         Me.MetroLabel3.TabIndex = 81
         Me.MetroLabel3.Text = "Entre"
         '
-        'ConsPatrimonioTableAdapter
+        'chkFiltrar
         '
-        Me.ConsPatrimonioTableAdapter.ClearBeforeFill = True
-        '
-        'Id
-        '
-        Me.Id.DataPropertyName = "Id"
-        Me.Id.HeaderText = "Id"
-        Me.Id.Name = "Id"
-        Me.Id.ReadOnly = True
-        Me.Id.Visible = False
+        Me.chkFiltrar.AutoSize = True
+        Me.chkFiltrar.Location = New System.Drawing.Point(935, 73)
+        Me.chkFiltrar.Name = "chkFiltrar"
+        Me.chkFiltrar.Size = New System.Drawing.Size(51, 17)
+        Me.chkFiltrar.TabIndex = 85
+        Me.chkFiltrar.Text = "Filtrar"
+        Me.chkFiltrar.UseVisualStyleBackColor = True
         '
         'NumeroFacturaDataGridViewTextBoxColumn
         '
@@ -178,15 +174,19 @@ Partial Class frmUtilidadesPatrimonioListado
         Me.ImporteDataGridViewTextBoxColumn.Name = "ImporteDataGridViewTextBoxColumn"
         Me.ImporteDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'chkFiltrar
+        'ConsPatrimonioBindingSource
         '
-        Me.chkFiltrar.AutoSize = True
-        Me.chkFiltrar.Location = New System.Drawing.Point(935, 73)
-        Me.chkFiltrar.Name = "chkFiltrar"
-        Me.chkFiltrar.Size = New System.Drawing.Size(51, 17)
-        Me.chkFiltrar.TabIndex = 85
-        Me.chkFiltrar.Text = "Filtrar"
-        Me.chkFiltrar.UseVisualStyleBackColor = True
+        Me.ConsPatrimonioBindingSource.DataMember = "consPatrimonio"
+        Me.ConsPatrimonioBindingSource.DataSource = Me.TallerDataSet
+        '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ConsPatrimonioTableAdapter
+        '
+        Me.ConsPatrimonioTableAdapter.ClearBeforeFill = True
         '
         'frmUtilidadesPatrimonioListado
         '
@@ -199,7 +199,7 @@ Partial Class frmUtilidadesPatrimonioListado
         Me.Controls.Add(Me.dtpFechaInicio)
         Me.Controls.Add(Me.dtpFechaFin)
         Me.Controls.Add(Me.MetroLabel3)
-        Me.Controls.Add(Me.MetroTextBox3)
+        Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.dgPatrimonio)
         Me.Name = "frmUtilidadesPatrimonioListado"
@@ -212,7 +212,7 @@ Partial Class frmUtilidadesPatrimonioListado
 
     End Sub
 
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtBuscar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents dgPatrimonio As DataGridView
     Friend WithEvents dtpFechaFin As DateTimePicker
