@@ -23,11 +23,11 @@ Partial Class frmFacturacionEmitidas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnImprimir = New MetroFramework.Controls.MetroButton()
         Me.btnEliminar = New MetroFramework.Controls.MetroButton()
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
@@ -61,6 +61,7 @@ Partial Class frmFacturacionEmitidas
         Me.lblArticulo = New MetroFramework.Controls.MetroLabel()
         Me.btnAnadir = New MetroFramework.Controls.MetroButton()
         Me.gbArticulo = New System.Windows.Forms.GroupBox()
+        Me.btnNuevoArticulo = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
         Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -91,7 +92,6 @@ Partial Class frmFacturacionEmitidas
         Me.cbContado = New System.Windows.Forms.CheckBox()
         Me.LineaFacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.LineaFacturaETableAdapter()
         Me.ProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProductoTableAdapter()
-        Me.btnNuevoArticulo = New MetroFramework.Controls.MetroButton()
         Me.btnAñadirCliente = New MetroFramework.Controls.MetroButton()
         CType(Me.dgLinea, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbArticulo.SuspendLayout()
@@ -171,8 +171,8 @@ Partial Class frmFacturacionEmitidas
         '
         Me.dgLinea.AllowUserToAddRows = False
         Me.dgLinea.AllowUserToDeleteRows = False
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgLinea.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgLinea.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgLinea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgLinea.BackgroundColor = System.Drawing.SystemColors.WindowFrame
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -194,8 +194,8 @@ Partial Class frmFacturacionEmitidas
         '
         'cantidad
         '
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle2
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
@@ -208,18 +208,18 @@ Partial Class frmFacturacionEmitidas
         '
         'precio
         '
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.NullValue = Nothing
-        Me.precio.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.precio.DefaultCellStyle = DataGridViewCellStyle3
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
         '
         'total
         '
-        DataGridViewCellStyle14.Format = "N2"
-        DataGridViewCellStyle14.NullValue = Nothing
-        Me.total.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.total.DefaultCellStyle = DataGridViewCellStyle4
         Me.total.HeaderText = "Total"
         Me.total.Name = "total"
         Me.total.ReadOnly = True
@@ -395,6 +395,14 @@ Partial Class frmFacturacionEmitidas
         Me.gbArticulo.TabStop = False
         Me.gbArticulo.Text = "Añadir artículo"
         '
+        'btnNuevoArticulo
+        '
+        Me.btnNuevoArticulo.Location = New System.Drawing.Point(497, 61)
+        Me.btnNuevoArticulo.Name = "btnNuevoArticulo"
+        Me.btnNuevoArticulo.Size = New System.Drawing.Size(28, 25)
+        Me.btnNuevoArticulo.TabIndex = 107
+        Me.btnNuevoArticulo.Text = "+"
+        '
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
@@ -447,9 +455,9 @@ Partial Class frmFacturacionEmitidas
         'PrecioDataGridViewTextBoxColumn
         '
         Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
-        DataGridViewCellStyle15.Format = "N2"
-        DataGridViewCellStyle15.NullValue = Nothing
-        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.PrecioDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
         Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
         Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
         Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
@@ -625,14 +633,6 @@ Partial Class frmFacturacionEmitidas
         'ProductoTableAdapter
         '
         Me.ProductoTableAdapter.ClearBeforeFill = True
-        '
-        'btnNuevoArticulo
-        '
-        Me.btnNuevoArticulo.Location = New System.Drawing.Point(497, 61)
-        Me.btnNuevoArticulo.Name = "btnNuevoArticulo"
-        Me.btnNuevoArticulo.Size = New System.Drawing.Size(28, 25)
-        Me.btnNuevoArticulo.TabIndex = 107
-        Me.btnNuevoArticulo.Text = "+"
         '
         'btnAñadirCliente
         '
