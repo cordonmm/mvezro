@@ -24,19 +24,19 @@ Partial Class frmListadosArticulos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.familia = New MetroFramework.Controls.MetroComboBox()
+        Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.alfabetico = New MetroFramework.Controls.MetroRadioButton()
         Me.referencia = New MetroFramework.Controls.MetroRadioButton()
         Me.precioCompra = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
-        Me.TallerDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FamiliaTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.FamiliaTableAdapter()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroLabel5
@@ -48,17 +48,32 @@ Partial Class frmListadosArticulos
         Me.MetroLabel5.TabIndex = 43
         Me.MetroLabel5.Text = "Familia"
         '
-        'MetroComboBox1
+        'familia
         '
-        Me.MetroComboBox1.DataSource = Me.FamiliaBindingSource
-        Me.MetroComboBox1.DisplayMember = "descripcion"
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(23, 96)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(256, 29)
-        Me.MetroComboBox1.TabIndex = 42
-        Me.MetroComboBox1.ValueMember = "Id"
+        Me.familia.DataSource = Me.FamiliaBindingSource
+        Me.familia.DisplayMember = "descripcion"
+        Me.familia.FormattingEnabled = True
+        Me.familia.ItemHeight = 23
+        Me.familia.Location = New System.Drawing.Point(23, 96)
+        Me.familia.Name = "familia"
+        Me.familia.Size = New System.Drawing.Size(256, 29)
+        Me.familia.TabIndex = 42
+        Me.familia.ValueMember = "Id"
+        '
+        'FamiliaBindingSource
+        '
+        Me.FamiliaBindingSource.DataMember = "Familia"
+        Me.FamiliaBindingSource.DataSource = Me.TallerDataSetBindingSource
+        '
+        'TallerDataSetBindingSource
+        '
+        Me.TallerDataSetBindingSource.DataSource = Me.TallerDataSet
+        Me.TallerDataSetBindingSource.Position = 0
+        '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'alfabetico
         '
@@ -108,21 +123,6 @@ Partial Class frmListadosArticulos
         Me.MetroButton1.TabIndex = 64
         Me.MetroButton1.Text = "Imprimir"
         '
-        'TallerDataSet
-        '
-        Me.TallerDataSet.DataSetName = "tallerDataSet"
-        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TallerDataSetBindingSource
-        '
-        Me.TallerDataSetBindingSource.DataSource = Me.TallerDataSet
-        Me.TallerDataSetBindingSource.Position = 0
-        '
-        'FamiliaBindingSource
-        '
-        Me.FamiliaBindingSource.DataMember = "Familia"
-        Me.FamiliaBindingSource.DataSource = Me.TallerDataSetBindingSource
-        '
         'FamiliaTableAdapter
         '
         Me.FamiliaTableAdapter.ClearBeforeFill = True
@@ -139,19 +139,19 @@ Partial Class frmListadosArticulos
         Me.Controls.Add(Me.referencia)
         Me.Controls.Add(Me.alfabetico)
         Me.Controls.Add(Me.MetroLabel5)
-        Me.Controls.Add(Me.MetroComboBox1)
+        Me.Controls.Add(Me.familia)
         Me.Name = "frmListadosArticulos"
         Me.Text = "Listado Artículos"
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents familia As MetroFramework.Controls.MetroComboBox
     Friend WithEvents alfabetico As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents referencia As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents precioCompra As MetroFramework.Controls.MetroCheckBox

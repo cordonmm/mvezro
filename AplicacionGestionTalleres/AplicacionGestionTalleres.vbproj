@@ -90,6 +90,12 @@
     <Compile Include="bbdd\tallerDataSet.vb">
       <DependentUpon>tallerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoStockCompleto.Designer.vb">
+      <DependentUpon>frmListadoStockCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoStockCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAcercaDe.Designer.vb">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </Compile>
@@ -314,6 +320,9 @@
     <EmbeddedResource Include="frmListadosStockMinimo.resx">
       <DependentUpon>frmListadosStockMinimo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoStockCompleto.resx">
+      <DependentUpon>frmListadoStockCompleto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoArticulosAlta.resx">
       <DependentUpon>frmMantenimientoArticulosAlta.vb</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +373,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
