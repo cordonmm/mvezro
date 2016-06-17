@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+    Dim bandera As Boolean = False
     Private Sub FamiliaArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FamiliaArtículosToolStripMenuItem.Click
 
     End Sub
@@ -10,8 +11,8 @@
     End Sub
 
     Private Sub PresupuestosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PresupuestosToolStripMenuItem.Click
-        Dim frmPresupuestos As frmPresupuestos1
-        frmPresupuestos = New frmPresupuestos1
+        Dim frmPresupuestos As frmPresupuesto
+        frmPresupuestos = New frmPresupuesto
         frmPresupuestos.Show()
     End Sub
 
@@ -146,4 +147,16 @@
         frmUtilidadesPatrimonioListado = New frmUtilidadesPatrimonioListado
         frmUtilidadesPatrimonioListado.Show()
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control And e.Shift And e.KeyCode = Keys.B Then
+            bandera = Not bandera
+            If (bandera) Then
+                Me.Icon = My.Resources.ico_car_thug
+            Else
+                Me.Icon = My.Resources.ico_car
+            End If
+
+        End If
+    End Sub
+
 End Class

@@ -22,7 +22,8 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CopiaSeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RealizarCopiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -62,18 +63,19 @@ Partial Class Form1
         Me.ListadoToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
+        Me.AaaaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+
+        'MenuStrip
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(20, 60)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(1201, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(20, 60)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(1201, 24)
+        Me.MenuStrip.TabIndex = 0
+        Me.MenuStrip.Text = "MenuStrip"
         '
         'ArchivoToolStripMenuItem
         '
@@ -299,13 +301,13 @@ Partial Class Form1
         'NuevaEntradaToolStripMenuItem
         '
         Me.NuevaEntradaToolStripMenuItem.Name = "NuevaEntradaToolStripMenuItem"
-        Me.NuevaEntradaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaEntradaToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.NuevaEntradaToolStripMenuItem.Text = "Nueva entrada"
         '
         'ListadoToolStripMenuItem3
         '
         Me.ListadoToolStripMenuItem3.Name = "ListadoToolStripMenuItem3"
-        Me.ListadoToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ListadoToolStripMenuItem3.Size = New System.Drawing.Size(151, 22)
         Me.ListadoToolStripMenuItem3.Text = "Listado"
         '
         'ConfiguraciónToolStripMenuItem
@@ -320,24 +322,30 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de..."
         '
+        'AaaaToolStripMenuItem
+        '
+        Me.AaaaToolStripMenuItem.Name = "AaaaToolStripMenuItem"
+        Me.AaaaToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.AaaaToolStripMenuItem.Text = "aaaa"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(1241, 458)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.MenuStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
+        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "Form1"
         Me.Text = "Gestión de Taller M. Vezro"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CopiaSeguridadToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RealizarCopiaToolStripMenuItem As ToolStripMenuItem
@@ -377,4 +385,6 @@ Partial Class Form1
     Friend WithEvents ListadoToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents NuevaEntradaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoToolStripMenuItem3 As ToolStripMenuItem
+    Public WithEvents MenuStrip As MenuStrip
+    Friend WithEvents AaaaToolStripMenuItem As ToolStripMenuItem
 End Class

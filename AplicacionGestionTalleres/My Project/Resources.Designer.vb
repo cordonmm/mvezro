@@ -61,6 +61,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        '''</summary>
+        Friend ReadOnly Property ico_car() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ico_car", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        '''</summary>
+        Friend ReadOnly Property ico_car_thug() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ico_car_thug", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property logoo() As System.Drawing.Bitmap

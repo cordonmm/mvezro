@@ -34,14 +34,18 @@ Public Class frmPresupuesto
 
             Me.Text = "Guardar Presupuesto"
         Else
-            txtFactura.Text = Me.PresupuestoTableAdapter.numeroFac() + 1
+            If (Me.PresupuestoTableAdapter.numeroFac() Is Nothing) Then
+                txtFactura.Text = 1
+            Else
+                txtFactura.Text = Me.PresupuestoTableAdapter.numeroFac() + 1
+            End If
         End If
-
 
         If (txtFactura.Text = "") Then
             txtFactura.Text = 1
 
         End If
+
 
         Dim drConfiguracion As tallerDataSet.ConfiguracionRow = Me.TallerDataSet.Configuracion.Rows(0)
         txtIVA.Text = drConfiguracion.iva
@@ -141,6 +145,8 @@ Public Class frmPresupuesto
         Dim val As String = validar()
         If (val = "") Then
             Try
+                PresupuestoTableAdapter.Connection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\Temp\taller2.mdb"
+                LineaPresupuestoTableAdapter.Connection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\Temp\taller2.mdb"
                 actualizarTotales()
                 If (dtFactura IsNot Nothing) Then
                     dtFactura(0).fecha = dtpFechaFac.Value.ToShortDateString
@@ -168,6 +174,9 @@ Public Class frmPresupuesto
 
 
                 Else
+                    If (txtKM.Text = "") Then
+                        txtKM.Text = "0"
+                    End If
 
                     Me.TallerDataSet.Presupuesto.AddPresupuestoRow(cmbCliente.SelectedValue, txtFactura.Text, Convert.ToDouble(txtBaseImponible.Text), Convert.ToDouble(txtTotalFactura.Text), cbContado.Checked, dtpFechaFac.Value.ToShortDateString, txtVehiculo.Text, txtMatricula.Text, txtKM.Text, txtIVA.Text)
 
@@ -186,8 +195,9 @@ Public Class frmPresupuesto
                 End If
 
 
+
             Catch ex As Exception
-                MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Ocurrio algun Error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             End Try
         Else
