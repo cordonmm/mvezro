@@ -253,4 +253,13 @@ Public Class frmFacturacionEmitidas
         frmMantenimientoClientesAlta.ShowDialog()
         ClienteTableAdapter.Fill(Me.TallerDataSet.Cliente)
     End Sub
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        If dtFactura IsNot Nothing Then
+            Dim frmInformeFacturaE As frmInformeFacturaE
+            frmInformeFacturaE = New frmInformeFacturaE
+            frmInformeFacturaE.Tag = dtFactura(0).Id
+            frmInformeFacturaE.ShowDialog()
+        End If
+    End Sub
 End Class
