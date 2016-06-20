@@ -681,6 +681,7 @@ Partial Class frmFacturacionEmitidas
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KeyPreview = True
         Me.Name = "frmFacturacionEmitidas"
         Me.Padding = New System.Windows.Forms.Padding(20, 65, 20, 22)
         Me.Text = "Facturas Emitidas"

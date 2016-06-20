@@ -10,6 +10,13 @@ Public Class frmFacturacionEmitidas
         'TODO: esta línea de código carga datos en la tabla 'TallerDataSet.ConsProducto' Puede moverla o quitarla según sea necesario.
         Me.ConsProductoTableAdapter.Fill(Me.TallerDataSet.ConsProducto)
         Me.ConfiguracionTableAdapter1.Fill(Me.TallerDataSet.Configuracion)
+        If (bandera) Then
+            Me.FacturaETableAdapter.Connection.ConnectionString = cadenaB
+            Me.LineaFacturaETableAdapter.Connection.ConnectionString = cadenaB
+        Else
+            Me.FacturaETableAdapter.Connection.ConnectionString = cadenaA
+            Me.LineaFacturaETableAdapter.Connection.ConnectionString = cadenaA
+        End If
         If (Me.Tag IsNot Nothing AndAlso IsNumeric(Me.Tag)) Then
             dtFactura = FacturaETableAdapter.GetDataBy2(Me.Tag)
             txtFactura.Text = dtFactura(0).numeroFactura
@@ -46,6 +53,21 @@ Public Class frmFacturacionEmitidas
         Dim drConfiguracion As tallerDataSet.ConfiguracionRow = Me.TallerDataSet.Configuracion.Rows(0)
         txtIVA.Text = drConfiguracion.iva
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control And e.Shift And e.KeyCode = Keys.B Then
+            bandera = Not bandera
+            If (bandera) Then
+                frmFacturacionEmitidas_Load(Me, Nothing)
+                principal.Icon = My.Resources.ico_car_thug
+
+
+            Else
+                frmFacturacionEmitidas_Load(Me, Nothing)
+                principal.Icon = My.Resources.ico_car
+            End If
+
+        End If
+    End Sub
 
     Private Sub MetroTextBox13_TextChanged(sender As Object, e As EventArgs) Handles txtArticulo.TextChanged
         ConsProductoBindingSource.Filter = "descripción like '%" & txtArticulo.Text & "%' or referencia like '%" & txtArticulo.Text & "%' or familia like '%" & txtArticulo.Text & "%'"
@@ -63,7 +85,7 @@ Public Class frmFacturacionEmitidas
             If (txtDescuento.Text <> "") Then
                 precio = precio * (1 - (Convert.ToDouble(txtDescuento.Text) / 100))
             End If
-            dgLinea.Rows.Add(consProdRow.Id, txtCantidad.Text, consProdRow.Descripción, precio, precio * txtCantidad.Text)
+            dgLinea.Rows.Add(consProdRow.Id, Convert.ToDouble(txtCantidad.Text), consProdRow.Descripción, precio, precio * txtCantidad.Text)
             actualizarTotales()
 
         Else
@@ -143,6 +165,9 @@ Public Class frmFacturacionEmitidas
             Try
                 actualizarTotales()
                 If (dtFactura IsNot Nothing) Then
+                    If (txtKM.Text = "") Then
+                        txtKM.Text = "0.0"
+                    End If
                     dtFactura(0).fecha = dtpFechaFac.Value.ToShortDateString
                     dtFactura(0).idCliente = cmbCliente.SelectedValue
                     dtFactura(0).baseImponible = txtBaseImponible.Text
@@ -168,7 +193,9 @@ Public Class frmFacturacionEmitidas
 
 
                 Else
-
+                    If (txtKM.Text = "") Then
+                        txtKM.Text = "0.0"
+                    End If
                     Me.TallerDataSet.FacturaE.AddFacturaERow(cmbCliente.SelectedValue, txtFactura.Text, Convert.ToDouble(txtBaseImponible.Text), Convert.ToDouble(txtTotalFactura.Text), cbContado.Checked, dtpFechaFac.Value.ToShortDateString, txtVehiculo.Text, txtMatricula.Text, txtKM.Text, txtIVA.Text)
 
                     Me.FacturaETableAdapter.Update(Me.TallerDataSet.FacturaE)
@@ -179,13 +206,17 @@ Public Class frmFacturacionEmitidas
                         Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), idFactura)
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
+                    If (MessageBox.Show("Factura guardada correctamente ,¿Desea imprimirla?", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK) Then
+                        Dim frmInformeFacturaE As frmInformeFacturaE
+                        frmInformeFacturaE = New frmInformeFacturaE
+                        frmInformeFacturaE.Tag = idFactura
+                        frmInformeFacturaE.ShowDialog()
+                    End If
 
-
-                    MessageBox.Show("Factura guardada correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
                 End If
 
-
+                actualizarTotales()
             Catch ex As Exception
                 MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -233,6 +264,7 @@ Public Class frmFacturacionEmitidas
             Next
             Me.Tag = frmBusquedaFacturaEmitidas.Tag
             Me.Text = "Guardar Factura"
+            actualizarTotales()
 
         End If
 
@@ -261,5 +293,10 @@ Public Class frmFacturacionEmitidas
             frmInformeFacturaE.Tag = dtFactura(0).Id
             frmInformeFacturaE.ShowDialog()
         End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
+        FacturaETableAdapter.Delete(dtFactura(0))
     End Sub
 End Class
