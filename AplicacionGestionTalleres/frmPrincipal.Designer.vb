@@ -67,7 +67,6 @@ Partial Class Form1
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
-
         'MenuStrip
         '
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})

@@ -228,7 +228,7 @@
             Next
             Me.Tag = frmBusquedaFacturaEmitidas.Tag
             Me.Text = "Guardar Factura"
-
+            actualizarTotales()
         End If
 
     End Sub
@@ -248,4 +248,5 @@
         frmMantenimientoArticulosAlta.ShowDialog()
         ConsProductoTableAdapter.Fill(Me.TallerDataSet.ConsProducto)
     End Sub
+
 End Class

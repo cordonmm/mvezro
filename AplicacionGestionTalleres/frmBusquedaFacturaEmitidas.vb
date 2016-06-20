@@ -1,5 +1,10 @@
 ﻿Public Class frmBusquedaFacturaEmitidas
     Private Sub frmMantenimientoClientesListado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If (bandera) Then
+            Me.ConsFacturaETableAdapter.Connection.ConnectionString = cadenaB
+        Else
+            Me.ConsFacturaETableAdapter.Connection.ConnectionString = cadenaA
+        End If
         'TODO: esta línea de código carga datos en la tabla 'TallerDataSet.ConsFacturaE' Puede moverla o quitarla según sea necesario.
         Me.ConsFacturaETableAdapter.Fill(Me.TallerDataSet.ConsFacturaE)
 
