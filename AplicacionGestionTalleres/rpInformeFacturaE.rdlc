@@ -55,7 +55,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -91,7 +91,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -127,7 +127,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -163,7 +163,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -199,7 +199,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -235,7 +235,7 @@
                           <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -357,7 +357,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Round(Fields!Cantidad.Value, 2)</Value>
+                              <Value>=Round(CDbl(Fields!Cantidad.Value), 2)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -379,6 +379,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -703,9 +704,11 @@
                 <TextRun>
                   <Value>Taller M. Vezro, S.L.</Value>
                   <Style>
+                    <FontStyle>Normal</FontStyle>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Color>DarkGreen</Color>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>CornflowerBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -736,9 +739,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>B41724030</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
@@ -768,9 +769,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>C/ Rubén Dario, Local 4</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
@@ -800,9 +799,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>955 833 846</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
@@ -832,9 +829,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>tallermanolito@hotmail.com</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
@@ -864,10 +859,14 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Sum(Fields!numeroFactura.Value, "DataSet1")</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>numeroFactura</rd:DefaultName>
@@ -927,7 +926,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!modeloVehiculo.Value, "DataSet1")</Value>
+                  <Value>=UCase(First(Fields!modeloVehiculo.Value, "DataSet1"))</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -992,7 +991,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!matricula.Value, "DataSet1")</Value>
+                  <Value>=UCase(First(Fields!matricula.Value, "DataSet1"))</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1125,11 +1124,13 @@
                   <Style />
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>fecha</rd:DefaultName>
-          <Top>1.72516cm</Top>
+          <Top>1.84863cm</Top>
           <Left>12.9337cm</Left>
           <Height>0.6cm</Height>
           <Width>3.24083cm</Width>
@@ -1169,6 +1170,7 @@
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1186,6 +1188,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <BackgroundColor>CornflowerBlue</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -1263,6 +1266,7 @@
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1281,6 +1285,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <BackgroundColor>CornflowerBlue</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -1330,6 +1335,7 @@
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1348,6 +1354,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <BackgroundColor>CornflowerBlue</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
