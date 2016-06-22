@@ -56,7 +56,10 @@ Public Class frmFacturacionEmitidas
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.Control And e.Shift And e.KeyCode = Keys.B Then
             bandera = Not bandera
+            Me.Tag = Nothing
+            limpiar()
             If (bandera) Then
+
                 frmFacturacionEmitidas_Load(Me, Nothing)
                 principal.Icon = My.Resources.ico_car_thug
 
@@ -296,7 +299,16 @@ Public Class frmFacturacionEmitidas
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
-        FacturaETableAdapter.Delete(dtFactura(0))
+        If (MessageBox.Show("¿Estás seguro que desea borrar la factura por completo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.OK) Then
+            Try
+                LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
+                FacturaETableAdapter.DeleteQuery(dtFactura(0).Id)
+            Catch ex As Exception
+                MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+        End If
+
+
     End Sub
 End Class
