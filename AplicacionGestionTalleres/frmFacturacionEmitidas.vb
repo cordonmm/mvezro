@@ -297,6 +297,6 @@ Public Class frmFacturacionEmitidas
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
-        FacturaETableAdapter.Delete(dtFactura(0))
+        FacturaETableAdapter.DeleteQuery(dtFactura(0).Id)
     End Sub
 End Class
