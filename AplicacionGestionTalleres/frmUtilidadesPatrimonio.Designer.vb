@@ -51,8 +51,8 @@ Partial Class frmUtilidadesPatrimonio
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ConfiguracionTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConfiguracionTableAdapter()
         Me.PatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.PatrimonioTableAdapter()
-        Me.txtIdentificador = New System.Windows.Forms.TextBox()
         Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
+        Me.cmbIdentificador = New System.Windows.Forms.ComboBox()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -277,18 +277,18 @@ Partial Class frmUtilidadesPatrimonio
         '
         Me.PatrimonioTableAdapter.ClearBeforeFill = True
         '
-        'txtIdentificador
-        '
-        Me.txtIdentificador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtIdentificador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtIdentificador.Location = New System.Drawing.Point(442, 90)
-        Me.txtIdentificador.Name = "txtIdentificador"
-        Me.txtIdentificador.Size = New System.Drawing.Size(164, 20)
-        Me.txtIdentificador.TabIndex = 8
-        '
         'ProveedorTableAdapter
         '
         Me.ProveedorTableAdapter.ClearBeforeFill = True
+        '
+        'cmbIdentificador
+        '
+        Me.cmbIdentificador.FormattingEnabled = True
+        Me.cmbIdentificador.Items.AddRange(New Object() {"HERRAMIENTAS", "EMPRESA"})
+        Me.cmbIdentificador.Location = New System.Drawing.Point(442, 89)
+        Me.cmbIdentificador.Name = "cmbIdentificador"
+        Me.cmbIdentificador.Size = New System.Drawing.Size(162, 21)
+        Me.cmbIdentificador.TabIndex = 135
         '
         'frmUtilidadesPatrimonio
         '
@@ -296,7 +296,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(948, 267)
-        Me.Controls.Add(Me.txtIdentificador)
+        Me.Controls.Add(Me.cmbIdentificador)
         Me.Controls.Add(Me.cmbProveedor)
         Me.Controls.Add(Me.txtImporte)
         Me.Controls.Add(Me.MetroLabel11)
@@ -357,7 +357,7 @@ Partial Class frmUtilidadesPatrimonio
     Friend WithEvents ConfiguracionTableAdapter As tallerDataSetTableAdapters.ConfiguracionTableAdapter
     Friend WithEvents PatrimonioTableAdapter As tallerDataSetTableAdapters.PatrimonioTableAdapter
     Friend WithEvents TallerDataSet As tallerDataSet
-    Friend WithEvents txtIdentificador As TextBox
     Friend WithEvents ProveedorBindingSource As BindingSource
     Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter
+    Friend WithEvents cmbIdentificador As ComboBox
 End Class

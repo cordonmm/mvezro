@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmInformeFacturaE
+Partial Class frmInformeGastos
     Inherits MetroFramework.Forms.MetroForm
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,18 +24,18 @@ Partial Class frmInformeFacturaE
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.informeFacturaEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.informeFacturaRBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.informeFacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.informeFacturaETableAdapter()
-        CType(Me.informeFacturaEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.informeFacturaRTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.informeFacturaRTableAdapter()
+        CType(Me.informeFacturaRBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'informeFacturaEBindingSource
+        'informeFacturaRBindingSource
         '
-        Me.informeFacturaEBindingSource.DataMember = "informeFacturaE"
-        Me.informeFacturaEBindingSource.DataSource = Me.tallerDataSet
+        Me.informeFacturaRBindingSource.DataMember = "informeFacturaR"
+        Me.informeFacturaRBindingSource.DataSource = Me.tallerDataSet
         '
         'tallerDataSet
         '
@@ -44,37 +44,35 @@ Partial Class frmInformeFacturaE
         '
         'ReportViewer1
         '
-        Me.ReportViewer1.AutoSize = True
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.informeFacturaEBindingSource
+        ReportDataSource1.Value = Me.informeFacturaRBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeFacturaE.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeFacturaR.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(744, 646)
+        Me.ReportViewer1.Size = New System.Drawing.Size(787, 475)
         Me.ReportViewer1.TabIndex = 0
         '
-        'informeFacturaETableAdapter
+        'informeFacturaRTableAdapter
         '
-        Me.informeFacturaETableAdapter.ClearBeforeFill = True
+        Me.informeFacturaRTableAdapter.ClearBeforeFill = True
         '
-        'frmInformeFacturaE
+        'frmInformeGastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(796, 814)
+        Me.ClientSize = New System.Drawing.Size(860, 600)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "frmInformeFacturaE"
-        Me.Text = "Factura emitida"
-        CType(Me.informeFacturaEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "frmInformeGastos"
+        Me.Text = "Gastos"
+        CType(Me.informeFacturaRBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents informeFacturaEBindingSource As BindingSource
+    Friend WithEvents informeFacturaRBindingSource As BindingSource
     Friend WithEvents tallerDataSet As tallerDataSet
-    Friend WithEvents informeFacturaETableAdapter As tallerDataSetTableAdapters.informeFacturaETableAdapter
+    Friend WithEvents informeFacturaRTableAdapter As tallerDataSetTableAdapters.informeFacturaRTableAdapter
 End Class

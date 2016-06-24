@@ -7,12 +7,7 @@
     End Sub
 
     Private Sub MetroTextBox3_Click(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
-        If (IsNumeric(txtBuscar.Text)) Then
-            ConsPatrimonioBindingSource.Filter = "nombre like '%" & txtBuscar.Text & "%' or concepto like '%" & txtBuscar.Text & "%' or identificador like '%" & txtBuscar.Text & "%' or numeroFactura = " & txtBuscar.Text & ""
-        Else
-            ConsPatrimonioBindingSource.Filter = "nombre like '%" & txtBuscar.Text & "%' or concepto like '%" & txtBuscar.Text & "%' or identificador like '%" & txtBuscar.Text & "%'"
-        End If
-
+        filtrado()
     End Sub
 
 
@@ -25,22 +20,27 @@
     End Sub
 
     Private Sub chkFiltrar_CheckedChanged(sender As Object, e As EventArgs) Handles chkFiltrar.CheckedChanged
-        If chkFiltrar.Checked Then
-            txtBuscar.Text = ""
-            txtBuscar.ReadOnly = True
-            ConsPatrimonioBindingSource.Filter = "fecha >='" & dtpFechaInicio.Value.ToShortDateString & "' and fecha <='" & dtpFechaFin.Value.ToShortDateString & "'"
-        Else
-            txtBuscar.ReadOnly = False
-            ConsPatrimonioBindingSource.Filter = ""
-
-        End If
+        filtrado()
     End Sub
+    Private Sub filtrado()
 
-    Private Sub dtpFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicio.ValueChanged, dtpFechaFin.ValueChanged
-
-        If chkFiltrar.Checked Then
-            txtBuscar.Text = ""
-            ConsPatrimonioBindingSource.Filter = "fecha >='" & dtpFechaInicio.Value.ToShortDateString & "' and fecha <='" & dtpFechaFin.Value.ToShortDateString & "'"
+        If (IsNumeric(txtBuscar.Text)) Then
+            ConsPatrimonioBindingSource.Filter = "(nombre like '%" & txtBuscar.Text & "%' or concepto like '%" & txtBuscar.Text & "%' or identificador like '%" & txtBuscar.Text & "%' or numeroFactura = " & txtBuscar.Text & ")"
+        Else
+            ConsPatrimonioBindingSource.Filter = "(nombre like '%" & txtBuscar.Text & "%' or concepto like '%" & txtBuscar.Text & "%' or identificador like '%" & txtBuscar.Text & "%')"
         End If
+        If chkFiltrar.Checked Then
+            If (dtpFechaInicio.Value.ToShortDateString > dtpFechaFin.Value.ToShortDateString) Then
+                MessageBox.Show("La fecha de inicio debe ser menor que la de fin", "Error Fechas", MessageBoxButtons.OK)
+            Else
+                ConsPatrimonioBindingSource.Filter &= "and (fecha >='" & dtpFechaInicio.Value.ToShortDateString & "' and fecha <='" & dtpFechaFin.Value.ToShortDateString & "')"
+            End If
+        End If
+
+
+
+    End Sub
+    Private Sub dtpFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicio.ValueChanged, dtpFechaFin.ValueChanged
+        filtrado()
     End Sub
 End Class

@@ -109,6 +109,18 @@
     <Compile Include="bbdd\tallerDataSet.vb">
       <DependentUpon>tallerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmInformeGastos.Designer.vb">
+      <DependentUpon>frmInformeGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformeGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformeFacturaR.Designer.vb">
+      <DependentUpon>frmInformeFacturaR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformeFacturaR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmInformeFacturaE.Designer.vb">
       <DependentUpon>frmInformeFacturaE.vb</DependentUpon>
     </Compile>
@@ -319,6 +331,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmInformeGastos.resx">
+      <DependentUpon>frmInformeGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformeFacturaR.resx">
+      <DependentUpon>frmInformeFacturaR.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInformeFacturaE.resx">
       <DependentUpon>frmInformeFacturaE.vb</DependentUpon>
     </EmbeddedResource>
@@ -418,9 +436,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="rpGastos.rdlc" />
+    <EmbeddedResource Include="rpInformeClientes.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="rpInformeFacturaR.rdlc" />
     <EmbeddedResource Include="rpInformeFacturaE.rdlc" />
   </ItemGroup>
   <ItemGroup>
