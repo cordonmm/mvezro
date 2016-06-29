@@ -302,13 +302,6 @@ Public Class frmFacturacionEmitidas
         If (MessageBox.Show("¿Estás seguro que desea borrar la factura por completo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.OK) Then
             Try
                 LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
-                FacturaETableAdapter.DeleteQuery(dtFactura(0).Id)
-            Catch ex As Exception
-                MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-
-        End If
-
-
+                FacturaETableAdapter.Delete(dtFactura(0))
     End Sub
 End Class
