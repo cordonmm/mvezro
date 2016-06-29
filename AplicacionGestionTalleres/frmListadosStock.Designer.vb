@@ -25,7 +25,7 @@ Partial Class frmListadosStock
         Me.components = New System.ComponentModel.Container()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.cmbFamilia = New MetroFramework.Controls.MetroComboBox()
         Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.familia = New MetroFramework.Controls.MetroRadioButton()
@@ -51,17 +51,17 @@ Partial Class frmListadosStock
         Me.MetroButton1.TabIndex = 80
         Me.MetroButton1.Text = "Imprimir"
         '
-        'MetroComboBox1
+        'cmbFamilia
         '
-        Me.MetroComboBox1.DataSource = Me.FamiliaBindingSource
-        Me.MetroComboBox1.DisplayMember = "descripcion"
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(172, 109)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(273, 29)
-        Me.MetroComboBox1.TabIndex = 79
-        Me.MetroComboBox1.ValueMember = "Id"
+        Me.cmbFamilia.DataSource = Me.FamiliaBindingSource
+        Me.cmbFamilia.DisplayMember = "descripcion"
+        Me.cmbFamilia.FormattingEnabled = True
+        Me.cmbFamilia.ItemHeight = 23
+        Me.cmbFamilia.Location = New System.Drawing.Point(172, 109)
+        Me.cmbFamilia.Name = "cmbFamilia"
+        Me.cmbFamilia.Size = New System.Drawing.Size(273, 29)
+        Me.cmbFamilia.TabIndex = 79
+        Me.cmbFamilia.ValueMember = "Id"
         '
         'FamiliaBindingSource
         '
@@ -107,7 +107,7 @@ Partial Class frmListadosStock
         Me.ClientSize = New System.Drawing.Size(477, 269)
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroComboBox1)
+        Me.Controls.Add(Me.cmbFamilia)
         Me.Controls.Add(Me.familia)
         Me.Controls.Add(Me.todos)
         Me.Name = "frmListadosStock"
@@ -121,7 +121,7 @@ Partial Class frmListadosStock
 
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents cmbFamilia As MetroFramework.Controls.MetroComboBox
     Friend WithEvents familia As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents todos As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents TallerDataSet As tallerDataSet

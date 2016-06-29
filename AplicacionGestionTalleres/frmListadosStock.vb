@@ -6,10 +6,17 @@
     End Sub
 
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        Dim frmInformeStock As frmInformeStock
+        frmInformeStock = New frmInformeStock
+
         If todos.Checked Then
-            Dim frmListadoStockCompleto As frmListadoStockCompleto
-            frmListadoStockCompleto = New frmListadoStockCompleto
-            frmListadoStockCompleto.Show()
+            frmInformeStock.Tag = 0
+            frmInformeStock.Show()
+        End If
+
+        If familia.Checked Then
+            frmInformeStock.Tag = cmbFamilia.SelectedValue
+            frmInformeStock.Show()
         End If
     End Sub
 

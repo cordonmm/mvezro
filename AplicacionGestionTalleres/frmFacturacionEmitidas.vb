@@ -304,4 +304,8 @@ Public Class frmFacturacionEmitidas
                 LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
                 FacturaETableAdapter.Delete(dtFactura(0))
     End Sub
+
+    Private Sub txtVehiculo_Click(sender As Object, e As EventArgs) Handles txtVehiculo.Click
+
+    End Sub
 End Class
