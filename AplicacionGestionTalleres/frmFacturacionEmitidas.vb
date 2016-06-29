@@ -311,4 +311,8 @@ Public Class frmFacturacionEmitidas
 
 
     End Sub
+
+    Private Sub txtVehiculo_Click(sender As Object, e As EventArgs) Handles txtVehiculo.Click
+
+    End Sub
 End Class

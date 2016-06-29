@@ -23,29 +23,29 @@ Partial Class frmListadosRecibidas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.fechaFin = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.fechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroRadioButton2 = New MetroFramework.Controls.MetroRadioButton()
-        Me.MetroRadioButton1 = New MetroFramework.Controls.MetroRadioButton()
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.cmbProveedor = New MetroFramework.Controls.MetroComboBox()
         Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.idProveedor = New MetroFramework.Controls.MetroRadioButton()
+        Me.todos = New MetroFramework.Controls.MetroRadioButton()
         Me.ProveedorTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProveedorTableAdapter()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DateTimePicker2
+        'fechaFin
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(270, 64)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(175, 20)
-        Me.DateTimePicker2.TabIndex = 80
+        Me.fechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fechaFin.Location = New System.Drawing.Point(270, 64)
+        Me.fechaFin.Name = "fechaFin"
+        Me.fechaFin.Size = New System.Drawing.Size(175, 20)
+        Me.fechaFin.TabIndex = 80
         '
         'MetroLabel1
         '
@@ -56,13 +56,13 @@ Partial Class frmListadosRecibidas
         Me.MetroLabel1.TabIndex = 79
         Me.MetroLabel1.Text = "y"
         '
-        'DateTimePicker1
+        'fechaInicio
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(68, 64)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(175, 20)
-        Me.DateTimePicker1.TabIndex = 78
+        Me.fechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fechaInicio.Location = New System.Drawing.Point(68, 64)
+        Me.fechaInicio.Name = "fechaInicio"
+        Me.fechaInicio.Size = New System.Drawing.Size(175, 20)
+        Me.fechaInicio.TabIndex = 78
         '
         'MetroLabel3
         '
@@ -89,49 +89,49 @@ Partial Class frmListadosRecibidas
         Me.MetroButton1.TabIndex = 75
         Me.MetroButton1.Text = "Imprimir"
         '
-        'MetroComboBox1
+        'cmbProveedor
         '
-        Me.MetroComboBox1.DataSource = Me.ProveedorBindingSource
-        Me.MetroComboBox1.DisplayMember = "nombre"
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(172, 170)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(273, 29)
-        Me.MetroComboBox1.TabIndex = 74
-        Me.MetroComboBox1.ValueMember = "Id"
+        Me.cmbProveedor.DataSource = Me.ProveedorBindingSource
+        Me.cmbProveedor.DisplayMember = "nombre"
+        Me.cmbProveedor.FormattingEnabled = True
+        Me.cmbProveedor.ItemHeight = 23
+        Me.cmbProveedor.Location = New System.Drawing.Point(172, 170)
+        Me.cmbProveedor.Name = "cmbProveedor"
+        Me.cmbProveedor.Size = New System.Drawing.Size(273, 29)
+        Me.cmbProveedor.TabIndex = 74
+        Me.cmbProveedor.ValueMember = "Id"
         '
-        'MetroRadioButton2
+        'ProveedorBindingSource
         '
-        Me.MetroRadioButton2.AutoSize = True
-        Me.MetroRadioButton2.Location = New System.Drawing.Point(23, 172)
-        Me.MetroRadioButton2.Name = "MetroRadioButton2"
-        Me.MetroRadioButton2.Size = New System.Drawing.Size(143, 15)
-        Me.MetroRadioButton2.TabIndex = 73
-        Me.MetroRadioButton2.Text = "Seleccionar Proveedor:"
-        Me.MetroRadioButton2.UseVisualStyleBackColor = True
-        '
-        'MetroRadioButton1
-        '
-        Me.MetroRadioButton1.AutoSize = True
-        Me.MetroRadioButton1.Checked = True
-        Me.MetroRadioButton1.Location = New System.Drawing.Point(23, 139)
-        Me.MetroRadioButton1.Name = "MetroRadioButton1"
-        Me.MetroRadioButton1.Size = New System.Drawing.Size(141, 15)
-        Me.MetroRadioButton1.TabIndex = 72
-        Me.MetroRadioButton1.TabStop = True
-        Me.MetroRadioButton1.Text = "Todos los Proveedores"
-        Me.MetroRadioButton1.UseVisualStyleBackColor = True
+        Me.ProveedorBindingSource.DataMember = "Proveedor"
+        Me.ProveedorBindingSource.DataSource = Me.TallerDataSet
         '
         'TallerDataSet
         '
         Me.TallerDataSet.DataSetName = "tallerDataSet"
         Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ProveedorBindingSource
+        'idProveedor
         '
-        Me.ProveedorBindingSource.DataMember = "Proveedor"
-        Me.ProveedorBindingSource.DataSource = Me.TallerDataSet
+        Me.idProveedor.AutoSize = True
+        Me.idProveedor.Location = New System.Drawing.Point(23, 172)
+        Me.idProveedor.Name = "idProveedor"
+        Me.idProveedor.Size = New System.Drawing.Size(143, 15)
+        Me.idProveedor.TabIndex = 73
+        Me.idProveedor.Text = "Seleccionar Proveedor:"
+        Me.idProveedor.UseVisualStyleBackColor = True
+        '
+        'todos
+        '
+        Me.todos.AutoSize = True
+        Me.todos.Checked = True
+        Me.todos.Location = New System.Drawing.Point(23, 139)
+        Me.todos.Name = "todos"
+        Me.todos.Size = New System.Drawing.Size(141, 15)
+        Me.todos.TabIndex = 72
+        Me.todos.TabStop = True
+        Me.todos.Text = "Todos los Proveedores"
+        Me.todos.UseVisualStyleBackColor = True
         '
         'ProveedorTableAdapter
         '
@@ -143,33 +143,33 @@ Partial Class frmListadosRecibidas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(477, 314)
-        Me.Controls.Add(Me.DateTimePicker2)
+        Me.Controls.Add(Me.fechaFin)
         Me.Controls.Add(Me.MetroLabel1)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.fechaInicio)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroComboBox1)
-        Me.Controls.Add(Me.MetroRadioButton2)
-        Me.Controls.Add(Me.MetroRadioButton1)
+        Me.Controls.Add(Me.cmbProveedor)
+        Me.Controls.Add(Me.idProveedor)
+        Me.Controls.Add(Me.todos)
         Me.Name = "frmListadosRecibidas"
         Me.Text = "Facturas Recibidas"
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents fechaFin As DateTimePicker
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents fechaInicio As DateTimePicker
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroRadioButton2 As MetroFramework.Controls.MetroRadioButton
-    Friend WithEvents MetroRadioButton1 As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents cmbProveedor As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents idProveedor As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents todos As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents ProveedorBindingSource As BindingSource
     Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter

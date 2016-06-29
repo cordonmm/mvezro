@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmListadosStockMinimo
     Inherits MetroFramework.Forms.MetroForm
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,19 @@ Partial Class frmListadosStockMinimo
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroRadioButton2 = New MetroFramework.Controls.MetroRadioButton()
-        Me.MetroRadioButton1 = New MetroFramework.Controls.MetroRadioButton()
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.cmbFamilia = New MetroFramework.Controls.MetroComboBox()
         Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.rbIdFamilia = New MetroFramework.Controls.MetroRadioButton()
+        Me.rbTodos = New MetroFramework.Controls.MetroRadioButton()
         Me.FamiliaTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.FamiliaTableAdapter()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroButton2
@@ -51,49 +51,49 @@ Partial Class frmListadosStockMinimo
         Me.MetroButton1.TabIndex = 85
         Me.MetroButton1.Text = "Imprimir"
         '
-        'MetroComboBox1
+        'cmbFamilia
         '
-        Me.MetroComboBox1.DataSource = Me.FamiliaBindingSource
-        Me.MetroComboBox1.DisplayMember = "descripcion"
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(172, 109)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(273, 29)
-        Me.MetroComboBox1.TabIndex = 84
-        Me.MetroComboBox1.ValueMember = "Id"
+        Me.cmbFamilia.DataSource = Me.FamiliaBindingSource
+        Me.cmbFamilia.DisplayMember = "descripcion"
+        Me.cmbFamilia.FormattingEnabled = True
+        Me.cmbFamilia.ItemHeight = 23
+        Me.cmbFamilia.Location = New System.Drawing.Point(172, 109)
+        Me.cmbFamilia.Name = "cmbFamilia"
+        Me.cmbFamilia.Size = New System.Drawing.Size(273, 29)
+        Me.cmbFamilia.TabIndex = 84
+        Me.cmbFamilia.ValueMember = "Id"
         '
-        'MetroRadioButton2
+        'FamiliaBindingSource
         '
-        Me.MetroRadioButton2.AutoSize = True
-        Me.MetroRadioButton2.Location = New System.Drawing.Point(23, 111)
-        Me.MetroRadioButton2.Name = "MetroRadioButton2"
-        Me.MetroRadioButton2.Size = New System.Drawing.Size(127, 15)
-        Me.MetroRadioButton2.TabIndex = 83
-        Me.MetroRadioButton2.Text = "Seleccionar Familia:"
-        Me.MetroRadioButton2.UseVisualStyleBackColor = True
-        '
-        'MetroRadioButton1
-        '
-        Me.MetroRadioButton1.AutoSize = True
-        Me.MetroRadioButton1.Checked = True
-        Me.MetroRadioButton1.Location = New System.Drawing.Point(23, 78)
-        Me.MetroRadioButton1.Name = "MetroRadioButton1"
-        Me.MetroRadioButton1.Size = New System.Drawing.Size(123, 15)
-        Me.MetroRadioButton1.TabIndex = 82
-        Me.MetroRadioButton1.TabStop = True
-        Me.MetroRadioButton1.Text = "Todos los Artículos"
-        Me.MetroRadioButton1.UseVisualStyleBackColor = True
+        Me.FamiliaBindingSource.DataMember = "Familia"
+        Me.FamiliaBindingSource.DataSource = Me.TallerDataSet
         '
         'TallerDataSet
         '
         Me.TallerDataSet.DataSetName = "tallerDataSet"
         Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'FamiliaBindingSource
+        'rbIdFamilia
         '
-        Me.FamiliaBindingSource.DataMember = "Familia"
-        Me.FamiliaBindingSource.DataSource = Me.TallerDataSet
+        Me.rbIdFamilia.AutoSize = True
+        Me.rbIdFamilia.Location = New System.Drawing.Point(23, 111)
+        Me.rbIdFamilia.Name = "rbIdFamilia"
+        Me.rbIdFamilia.Size = New System.Drawing.Size(127, 15)
+        Me.rbIdFamilia.TabIndex = 83
+        Me.rbIdFamilia.Text = "Seleccionar Familia:"
+        Me.rbIdFamilia.UseVisualStyleBackColor = True
+        '
+        'rbTodos
+        '
+        Me.rbTodos.AutoSize = True
+        Me.rbTodos.Checked = True
+        Me.rbTodos.Location = New System.Drawing.Point(23, 78)
+        Me.rbTodos.Name = "rbTodos"
+        Me.rbTodos.Size = New System.Drawing.Size(123, 15)
+        Me.rbTodos.TabIndex = 82
+        Me.rbTodos.TabStop = True
+        Me.rbTodos.Text = "Todos los Artículos"
+        Me.rbTodos.UseVisualStyleBackColor = True
         '
         'FamiliaTableAdapter
         '
@@ -107,13 +107,13 @@ Partial Class frmListadosStockMinimo
         Me.ClientSize = New System.Drawing.Size(467, 242)
         Me.Controls.Add(Me.MetroButton2)
         Me.Controls.Add(Me.MetroButton1)
-        Me.Controls.Add(Me.MetroComboBox1)
-        Me.Controls.Add(Me.MetroRadioButton2)
-        Me.Controls.Add(Me.MetroRadioButton1)
+        Me.Controls.Add(Me.cmbFamilia)
+        Me.Controls.Add(Me.rbIdFamilia)
+        Me.Controls.Add(Me.rbTodos)
         Me.Name = "frmListadosStockMinimo"
         Me.Text = "Artículos Stock bajo Mínimo"
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -121,9 +121,9 @@ Partial Class frmListadosStockMinimo
 
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MetroRadioButton2 As MetroFramework.Controls.MetroRadioButton
-    Friend WithEvents MetroRadioButton1 As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents cmbFamilia As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents rbIdFamilia As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents rbTodos As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents FamiliaBindingSource As BindingSource
     Friend WithEvents FamiliaTableAdapter As tallerDataSetTableAdapters.FamiliaTableAdapter
