@@ -36,7 +36,7 @@ Public Class frmFacturacionEmitidas
             cmbCliente.SelectedValue = dtFactura(0).idCliente
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
             Next
 
             Me.Text = "Guardar Factura"
@@ -82,13 +82,15 @@ Public Class frmFacturacionEmitidas
         If validar = "" Then
             Dim consProdRow As tallerDataSet.ConsProductoRow = TryCast(dgArticulos.SelectedRows(0).DataBoundItem.Row, tallerDataSet.ConsProductoRow)
             Dim precio = consProdRow.Precio
+            Dim descuento = 0
             If (txtPVP.Text <> "") Then
                 precio = txtPVP.Text
             End If
             If (txtDescuento.Text <> "") Then
-                precio = precio * (1 - (Convert.ToDouble(txtDescuento.Text) / 100))
+                descuento = txtDescuento.Text
+                precio = precio * (1 - (Convert.ToDouble(descuento) / 100))
             End If
-            dgLinea.Rows.Add(consProdRow.Id, Convert.ToDouble(txtCantidad.Text), consProdRow.Descripción, precio, precio * txtCantidad.Text)
+            dgLinea.Rows.Add(consProdRow.Id, Convert.ToDouble(txtCantidad.Text), consProdRow.Descripción, precio, descuento, precio * txtCantidad.Text)
             actualizarTotales()
 
         Else
@@ -183,10 +185,14 @@ Public Class frmFacturacionEmitidas
                     Else
                         dtFactura(0).contado = False
                     End If
+                    For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
+                        ProductoTableAdapter.UpdateStock(row.idProducto, -row.Cantidad)
+                    Next
 
                     LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), dtFactura(0).Id)
+                        ProductoTableAdapter.UpdateStock(row.Cells(0).Value, row.Cells(1).Value)
+                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), dtFactura(0).Id, Convert.ToDouble(row.Cells(4).Value))
 
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
@@ -206,7 +212,9 @@ Public Class frmFacturacionEmitidas
                     Dim idFactura As Integer = FacturaETableAdapter.GetId(txtFactura.Text)
 
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), idFactura)
+
+                        ProductoTableAdapter.UpdateStock(row.Cells(0).Value, row.Cells(1).Value)
+                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), idFactura, Convert.ToDouble(row.Cells(4).Value))
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
                     If (MessageBox.Show("Factura guardada correctamente ,¿Desea imprimirla?", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK) Then
@@ -263,7 +271,7 @@ Public Class frmFacturacionEmitidas
             cmbCliente.SelectedValue = dtFactura(0).idCliente
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
             Next
             Me.Tag = frmBusquedaFacturaEmitidas.Tag
             Me.Text = "Guardar Factura"
@@ -299,13 +307,24 @@ Public Class frmFacturacionEmitidas
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If (MessageBox.Show("¿Estás seguro que desea borrar la factura por completo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.OK) Then
-            Try
-                LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
-                FacturaETableAdapter.Delete(dtFactura(0))
+        If (dtFactura IsNot Nothing And dtFactura.Count > 0) Then
+
+            If (MessageBox.Show("¿Estás seguro que desea borrar la factura por completo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.OK) Then
+                Try
+                    LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
+                    FacturaETableAdapter.DeleteQuery(dtFactura(0).Id)
+                    limpiar()
+                Catch ex As Exception
+                    MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
+
+
+
     End Sub
 
-    Private Sub txtVehiculo_Click(sender As Object, e As EventArgs) Handles txtVehiculo.Click
+    Private Sub gbArticulo_Enter(sender As Object, e As EventArgs) Handles gbArticulo.Enter
 
     End Sub
 End Class

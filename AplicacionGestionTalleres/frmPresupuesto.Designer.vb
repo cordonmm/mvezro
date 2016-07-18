@@ -646,7 +646,8 @@ Partial Class frmPresupuesto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1244, 884)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1244, 780)
         Me.Controls.Add(Me.btnAñadirCliente)
         Me.Controls.Add(Me.cbContado)
         Me.Controls.Add(Me.MetroLabel2)

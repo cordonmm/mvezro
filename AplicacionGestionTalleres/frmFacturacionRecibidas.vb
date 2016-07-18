@@ -10,6 +10,13 @@
         'TODO: esta línea de código carga datos en la tabla 'TallerDataSet.ConsProducto' Puede moverla o quitarla según sea necesario.
         Me.ConsProductoTableAdapter.Fill(Me.TallerDataSet.ConsProducto)
         Me.ConfiguracionTableAdapter.Fill(Me.TallerDataSet.Configuracion)
+        If (bandera) Then
+            Me.FacturaRTableAdapter.Connection.ConnectionString = cadenaB
+            Me.LineaFacturaRTableAdapter.Connection.ConnectionString = cadenaB
+        Else
+            Me.FacturaRTableAdapter.Connection.ConnectionString = cadenaA
+            Me.LineaFacturaRTableAdapter.Connection.ConnectionString = cadenaA
+        End If
         If (Me.Tag IsNot Nothing AndAlso IsNumeric(Me.Tag)) Then
             dtFactura = FacturaRTableAdapter.GetDataBy2(Me.Tag)
             txtFactura.Text = dtFactura(0).numeroFactura
@@ -27,7 +34,7 @@
             cmbProveedor.SelectedValue = dtFactura(0).idProveedor
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaRRow In LineaFacturaRTableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
             Next
 
             Me.Text = "Guardar Factura"
@@ -52,18 +59,39 @@
 
     End Sub
 
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control And e.Shift And e.KeyCode = Keys.B Then
+            bandera = Not bandera
+            Me.Tag = Nothing
+            limpiar()
+            If (bandera) Then
+
+                frmFacturacionRecibidas_Load(Me, Nothing)
+                principal.Icon = My.Resources.ico_car_thug
+
+
+            Else
+                frmFacturacionRecibidas_Load(Me, Nothing)
+                principal.Icon = My.Resources.ico_car
+            End If
+
+        End If
+    End Sub
+
     Private Sub btnAnadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim validar As String = ValidarLinea()
         If validar = "" Then
             Dim consProdRow As tallerDataSet.ConsProductoRow = TryCast(dgArticulos.SelectedRows(0).DataBoundItem.Row, tallerDataSet.ConsProductoRow)
+            Dim descuento As Integer = 0
             Dim precio = consProdRow.Precio
             If (txtPVP.Text <> "") Then
                 precio = txtPVP.Text
             End If
             If (txtDescuento.Text <> "") Then
-                precio = precio * (1 - (Convert.ToDouble(txtDescuento.Text) / 100))
+                descuento = txtDescuento.Text
+                precio = precio * (1 - (Convert.ToDouble(descuento) / 100))
             End If
-            dgLinea.Rows.Add(consProdRow.Id, txtCantidad.Text, consProdRow.Descripción, precio, precio * txtCantidad.Text)
+            dgLinea.Rows.Add(consProdRow.Id, txtCantidad.Text, consProdRow.Descripción, precio, descuento, precio * txtCantidad.Text)
             actualizarTotales()
 
         Else
@@ -157,7 +185,7 @@
 
                     LineaFacturaRTableAdapter.BorrarLineas(dtFactura(0).Id)
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), dtFactura(0).Id)
+                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), dtFactura(0).Id, Convert.ToDouble(row.Cells(4).Value))
 
                     Next
                     Me.LineaFacturaRTableAdapter.Update(Me.TallerDataSet.LineaFacturaR)
@@ -175,7 +203,7 @@
                     Dim idFactura As Integer = FacturaRTableAdapter.GetId(txtFactura.Text)
 
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), idFactura)
+                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), idFactura, Convert.ToDouble(row.Cells(5).Value))
                     Next
                     Me.LineaFacturaRTableAdapter.Update(Me.TallerDataSet.LineaFacturaR)
 
@@ -224,7 +252,7 @@
             cmbProveedor.SelectedValue = dtFactura(0).idProveedor
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaRTableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
             Next
             Me.Tag = frmBusquedaFacturaEmitidas.Tag
             Me.Text = "Guardar Factura"
@@ -255,6 +283,21 @@
             frmInformeFacturaR = New frmInformeFacturaR
             frmInformeFacturaR.Tag = dtFactura(0).Id
             frmInformeFacturaR.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If (dtFactura IsNot Nothing And dtFactura.Count > 0) Then
+
+            If (MessageBox.Show("¿Estás seguro que desea borrar la factura por completo?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = DialogResult.OK) Then
+                Try
+                    LineaFacturaRTableAdapter.BorrarLineas(dtFactura(0).Id)
+                    FacturaRTableAdapter.DeleteQuery(dtFactura(0).Id)
+                    limpiar()
+                Catch ex As Exception
+                    MessageBox.Show("Ocurrio algun error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
         End If
     End Sub
 End Class

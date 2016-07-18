@@ -13,8 +13,10 @@
             txtConcepto.Text = dtPatrimonio(0).concepto
             txtIVA.Text = dtPatrimonio(0).iva
             txtImporte.Text = dtPatrimonio(0).importe
-            cmbIdentificador.SelectedText = dtPatrimonio(0).identificador
+            cmbIdentificador.SelectedItem = dtPatrimonio(0).identificador
             cmbProveedor.SelectedValue = dtPatrimonio(0).idProveedor
+            dtpFechaFac.Value = dtPatrimonio(0).fecha
+
 
             Me.Text = "Guardar Patrimonio"
         Else
@@ -38,12 +40,15 @@
         If (val = "") Then
             Try
                 If (dtPatrimonio IsNot Nothing) Then
+
                     dtPatrimonio(0).concepto = txtConcepto.Text
                     dtPatrimonio(0).iva = txtIVA.Text
                     dtPatrimonio(0).importe = txtImporte.Text
-                    dtPatrimonio(0).identificador = cmbIdentificador.SelectedText
+                    dtPatrimonio(0).identificador = cmbIdentificador.SelectedItem
                     dtPatrimonio(0).idProveedor = cmbProveedor.SelectedValue
                     dtPatrimonio(0).fecha = dtpFechaFac.Value.ToShortDateString
+                    dtPatrimonio(0).total = (Convert.ToDouble(txtImporte.Text) * (1 + (Convert.ToDouble(txtIVA.Text) / 100)))
+
                     Me.PatrimonioTableAdapter.Update(dtPatrimonio)
                     If (MessageBox.Show("Patrimonio guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK) Then
                         Me.Close()
@@ -52,7 +57,7 @@
 
                 Else
 
-                    Me.TallerDataSet.Patrimonio.AddPatrimonioRow(cmbProveedor.SelectedValue, txtFactura.Text, cmbIdentificador.SelectedText, txtConcepto.Text, txtImporte.Text, Convert.ToDouble(txtImporte.Text) * Convert.ToDouble(txtIVA.Text), txtIVA.Text, dtpFechaFac.Value.ToShortDateString)
+                    Me.TallerDataSet.Patrimonio.AddPatrimonioRow(cmbProveedor.SelectedValue, txtFactura.Text, cmbIdentificador.SelectedItem, txtConcepto.Text, txtImporte.Text, (Convert.ToDouble(txtImporte.Text) * (1 + (Convert.ToDouble(txtIVA.Text) / 100))), txtIVA.Text, dtpFechaFac.Value.ToShortDateString)
                     Me.PatrimonioTableAdapter.Update(Me.TallerDataSet.Patrimonio)
                     MessageBox.Show("Patrimonio guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()

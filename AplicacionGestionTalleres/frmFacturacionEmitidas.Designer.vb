@@ -41,6 +41,7 @@ Partial Class frmFacturacionEmitidas
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblVehiculo = New MetroFramework.Controls.MetroLabel()
         Me.lblCliente = New MetroFramework.Controls.MetroLabel()
@@ -176,7 +177,7 @@ Partial Class frmFacturacionEmitidas
         Me.dgLinea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgLinea.BackgroundColor = System.Drawing.SystemColors.WindowFrame
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.cantidad, Me.descripcion, Me.precio, Me.total})
+        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.cantidad, Me.descripcion, Me.precio, Me.Descuento, Me.total})
         Me.dgLinea.Location = New System.Drawing.Point(25, 30)
         Me.dgLinea.Name = "dgLinea"
         Me.dgLinea.ReadOnly = True
@@ -196,6 +197,7 @@ Partial Class frmFacturacionEmitidas
         '
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cantidad.DefaultCellStyle = DataGridViewCellStyle2
+        Me.cantidad.FillWeight = 50.0!
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
@@ -214,6 +216,12 @@ Partial Class frmFacturacionEmitidas
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
         '
         'total
         '
@@ -646,7 +654,8 @@ Partial Class frmFacturacionEmitidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1244, 884)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1244, 780)
         Me.Controls.Add(Me.btnAñadirCliente)
         Me.Controls.Add(Me.cbContado)
         Me.Controls.Add(Me.MetroLabel2)
@@ -748,11 +757,6 @@ Partial Class frmFacturacionEmitidas
     Friend WithEvents DescripciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents idProducto As DataGridViewTextBoxColumn
-    Friend WithEvents cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents total As DataGridViewTextBoxColumn
     Friend WithEvents ConfiguracionTableAdapter1 As tallerDataSetTableAdapters.ConfiguracionTableAdapter
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
@@ -762,4 +766,10 @@ Partial Class frmFacturacionEmitidas
     Friend WithEvents ProductoTableAdapter As tallerDataSetTableAdapters.ProductoTableAdapter
     Friend WithEvents btnNuevoArticulo As MetroFramework.Controls.MetroButton
     Friend WithEvents btnAñadirCliente As MetroFramework.Controls.MetroButton
+    Friend WithEvents idProducto As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents Descuento As DataGridViewTextBoxColumn
+    Friend WithEvents total As DataGridViewTextBoxColumn
 End Class

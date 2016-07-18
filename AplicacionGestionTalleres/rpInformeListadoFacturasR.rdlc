@@ -6,25 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.10312cm</Width>
+              <Width>1.04301cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.22718cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.40638cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.46531cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.50542cm</Width>
+              <Width>3.25906cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.94438cm</Width>
+              <Width>2.17798cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.05021cm</Width>
+              <Width>1.30114cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.46531cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -40,7 +43,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nº Fra</Value>
+                              <Value>Nº </Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -112,7 +115,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Proveedor</Value>
+                              <Value>Nombre</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -184,7 +187,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Base Imponible</Value>
+                              <Value>Email</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -220,7 +223,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Iva</Value>
+                              <Value>Base Imp.</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -256,7 +259,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total</Value>
+                              <Value>IVA</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -269,6 +272,42 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#7292cc</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#7292cc</Color>
@@ -330,7 +369,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!fecha.Value</Value>
+                              <Value>=FormatDateTime(Fields!fecha.Value,DateFormat.ShortDate)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -422,6 +461,39 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="email">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!email.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>email</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#e5e5e5</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="baseImponible">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -429,7 +501,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!baseImponible.Value</Value>
+                              <Value>=Fields!baseImponible.Value &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -455,24 +527,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="iva">
+                    <Textbox Name="iva1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!iva.Value</Value>
+                              <Value>=(Fields!baseImponible.Value * (Fields!iva.Value/100)) &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>iva</rd:DefaultName>
+                      <rd:DefaultName>iva1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -488,24 +562,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Expr1">
+                    <Textbox Name="total">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Expr1.Value</Value>
+                              <Value>=Fields!total.Value &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Expr1</rd:DefaultName>
+                      <rd:DefaultName>total</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -532,6 +608,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -545,9 +622,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.68792cm</Top>
+        <Top>0.3175cm</Top>
         <Height>1.2cm</Height>
-        <Width>17.10312cm</Width>
+        <Width>18.34537cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -555,13 +632,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.41875in</Height>
+    <Height>2.95in</Height>
     <Style />
   </Body>
-  <Width>6.7856in</Width>
+  <Width>7.22259in</Width>
   <Page>
     <PageHeader>
-      <Height>4.7625cm</Height>
+      <Height>4.68313cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -586,8 +663,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
-          <Top>0.39618cm</Top>
-          <Left>0.63406cm</Left>
+          <Top>0.19264cm</Top>
+          <Left>0.83896cm</Left>
           <Height>0.86458cm</Height>
           <Width>7.73875cm</Width>
           <Style>
@@ -615,8 +692,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>1.43715cm</Top>
-          <Left>0.63406cm</Left>
+          <Top>1.23361cm</Top>
+          <Left>0.83896cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>1</ZIndex>
@@ -645,8 +722,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>2.21354cm</Top>
-          <Left>0.63406cm</Left>
+          <Top>2.01cm</Top>
+          <Left>0.83896cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>2</ZIndex>
@@ -675,8 +752,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>2.98993cm</Top>
-          <Left>0.63406cm</Left>
+          <Top>2.78639cm</Top>
+          <Left>0.83896cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>3</ZIndex>
@@ -705,8 +782,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>3.76632cm</Top>
-          <Left>0.63406cm</Left>
+          <Top>3.56278cm</Top>
+          <Left>0.83896cm</Left>
           <Height>0.6cm</Height>
           <Width>6.12479cm</Width>
           <ZIndex>4</ZIndex>
@@ -728,7 +805,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.48708cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -747,8 +824,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.94403cm</Top>
-          <Left>14.15203cm</Left>
+          <Top>0.7112cm</Top>
+          <Left>15.16293cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -784,7 +861,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>7113f2c5-ac02-44ef-ad39-ba24f295fdd4</rd:DataSourceID>
+      <rd:DataSourceID>407f909a-6078-4297-8331-dd9d3a0656f8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -794,53 +871,17 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Codigo">
-          <DataField>Codigo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Referencia">
-          <DataField>Referencia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Descripción">
-          <DataField>Descripción</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="id">
+          <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Precio">
-          <DataField>Precio</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="numeroFactura">
           <DataField>numeroFactura</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="baseImponible">
-          <DataField>baseImponible</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Expr1">
-          <DataField>Expr1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="contado">
-          <DataField>contado</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
         <Field Name="fecha">
           <DataField>fecha</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="iva">
-          <DataField>iva</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="nombre">
           <DataField>nombre</DataField>
@@ -850,33 +891,33 @@
           <DataField>cif</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="domicilio">
-          <DataField>domicilio</DataField>
+        <Field Name="email">
+          <DataField>email</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="población">
-          <DataField>población</DataField>
+        <Field Name="baseImponible">
+          <DataField>baseImponible</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="provincia">
-          <DataField>provincia</DataField>
+        <Field Name="total">
+          <DataField>total</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cp">
-          <DataField>cp</DataField>
+        <Field Name="iva">
+          <DataField>iva</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>tallerDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Manuel\Source\Repos\mvezro\AplicacionGestionTalleres\bbdd\tallerDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>informeFacturaR</rd:TableName>
+        <rd:SchemaPath>C:\Users\JoséAntonio\Documents\GitHubVisualStudio\mvezro\AplicacionGestionTalleres\bbdd\tallerDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>ConsFacturaR</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>informeFacturaRTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>ConsFacturaRTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>430bbaeb-26ca-4562-a818-ef23bbbb0413</rd:ReportID>
+  <rd:ReportID>2871c99f-4174-43e8-a592-d5e33762006a</rd:ReportID>
 </Report>

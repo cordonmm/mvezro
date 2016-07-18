@@ -24,18 +24,23 @@ Partial Class frmInformeGastos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
-        Me.ConsInformePatrimonioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsInformePatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsInformePatrimonioTableAdapter()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.consPatrimonioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.consPatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.consPatrimonioTableAdapter()
         CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConsInformePatrimonioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.consPatrimonioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'tallerDataSet
+        '
+        Me.tallerDataSet.DataSetName = "tallerDataSet"
+        Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.ConsInformePatrimonioBindingSource
+        ReportDataSource1.Value = Me.consPatrimonioBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpGastos.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
@@ -43,19 +48,14 @@ Partial Class frmInformeGastos
         Me.ReportViewer1.Size = New System.Drawing.Size(787, 475)
         Me.ReportViewer1.TabIndex = 0
         '
-        'tallerDataSet
+        'consPatrimonioBindingSource
         '
-        Me.tallerDataSet.DataSetName = "tallerDataSet"
-        Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.consPatrimonioBindingSource.DataMember = "consPatrimonio"
+        Me.consPatrimonioBindingSource.DataSource = Me.tallerDataSet
         '
-        'ConsInformePatrimonioBindingSource
+        'consPatrimonioTableAdapter
         '
-        Me.ConsInformePatrimonioBindingSource.DataMember = "ConsInformePatrimonio"
-        Me.ConsInformePatrimonioBindingSource.DataSource = Me.tallerDataSet
-        '
-        'ConsInformePatrimonioTableAdapter
-        '
-        Me.ConsInformePatrimonioTableAdapter.ClearBeforeFill = True
+        Me.consPatrimonioTableAdapter.ClearBeforeFill = True
         '
         'frmInformeGastos
         '
@@ -66,13 +66,13 @@ Partial Class frmInformeGastos
         Me.Name = "frmInformeGastos"
         Me.Text = "Gastos"
         CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConsInformePatrimonioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.consPatrimonioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents ConsInformePatrimonioBindingSource As BindingSource
     Friend WithEvents tallerDataSet As tallerDataSet
-    Friend WithEvents ConsInformePatrimonioTableAdapter As tallerDataSetTableAdapters.ConsInformePatrimonioTableAdapter
+    Friend WithEvents consPatrimonioBindingSource As BindingSource
+    Friend WithEvents consPatrimonioTableAdapter As tallerDataSetTableAdapters.consPatrimonioTableAdapter
 End Class

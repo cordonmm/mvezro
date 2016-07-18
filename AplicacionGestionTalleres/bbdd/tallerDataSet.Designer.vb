@@ -3455,6 +3455,8 @@ Partial Public Class tallerDataSet
         
         Private columnidFactura As Global.System.Data.DataColumn
         
+        Private columndescuento As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -3539,6 +3541,14 @@ Partial Public Class tallerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property descuentoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndescuento
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3575,9 +3585,9 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddLineaFacturaERow(ByVal idProducto As Integer, ByVal Cantidad As Integer, ByVal Precio As Decimal, ByVal Total As Decimal, ByVal idFactura As Integer) As LineaFacturaERow
+        Public Overloads Function AddLineaFacturaERow(ByVal idProducto As Integer, ByVal Cantidad As Integer, ByVal Precio As Decimal, ByVal Total As Decimal, ByVal idFactura As Integer, ByVal descuento As Integer) As LineaFacturaERow
             Dim rowLineaFacturaERow As LineaFacturaERow = CType(Me.NewRow,LineaFacturaERow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, idProducto, Cantidad, Precio, Total, idFactura}
+            Dim columnValuesArray() As Object = New Object() {Nothing, idProducto, Cantidad, Precio, Total, idFactura, descuento}
             rowLineaFacturaERow.ItemArray = columnValuesArray
             Me.Rows.Add(rowLineaFacturaERow)
             Return rowLineaFacturaERow
@@ -3612,6 +3622,7 @@ Partial Public Class tallerDataSet
             Me.columnPrecio = MyBase.Columns("Precio")
             Me.columnTotal = MyBase.Columns("Total")
             Me.columnidFactura = MyBase.Columns("idFactura")
+            Me.columndescuento = MyBase.Columns("descuento")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3629,6 +3640,8 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnTotal)
             Me.columnidFactura = New Global.System.Data.DataColumn("idFactura", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnidFactura)
+            Me.columndescuento = New Global.System.Data.DataColumn("descuento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndescuento)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = 1
@@ -3783,6 +3796,8 @@ Partial Public Class tallerDataSet
         
         Private columnidFactura As Global.System.Data.DataColumn
         
+        Private columndescuento As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -3867,6 +3882,14 @@ Partial Public Class tallerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property descuentoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndescuento
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3903,9 +3926,9 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddLineaFacturaRRow(ByVal idProducto As Integer, ByVal Cantidad As Integer, ByVal Precio As Decimal, ByVal Total As Decimal, ByVal idFactura As Integer) As LineaFacturaRRow
+        Public Overloads Function AddLineaFacturaRRow(ByVal idProducto As Integer, ByVal Cantidad As Integer, ByVal Precio As Decimal, ByVal Total As Decimal, ByVal idFactura As Integer, ByVal descuento As Integer) As LineaFacturaRRow
             Dim rowLineaFacturaRRow As LineaFacturaRRow = CType(Me.NewRow,LineaFacturaRRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, idProducto, Cantidad, Precio, Total, idFactura}
+            Dim columnValuesArray() As Object = New Object() {Nothing, idProducto, Cantidad, Precio, Total, idFactura, descuento}
             rowLineaFacturaRRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowLineaFacturaRRow)
             Return rowLineaFacturaRRow
@@ -3940,6 +3963,7 @@ Partial Public Class tallerDataSet
             Me.columnPrecio = MyBase.Columns("Precio")
             Me.columnTotal = MyBase.Columns("Total")
             Me.columnidFactura = MyBase.Columns("idFactura")
+            Me.columndescuento = MyBase.Columns("descuento")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3957,6 +3981,8 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnTotal)
             Me.columnidFactura = New Global.System.Data.DataColumn("idFactura", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnidFactura)
+            Me.columndescuento = New Global.System.Data.DataColumn("descuento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndescuento)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = 1
@@ -6025,6 +6051,12 @@ Partial Public Class tallerDataSet
         
         Private columnId As Global.System.Data.DataColumn
         
+        Private columnbaseImponible As Global.System.Data.DataColumn
+        
+        Private columntotal As Global.System.Data.DataColumn
+        
+        Private columniva As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -6109,6 +6141,30 @@ Partial Public Class tallerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property baseImponibleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbaseImponible
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ivaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columniva
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6145,9 +6201,9 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddConsFacturaERow(ByVal numeroFactura As Integer, ByVal fecha As String, ByVal nombre As String, ByVal cif As String, ByVal email As String) As ConsFacturaERow
+        Public Overloads Function AddConsFacturaERow(ByVal numeroFactura As Integer, ByVal fecha As Date, ByVal nombre As String, ByVal cif As String, ByVal email As String, ByVal baseImponible As String, ByVal total As String, ByVal iva As Integer) As ConsFacturaERow
             Dim rowConsFacturaERow As ConsFacturaERow = CType(Me.NewRow,ConsFacturaERow)
-            Dim columnValuesArray() As Object = New Object() {numeroFactura, fecha, nombre, cif, email, Nothing}
+            Dim columnValuesArray() As Object = New Object() {numeroFactura, fecha, nombre, cif, email, Nothing, baseImponible, total, iva}
             rowConsFacturaERow.ItemArray = columnValuesArray
             Me.Rows.Add(rowConsFacturaERow)
             Return rowConsFacturaERow
@@ -6176,6 +6232,9 @@ Partial Public Class tallerDataSet
             Me.columncif = MyBase.Columns("cif")
             Me.columnemail = MyBase.Columns("email")
             Me.columnId = MyBase.Columns("Id")
+            Me.columnbaseImponible = MyBase.Columns("baseImponible")
+            Me.columntotal = MyBase.Columns("total")
+            Me.columniva = MyBase.Columns("iva")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6183,7 +6242,7 @@ Partial Public Class tallerDataSet
         Private Sub InitClass()
             Me.columnnumeroFactura = New Global.System.Data.DataColumn("numeroFactura", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnumeroFactura)
-            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfecha)
             Me.columnnombre = New Global.System.Data.DataColumn("nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombre)
@@ -6193,13 +6252,20 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnemail)
             Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId)
-            Me.columnfecha.MaxLength = 255
+            Me.columnbaseImponible = New Global.System.Data.DataColumn("baseImponible", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbaseImponible)
+            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal)
+            Me.columniva = New Global.System.Data.DataColumn("iva", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columniva)
             Me.columnnombre.MaxLength = 255
             Me.columncif.MaxLength = 255
             Me.columnemail.MaxLength = 255
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
             Me.columnId.AutoIncrementStep = -1
+            Me.columnbaseImponible.MaxLength = 255
+            Me.columntotal.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6349,6 +6415,12 @@ Partial Public Class tallerDataSet
         
         Private columnemail As Global.System.Data.DataColumn
         
+        Private columnbaseImponible As Global.System.Data.DataColumn
+        
+        Private columntotal As Global.System.Data.DataColumn
+        
+        Private columniva As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -6433,6 +6505,30 @@ Partial Public Class tallerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property baseImponibleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbaseImponible
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ivaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columniva
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6469,9 +6565,9 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddConsFacturaRRow(ByVal numeroFactura As Integer, ByVal fecha As String, ByVal nombre As String, ByVal cif As String, ByVal email As String) As ConsFacturaRRow
+        Public Overloads Function AddConsFacturaRRow(ByVal numeroFactura As Integer, ByVal fecha As Date, ByVal nombre As String, ByVal cif As String, ByVal email As String, ByVal baseImponible As String, ByVal total As String, ByVal iva As Integer) As ConsFacturaRRow
             Dim rowConsFacturaRRow As ConsFacturaRRow = CType(Me.NewRow,ConsFacturaRRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, numeroFactura, fecha, nombre, cif, email}
+            Dim columnValuesArray() As Object = New Object() {Nothing, numeroFactura, fecha, nombre, cif, email, baseImponible, total, iva}
             rowConsFacturaRRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowConsFacturaRRow)
             Return rowConsFacturaRRow
@@ -6500,6 +6596,9 @@ Partial Public Class tallerDataSet
             Me.columnnombre = MyBase.Columns("nombre")
             Me.columncif = MyBase.Columns("cif")
             Me.columnemail = MyBase.Columns("email")
+            Me.columnbaseImponible = MyBase.Columns("baseImponible")
+            Me.columntotal = MyBase.Columns("total")
+            Me.columniva = MyBase.Columns("iva")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6509,7 +6608,7 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnid)
             Me.columnnumeroFactura = New Global.System.Data.DataColumn("numeroFactura", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnumeroFactura)
-            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfecha)
             Me.columnnombre = New Global.System.Data.DataColumn("nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombre)
@@ -6517,13 +6616,20 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columncif)
             Me.columnemail = New Global.System.Data.DataColumn("email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnemail)
+            Me.columnbaseImponible = New Global.System.Data.DataColumn("baseImponible", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbaseImponible)
+            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal)
+            Me.columniva = New Global.System.Data.DataColumn("iva", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columniva)
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
             Me.columnid.AutoIncrementStep = -1
-            Me.columnfecha.MaxLength = 255
             Me.columnnombre.MaxLength = 255
             Me.columncif.MaxLength = 255
             Me.columnemail.MaxLength = 255
+            Me.columnbaseImponible.MaxLength = 255
+            Me.columntotal.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8044,7 +8150,7 @@ Partial Public Class tallerDataSet
                     ByVal km As Integer,  _
                     ByVal matricula As String,  _
                     ByVal modeloVehiculo As String,  _
-                    ByVal fecha As String,  _
+                    ByVal fecha As Date,  _
                     ByVal contado As Boolean,  _
                     ByVal baseImponible As String,  _
                     ByVal numeroFactura As Integer,  _
@@ -8131,7 +8237,7 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnmatricula)
             Me.columnmodeloVehiculo = New Global.System.Data.DataColumn("modeloVehiculo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmodeloVehiculo)
-            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfecha)
             Me.columncontado = New Global.System.Data.DataColumn("contado", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncontado)
@@ -8164,7 +8270,6 @@ Partial Public Class tallerDataSet
             Me.columnDescripción.MaxLength = 536870910
             Me.columnmatricula.MaxLength = 255
             Me.columnmodeloVehiculo.MaxLength = 255
-            Me.columnfecha.MaxLength = 255
             Me.columnbaseImponible.MaxLength = 255
             Me.columnnombre.MaxLength = 255
             Me.columncif.MaxLength = 255
@@ -8573,7 +8678,7 @@ Partial Public Class tallerDataSet
                     ByVal baseImponible As String,  _
                     ByVal Expr1 As String,  _
                     ByVal contado As Boolean,  _
-                    ByVal fecha As String,  _
+                    ByVal fecha As Date,  _
                     ByVal iva As Integer,  _
                     ByVal nombre As String,  _
                     ByVal cif As String,  _
@@ -8648,7 +8753,7 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnExpr1)
             Me.columncontado = New Global.System.Data.DataColumn("contado", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncontado)
-            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnfecha = New Global.System.Data.DataColumn("fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfecha)
             Me.columniva = New Global.System.Data.DataColumn("iva", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columniva)
@@ -8669,7 +8774,6 @@ Partial Public Class tallerDataSet
             Me.columnDescripción.MaxLength = 536870910
             Me.columnbaseImponible.MaxLength = 255
             Me.columnExpr1.MaxLength = 255
-            Me.columnfecha.MaxLength = 255
             Me.columnnombre.MaxLength = 255
             Me.columncif.MaxLength = 255
             Me.columndomicilio.MaxLength = 255
@@ -10664,6 +10768,21 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property descuento() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableLineaFacturaE.descuentoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'descuento' de la tabla 'LineaFacturaE' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLineaFacturaE.descuentoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidProductoNull() As Boolean
             Return Me.IsNull(Me.tableLineaFacturaE.idProductoColumn)
         End Function
@@ -10720,6 +10839,18 @@ Partial Public Class tallerDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetidFacturaNull()
             Me(Me.tableLineaFacturaE.idFacturaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsdescuentoNull() As Boolean
+            Return Me.IsNull(Me.tableLineaFacturaE.descuentoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetdescuentoNull()
+            Me(Me.tableLineaFacturaE.descuentoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10826,6 +10957,21 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property descuento() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableLineaFacturaR.descuentoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'descuento' de la tabla 'LineaFacturaR' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLineaFacturaR.descuentoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidProductoNull() As Boolean
             Return Me.IsNull(Me.tableLineaFacturaR.idProductoColumn)
         End Function
@@ -10882,6 +11028,18 @@ Partial Public Class tallerDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetidFacturaNull()
             Me(Me.tableLineaFacturaR.idFacturaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsdescuentoNull() As Boolean
+            Return Me.IsNull(Me.tableLineaFacturaR.descuentoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetdescuentoNull()
+            Me(Me.tableLineaFacturaR.descuentoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -12283,10 +12441,10 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property fecha() As String
+        Public Property fecha() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableConsFacturaE.fechaColumn),String)
+                    Return CType(Me(Me.tableConsFacturaE.fechaColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha' de la tabla 'ConsFacturaE' es DBNull.", e)
                 End Try
@@ -12353,6 +12511,51 @@ Partial Public Class tallerDataSet
             End Get
             Set
                 Me(Me.tableConsFacturaE.IdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property baseImponible() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaE.baseImponibleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'baseImponible' de la tabla 'ConsFacturaE' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaE.baseImponibleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property total() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaE.totalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'total' de la tabla 'ConsFacturaE' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaE.totalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property iva() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaE.ivaColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'iva' de la tabla 'ConsFacturaE' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaE.ivaColumn) = value
             End Set
         End Property
         
@@ -12427,6 +12630,42 @@ Partial Public Class tallerDataSet
         Public Sub SetIdNull()
             Me(Me.tableConsFacturaE.IdColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsbaseImponibleNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaE.baseImponibleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetbaseImponibleNull()
+            Me(Me.tableConsFacturaE.baseImponibleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotalNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaE.totalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotalNull()
+            Me(Me.tableConsFacturaE.totalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsivaNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaE.ivaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetivaNull()
+            Me(Me.tableConsFacturaE.ivaColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -12476,10 +12715,10 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property fecha() As String
+        Public Property fecha() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableConsFacturaR.fechaColumn),String)
+                    Return CType(Me(Me.tableConsFacturaR.fechaColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha' de la tabla 'ConsFacturaR' es DBNull.", e)
                 End Try
@@ -12531,6 +12770,51 @@ Partial Public Class tallerDataSet
             End Get
             Set
                 Me(Me.tableConsFacturaR.emailColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property baseImponible() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaR.baseImponibleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'baseImponible' de la tabla 'ConsFacturaR' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaR.baseImponibleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property total() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaR.totalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'total' de la tabla 'ConsFacturaR' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaR.totalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property iva() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaR.ivaColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'iva' de la tabla 'ConsFacturaR' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaR.ivaColumn) = value
             End Set
         End Property
         
@@ -12604,6 +12888,42 @@ Partial Public Class tallerDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetemailNull()
             Me(Me.tableConsFacturaR.emailColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsbaseImponibleNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaR.baseImponibleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetbaseImponibleNull()
+            Me(Me.tableConsFacturaR.baseImponibleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotalNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaR.totalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotalNull()
+            Me(Me.tableConsFacturaR.totalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsivaNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaR.ivaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetivaNull()
+            Me(Me.tableConsFacturaR.ivaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -13454,10 +13774,10 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property fecha() As String
+        Public Property fecha() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableinformeFacturaE.fechaColumn),String)
+                    Return CType(Me(Me.tableinformeFacturaE.fechaColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha' de la tabla 'informeFacturaE' es DBNull.", e)
                 End Try
@@ -14118,10 +14438,10 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property fecha() As String
+        Public Property fecha() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableinformeFacturaR.fechaColumn),String)
+                    Return CType(Me(Me.tableinformeFacturaR.fechaColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha' de la tabla 'informeFacturaR' es DBNull.", e)
                 End Try
@@ -16339,8 +16659,8 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Id, nombre, cif, domicilio, población, provincia, cp, telefonoFijo,"& _ 
-                " telefonoMovil, fax, observaciones, email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Cliente"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
-                "Id = ?)"
+                " telefonoMovil, fax, observaciones, email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Cliente"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE       "& _ 
+                " (Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -17251,14 +17571,14 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaE"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (numeroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP "& _ 
-                "BY Id"
+            Me._commandCollection(3).CommandText = "SELECT        Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (numeroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GRO"& _ 
+                "UP BY Id"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("numeroFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "numeroFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaE"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "       (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
+            Me._commandCollection(4).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
+                "E        (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -17955,7 +18275,7 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Id, idProveedor, numeroFactura, baseImponible, total, contado, fech"& _ 
-                "a, albaran, iva"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaR"
+                "a, albaran, iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaR"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -17970,14 +18290,14 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaR"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (numeroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP "& _ 
-                "BY Id"
+            Me._commandCollection(3).CommandText = "SELECT        Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (numeroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GRO"& _ 
+                "UP BY Id"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("numeroFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "numeroFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaR"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "       (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
+            Me._commandCollection(4).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FacturaR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
+                "E        (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -18564,12 +18884,12 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        Id, descripcion"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Familia"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = ?)"
+            Me._commandCollection(1).CommandText = "SELECT        Id, descripcion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Familia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        MAX(Id) AS id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Familia"&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Id"
+            Me._commandCollection(2).CommandText = "SELECT        MAX(Id) AS id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Familia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Id"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -19339,6 +19659,7 @@ Namespace tallerDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Precio", "Precio")
             tableMapping.ColumnMappings.Add("Total", "Total")
             tableMapping.ColumnMappings.Add("idFactura", "idFactura")
+            tableMapping.ColumnMappings.Add("descuento", "descuento")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -19346,7 +19667,7 @@ Namespace tallerDataSetTableAdapters
                 "L) OR (`idProducto` = ?)) AND ((? = 1 AND `Cantidad` IS NULL) OR (`Cantidad` = ?"& _ 
                 ")) AND ((? = 1 AND `Precio` IS NULL) OR (`Precio` = ?)) AND ((? = 1 AND `Total` "& _ 
                 "IS NULL) OR (`Total` = ?)) AND ((? = 1 AND `idFactura` IS NULL) OR (`idFactura` "& _ 
-                "= ?)))"
+                "= ?)) AND ((? = 1 AND `descuento` IS NULL) OR (`descuento` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -19359,30 +19680,34 @@ Namespace tallerDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `LineaFacturaE` (`idProducto`, `Cantidad`, `Precio`, `Total`, `idFact"& _ 
-                "ura`) VALUES (?, ?, ?, ?, ?)"
+                "ura`, `descuento`) VALUES (?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cantidad", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cantidad", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Precio", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `LineaFacturaE` SET `idProducto` = ?, `Cantidad` = ?, `Precio` = ?, `Total"& _ 
-                "` = ?, `idFactura` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `idProducto` IS NULL) O"& _ 
-                "R (`idProducto` = ?)) AND ((? = 1 AND `Cantidad` IS NULL) OR (`Cantidad` = ?)) A"& _ 
-                "ND ((? = 1 AND `Precio` IS NULL) OR (`Precio` = ?)) AND ((? = 1 AND `Total` IS N"& _ 
-                "ULL) OR (`Total` = ?)) AND ((? = 1 AND `idFactura` IS NULL) OR (`idFactura` = ?)"& _ 
-                "))"
+                "` = ?, `idFactura` = ?, `descuento` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `idPro"& _ 
+                "ducto` IS NULL) OR (`idProducto` = ?)) AND ((? = 1 AND `Cantidad` IS NULL) OR (`"& _ 
+                "Cantidad` = ?)) AND ((? = 1 AND `Precio` IS NULL) OR (`Precio` = ?)) AND ((? = 1"& _ 
+                " AND `Total` IS NULL) OR (`Total` = ?)) AND ((? = 1 AND `idFactura` IS NULL) OR "& _ 
+                "(`idFactura` = ?)) AND ((? = 1 AND `descuento` IS NULL) OR (`descuento` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cantidad", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cantidad", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Precio", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -19394,6 +19719,8 @@ Namespace tallerDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -19409,17 +19736,18 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, idProducto, Cantidad, Precio, Total, idFactura FROM LineaFacturaE"
+            Me._commandCollection(0).CommandText = "SELECT Id, idProducto, Cantidad, Precio, Total, idFactura, descuento FROM LineaFa"& _ 
+                "cturaE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "DELETE FROM LineaFacturaE"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
+            Me._commandCollection(1).CommandText = "DELETE FROM LineaFacturaE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        Id, idProducto, Cantidad, Precio, Total, idFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            "& _ 
-                "LineaFacturaE"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
+            Me._commandCollection(2).CommandText = "SELECT Id, idProducto, Cantidad, Precio, Total, idFactura, descuento FROM LineaFa"& _ 
+                "cturaE WHERE (idFactura = ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -19514,7 +19842,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer), ByVal Original_descuento As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_idProducto.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -19551,6 +19879,13 @@ Namespace tallerDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
+            If (Original_descuento.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_descuento.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -19570,7 +19905,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer), ByVal descuento As Global.System.Nullable(Of Integer)) As Integer
             If (idProducto.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(idProducto.Value,Integer)
             Else
@@ -19596,6 +19931,11 @@ Namespace tallerDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
+            If (descuento.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(descuento.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -19615,7 +19955,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Update(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer), ByVal descuento As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer), ByVal Original_descuento As Global.System.Nullable(Of Integer)) As Integer
             If (idProducto.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(idProducto.Value,Integer)
             Else
@@ -19641,41 +19981,53 @@ Namespace tallerDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Id,Integer)
-            If (Original_idProducto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_idProducto.Value,Integer)
+            If (descuento.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(descuento.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Id,Integer)
+            If (Original_idProducto.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_idProducto.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_Cantidad.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Cantidad.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Cantidad.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_Precio.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Precio.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Precio.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_Total.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Total.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Total.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_idFactura.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_idFactura.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_idFactura.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_descuento.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_descuento.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -19853,6 +20205,7 @@ Namespace tallerDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Precio", "Precio")
             tableMapping.ColumnMappings.Add("Total", "Total")
             tableMapping.ColumnMappings.Add("idFactura", "idFactura")
+            tableMapping.ColumnMappings.Add("descuento", "descuento")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -19860,7 +20213,7 @@ Namespace tallerDataSetTableAdapters
                 "L) OR (`idProducto` = ?)) AND ((? = 1 AND `Cantidad` IS NULL) OR (`Cantidad` = ?"& _ 
                 ")) AND ((? = 1 AND `Precio` IS NULL) OR (`Precio` = ?)) AND ((? = 1 AND `Total` "& _ 
                 "IS NULL) OR (`Total` = ?)) AND ((? = 1 AND `idFactura` IS NULL) OR (`idFactura` "& _ 
-                "= ?)))"
+                "= ?)) AND ((? = 1 AND `descuento` IS NULL) OR (`descuento` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -19873,30 +20226,34 @@ Namespace tallerDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `LineaFacturaR` (`idProducto`, `Cantidad`, `Precio`, `Total`, `idFact"& _ 
-                "ura`) VALUES (?, ?, ?, ?, ?)"
+                "ura`, `descuento`) VALUES (?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cantidad", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cantidad", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Precio", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `LineaFacturaR` SET `idProducto` = ?, `Cantidad` = ?, `Precio` = ?, `Total"& _ 
-                "` = ?, `idFactura` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `idProducto` IS NULL) O"& _ 
-                "R (`idProducto` = ?)) AND ((? = 1 AND `Cantidad` IS NULL) OR (`Cantidad` = ?)) A"& _ 
-                "ND ((? = 1 AND `Precio` IS NULL) OR (`Precio` = ?)) AND ((? = 1 AND `Total` IS N"& _ 
-                "ULL) OR (`Total` = ?)) AND ((? = 1 AND `idFactura` IS NULL) OR (`idFactura` = ?)"& _ 
-                "))"
+                "` = ?, `idFactura` = ?, `descuento` = ? WHERE ((`Id` = ?) AND ((? = 1 AND `idPro"& _ 
+                "ducto` IS NULL) OR (`idProducto` = ?)) AND ((? = 1 AND `Cantidad` IS NULL) OR (`"& _ 
+                "Cantidad` = ?)) AND ((? = 1 AND `Precio` IS NULL) OR (`Precio` = ?)) AND ((? = 1"& _ 
+                " AND `Total` IS NULL) OR (`Total` = ?)) AND ((? = 1 AND `idFactura` IS NULL) OR "& _ 
+                "(`idFactura` = ?)) AND ((? = 1 AND `descuento` IS NULL) OR (`descuento` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cantidad", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cantidad", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Precio", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idProducto", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idProducto", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -19908,6 +20265,8 @@ Namespace tallerDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_descuento", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "descuento", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -19923,17 +20282,18 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, idProducto, Cantidad, Precio, Total, idFactura FROM LineaFacturaR"
+            Me._commandCollection(0).CommandText = "SELECT Id, idProducto, Cantidad, Precio, Total, idFactura, descuento FROM LineaFa"& _ 
+                "cturaR"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "DELETE FROM LineaFacturaR"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
+            Me._commandCollection(1).CommandText = "DELETE FROM LineaFacturaR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        Id, idProducto, Cantidad, Precio, Total, idFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            "& _ 
-                "LineaFacturaR"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
+            Me._commandCollection(2).CommandText = "SELECT Id, idProducto, Cantidad, Precio, Total, idFactura, descuento FROM LineaFa"& _ 
+                "cturaR WHERE (idFactura = ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -20028,7 +20388,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer), ByVal Original_descuento As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_idProducto.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -20065,6 +20425,13 @@ Namespace tallerDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
+            If (Original_descuento.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_descuento.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -20084,7 +20451,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer), ByVal descuento As Global.System.Nullable(Of Integer)) As Integer
             If (idProducto.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(idProducto.Value,Integer)
             Else
@@ -20110,6 +20477,11 @@ Namespace tallerDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
+            If (descuento.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(descuento.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -20129,7 +20501,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Update(ByVal idProducto As Global.System.Nullable(Of Integer), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal), ByVal idFactura As Global.System.Nullable(Of Integer), ByVal descuento As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer, ByVal Original_idProducto As Global.System.Nullable(Of Integer), ByVal Original_Cantidad As Global.System.Nullable(Of Integer), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_Total As Global.System.Nullable(Of Decimal), ByVal Original_idFactura As Global.System.Nullable(Of Integer), ByVal Original_descuento As Global.System.Nullable(Of Integer)) As Integer
             If (idProducto.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(idProducto.Value,Integer)
             Else
@@ -20155,41 +20527,53 @@ Namespace tallerDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Id,Integer)
-            If (Original_idProducto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_idProducto.Value,Integer)
+            If (descuento.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(descuento.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Id,Integer)
+            If (Original_idProducto.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_idProducto.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_Cantidad.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Cantidad.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Cantidad.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_Precio.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Precio.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Precio.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_Total.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Total.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Total.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_idFactura.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_idFactura.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_idFactura.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (Original_descuento.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_descuento.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -20446,8 +20830,8 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        Id, idProducto, Cantidad, Precio, Total, idFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            "& _ 
-                "LineaPresupuesto"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
+            Me._commandCollection(2).CommandText = "SELECT        Id, idProducto, Cantidad, Precio, Total, idFactura"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
+                " LineaPresupuesto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFactura = ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -20995,24 +21379,24 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Id, idCliente, numeroFactura, baseImponible, total, contado, fecha,"& _ 
-                " modeloVehiculo, matricula, km, iva"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Presupuesto"
+                " modeloVehiculo, matricula, km, iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Presupuesto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Id, idCliente, numeroFactura, baseImponible, total, contado, fecha,"& _ 
-                " modeloVehiculo, matricula, km, iva"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Presupuesto where id = ?"
+                " modeloVehiculo, matricula, km, iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Presupuesto where id = ?"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Presupuesto"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (numeroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(10)&"GRO"& _ 
-                "UP BY Id"
+            Me._commandCollection(2).CommandText = "SELECT        Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Presupuesto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (numeroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "GROUP BY Id"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("numeroFactura", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "numeroFactura", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            presupuesto"&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
-                "RE        (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
+            Me._commandCollection(3).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            presupuesto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
+                "HERE        (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -21660,35 +22044,42 @@ Namespace tallerDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(4) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Id, Codigo, Referencia, Descripción, Precio, Observaciones, idFamil"& _ 
-                "ia, Stock, pvp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Producto"
+                "ia, Stock, pvp"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Producto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        Id, Codigo, Referencia, Descripción, Precio, Observaciones, idFamil"& _ 
-                "ia, Stock, pvp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Producto"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = ?)"
+            Me._commandCollection(1).CommandText = "SELECT Codigo, Descripción, Id, Observaciones, Precio, Referencia, Stock, idFamil"& _ 
+                "ia, pvp FROM Producto WHERE (Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        Id, Codigo, Referencia, Descripción, Precio, Observaciones, idFamil"& _ 
-                "ia, Stock, pvp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Producto"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idFamilia = ?)"
+            Me._commandCollection(2).CommandText = "SELECT Codigo, Descripción, Id, Observaciones, Precio, Referencia, Stock, idFamil"& _ 
+                "ia, pvp FROM Producto WHERE (idFamilia = ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFamilia", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFamilia", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT   Id, Codigo, Referencia, Descripción, Precio, Observaciones, idFamilia, S"& _ 
-                "tock, pvp"&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Producto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE stock <= 10"
+            Me._commandCollection(3).CommandText = "SELECT Codigo, Descripción, Id, Observaciones, Precio, Referencia, Stock, idFamil"& _ 
+                "ia, pvp FROM Producto WHERE (Stock <= 10)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        Id, Codigo, Referencia, Descripción, Precio, Observaciones, idFamil"& _ 
-                "ia, Stock, pvp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Producto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE stock <= 10"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND idFamilia = ?"
+            Me._commandCollection(4).CommandText = "SELECT Codigo, Descripción, Id, Observaciones, Precio, Referencia, Stock, idFamil"& _ 
+                "ia, pvp FROM Producto WHERE (Stock <= 10) AND (idFamilia = ?)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFamilia", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFamilia", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(5) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "UPDATE       Producto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                Stock = Stock - ?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = ?"& _ 
+                ")"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Stock", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Stock", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22058,6 +22449,34 @@ Namespace tallerDataSetTableAdapters
                 End If
             End Try
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateStock(ByVal Stock As Global.System.Nullable(Of Integer), ByVal Original_Id As Integer) As Integer
+            Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(5)
+            If (Stock.HasValue = true) Then
+                command.Parameters(0).Value = CType(Stock.Value,Integer)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            command.Parameters(1).Value = CType(Original_Id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
     End Class
     
     '''<summary>
@@ -22333,8 +22752,8 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Id, nombre, cif, domicilio, población, provincia, cp, telefonoFijo,"& _ 
-                " telefonoMovil, fax, observaciones, email, contacto, telefonoContacto"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
-                "      Proveedor"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = ?)"
+                " telefonoMovil, fax, observaciones, email, contacto, telefonoContacto"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     "& _ 
+                "       Proveedor"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -22959,40 +23378,40 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Familia.descripcion AS Familia, Producto.Codigo, Producto.Referenci"& _ 
                 "a, Producto.Descripción, Producto.Precio, Producto.Observaciones, Producto.idFam"& _ 
-                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INNER "& _ 
-                "JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"
+                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INNER"& _ 
+                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Familia.descripcion AS Familia, Producto.Codigo, Producto.Referenci"& _ 
                 "a, Producto.Descripción, Producto.Precio, Producto.Observaciones, Producto.idFam"& _ 
-                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INNE"& _ 
-                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
-                "RE Producto.Stock <= 10"
+                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INN"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
+                "HERE Producto.Stock <= 10"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        Familia.descripcion AS Familia, Producto.Codigo, Producto.Referenci"& _ 
                 "a, Producto.Descripción, Producto.Precio, Producto.Observaciones, Producto.idFam"& _ 
-                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(10)&" FROM            (Producto INNER"& _ 
-                " JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
-                "E Producto.idFamilia = ?"
+                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" FROM            (Producto INNE"& _ 
+                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WH"& _ 
+                "ERE Producto.idFamilia = ?"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFamilia", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFamilia", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT        Familia.descripcion AS Familia, Producto.Codigo, Producto.Referenci"& _ 
                 "a, Producto.Descripción, Producto.Precio, Producto.Observaciones, Producto.idFam"& _ 
-                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INNE"& _ 
-                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"
+                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INN"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT        Familia.descripcion AS Familia, Producto.Codigo, Producto.Referenci"& _ 
                 "a, Producto.Descripción, Producto.Precio, Producto.Observaciones, Producto.idFam"& _ 
-                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INNER "& _ 
-                "JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"& _ 
-                " Producto.Stock <= 10"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Producto.idFamilia = ?"
+                "ilia, Producto.Stock, Producto.pvp, Producto.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Producto INNER"& _ 
+                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE Producto.Stock <= 10"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Producto.idFamilia = ?"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idFamilia", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idFamilia", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -23266,11 +23685,13 @@ Namespace tallerDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "ConsFacturaE"
             tableMapping.ColumnMappings.Add("numeroFactura", "numeroFactura")
-            tableMapping.ColumnMappings.Add("fecha", "fecha")
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("cif", "cif")
             tableMapping.ColumnMappings.Add("email", "email")
             tableMapping.ColumnMappings.Add("Id", "Id")
+            tableMapping.ColumnMappings.Add("baseImponible", "baseImponible")
+            tableMapping.ColumnMappings.Add("total", "total")
+            tableMapping.ColumnMappings.Add("iva", "iva")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -23284,21 +23705,43 @@ Namespace tallerDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        FacturaE.numeroFactura, FacturaE.fecha, Cliente.nombre, Cliente.cif"& _ 
-                ", Cliente.email, FacturaE.Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "           Cliente ON FacturaE.idCliente = Cliente.Id)"
+                ", Cliente.email, FacturaE.Id, FacturaE.baseImponible, FacturaE.total, FacturaE.i"& _ 
+                "va"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cliente ON Fa"& _ 
+                "cturaE.idCliente = Cliente.Id)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        FacturaE.numeroFactura, FacturaE.fecha, Cliente.nombre, Cliente.cif"& _ 
-                ", Cliente.email, FacturaE.Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "           Cliente ON FacturaE.idCliente = Cliente.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaE.Id"& _ 
-                " = ?)"
+                ", Cliente.email, FacturaE.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             Cliente ON FacturaE.idCliente = Cliente.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaE"& _ 
+                ".Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        FacturaE.numeroFactura, FacturaE.fecha, Cliente.nombre, Cliente.cif"& _ 
+                ", Cliente.email, FacturaE.Id, FacturaE.baseImponible, FacturaE.total, FacturaE.i"& _ 
+                "va"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cliente ON Fa"& _ 
+                "cturaE.idCliente = Cliente.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaE.fecha >= ?) AND (FacturaE"& _ 
+                ".fecha <= ?)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        FacturaE.numeroFactura, FacturaE.fecha, Cliente.nombre, Cliente.cif"& _ 
+                ", Cliente.email, FacturaE.Id, FacturaE.baseImponible, FacturaE.total, FacturaE.i"& _ 
+                "va"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cliente ON Fa"& _ 
+                "cturaE.idCliente = Cliente.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FacturaE.fecha >= ? and FacturaE.fecha <= "& _ 
+                "?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Cliente.id= ?"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23329,9 +23772,13 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy(ByVal dataTable As tallerDataSet.ConsFacturaEDataTable, ByVal Id As Integer) As Integer
+        Public Overloads Overridable Function FillBy(ByVal dataTable As tallerDataSet.ConsFacturaEDataTable, ByVal Id As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id,Integer)
+            If (Id.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -23343,9 +23790,103 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBy(ByVal Id As Integer) As tallerDataSet.ConsFacturaEDataTable
+        Public Overloads Overridable Function GetDataBy(ByVal Id As Global.System.Nullable(Of Integer)) As tallerDataSet.ConsFacturaEDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id,Integer)
+            If (Id.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As tallerDataSet.ConsFacturaEDataTable = New tallerDataSet.ConsFacturaEDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByFacturaEFecha(ByVal dataTable As tallerDataSet.ConsFacturaEDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByFacturaEFecha(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date)) As tallerDataSet.ConsFacturaEDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As tallerDataSet.ConsFacturaEDataTable = New tallerDataSet.ConsFacturaEDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByFacturaEfechasCliente(ByVal dataTable As tallerDataSet.ConsFacturaEDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByFacturaEfechasCliente(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Integer) As tallerDataSet.ConsFacturaEDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id,Integer)
             Dim dataTable As tallerDataSet.ConsFacturaEDataTable = New tallerDataSet.ConsFacturaEDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -23481,10 +24022,12 @@ Namespace tallerDataSetTableAdapters
             tableMapping.DataSetTable = "ConsFacturaR"
             tableMapping.ColumnMappings.Add("id", "id")
             tableMapping.ColumnMappings.Add("numeroFactura", "numeroFactura")
-            tableMapping.ColumnMappings.Add("fecha", "fecha")
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("cif", "cif")
             tableMapping.ColumnMappings.Add("email", "email")
+            tableMapping.ColumnMappings.Add("baseImponible", "baseImponible")
+            tableMapping.ColumnMappings.Add("total", "total")
+            tableMapping.ColumnMappings.Add("iva", "iva")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -23502,35 +24045,38 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        FacturaR.Id AS id, FacturaR.numeroFactura, FacturaR.fecha, Proveedo"& _ 
-                "r.nombre, Proveedor.cif, Proveedor.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       Proveedor ON FacturaR.idProveedor = Proveedor.Id)"
+                "r.nombre, Proveedor.cif, Proveedor.email, FacturaR.baseImponible, FacturaR.total"& _ 
+                ", FacturaR.iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         P"& _ 
+                "roveedor ON FacturaR.idProveedor = Proveedor.Id)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        FacturaR.Id AS id, FacturaR.numeroFactura, FacturaR.fecha, Proveedo"& _ 
-                "r.nombre, Proveedor.cif, Proveedor.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       Proveedor ON FacturaR.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
-                "      (FacturaR.Id = ?)"
+                "r.nombre, Proveedor.cif, Proveedor.email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "                         Proveedor ON FacturaR.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
+                "E        (FacturaR.Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        FacturaR.Id AS id, FacturaR.numeroFactura, FacturaR.fecha, Proveedo"& _ 
-                "r.nombre, Proveedor.cif, Proveedor.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       Proveedor ON FacturaR.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "FacturaR.fecha >= ? and FacturaR.fecha <= ?"
+                "r.nombre, Proveedor.cif, Proveedor.email, FacturaR.baseImponible, FacturaR.total"& _ 
+                ", FacturaR.iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         P"& _ 
+                "roveedor ON FacturaR.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaR.fecha >"& _ 
+                "= ?) AND (FacturaR.fecha <= ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT        FacturaR.Id AS id, FacturaR.numeroFactura, FacturaR.fecha, Proveedo"& _ 
-                "r.nombre, Proveedor.cif, Proveedor.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       Proveedor ON FacturaR.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "FacturaR.fecha >= ? and FacturaR.fecha <= ?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Proveedor.id = ?"
+                "r.nombre, Proveedor.cif, Proveedor.email, FacturaR.baseImponible, FacturaR.total"& _ 
+                ", FacturaR.iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         P"& _ 
+                "roveedor ON FacturaR.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaR.fecha >"& _ 
+                "= ?) AND (FacturaR.fecha <= ?) AND (Proveedor.Id = ?)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
@@ -23562,43 +24108,12 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy(ByVal dataTable As tallerDataSet.ConsFacturaRDataTable, ByVal Id As Integer) As Integer
+        Public Overloads Overridable Function FillBy(ByVal dataTable As tallerDataSet.ConsFacturaRDataTable, ByVal Id As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id,Integer)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBy(ByVal Id As Integer) As tallerDataSet.ConsFacturaRDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id,Integer)
-            Dim dataTable As tallerDataSet.ConsFacturaRDataTable = New tallerDataSet.ConsFacturaRDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFacturasRfecha(ByVal dataTable As tallerDataSet.ConsFacturaRDataTable, ByVal fecha As String, ByVal fecha1 As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (fecha Is Nothing) Then
+            If (Id.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id.Value,Integer)
+            Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha,String)
-            End If
-            If (fecha1 Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -23611,17 +24126,12 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByFacturasRfecha(ByVal fecha As String, ByVal fecha1 As String) As tallerDataSet.ConsFacturaRDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (fecha Is Nothing) Then
+        Public Overloads Overridable Function GetDataBy(ByVal Id As Global.System.Nullable(Of Integer)) As tallerDataSet.ConsFacturaRDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Id.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id.Value,Integer)
+            Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha,String)
-            End If
-            If (fecha1 Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1,String)
             End If
             Dim dataTable As tallerDataSet.ConsFacturaRDataTable = New tallerDataSet.ConsFacturaRDataTable()
             Me.Adapter.Fill(dataTable)
@@ -23632,17 +24142,61 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFacturasRfechasProveedor(ByVal dataTable As tallerDataSet.ConsFacturaRDataTable, ByVal fecha As String, ByVal fecha1 As String, ByVal Id As Integer) As Integer
+        Public Overloads Overridable Function FillByFacturasRfecha(ByVal dataTable As tallerDataSet.ConsFacturaRDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByFacturasRfecha(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date)) As tallerDataSet.ConsFacturaRDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As tallerDataSet.ConsFacturaRDataTable = New tallerDataSet.ConsFacturaRDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByFacturasRfechasProveedor(ByVal dataTable As tallerDataSet.ConsFacturaRDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            If (fecha Is Nothing) Then
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha,String)
             End If
-            If (fecha1 Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1,String)
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id,Integer)
             If (Me.ClearBeforeFill = true) Then
@@ -23656,17 +24210,17 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByFacturasRfechasProveedor(ByVal fecha As String, ByVal fecha1 As String, ByVal Id As Integer) As tallerDataSet.ConsFacturaRDataTable
+        Public Overloads Overridable Function GetDataByFacturasRfechasProveedor(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Integer) As tallerDataSet.ConsFacturaRDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            If (fecha Is Nothing) Then
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha,String)
             End If
-            If (fecha1 Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1,String)
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id,Integer)
             Dim dataTable As tallerDataSet.ConsFacturaRDataTable = New tallerDataSet.ConsFacturaRDataTable()
@@ -23904,7 +24458,7 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Id, idProveedor, numeroFactura, identificador, concepto, importe, t"& _ 
-                "otal, iva, fecha"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Patrimonio"
+                "otal, iva, fecha"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Patrimonio"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -23914,8 +24468,8 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Patrimonio"&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
-                "E        (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
+            Me._commandCollection(2).CommandText = "SELECT        MAX(numeroFactura) AS numeroFactura"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Patrimonio"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WH"& _ 
+                "ERE        (DatePart('yyyy', fecha) = DatePart('yyyy', NOW()))"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -24449,16 +25003,16 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Proveedor.nombre, Patrimonio.Id, Patrimonio.numeroFactura, Patrimon"& _ 
                 "io.identificador, Patrimonio.fecha, Patrimonio.concepto, Patrimonio.importe, Pat"& _ 
-                "rimonio.total, Patrimonio.iva"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Patrimonio INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
-                "              Proveedor ON Patrimonio.idProveedor = Proveedor.Id)"
+                "rimonio.total, Patrimonio.iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Patrimonio INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                Proveedor ON Patrimonio.idProveedor = Proveedor.Id)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Proveedor.nombre, Patrimonio.Id, Patrimonio.numeroFactura, Patrimon"& _ 
                 "io.identificador, Patrimonio.fecha, Patrimonio.concepto, Patrimonio.importe, Pat"& _ 
-                "rimonio.total, Patrimonio.iva"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Patrimonio INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
-                "              Proveedor ON Patrimonio.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
-                "Patrimonio.Id = ?)"
+                "rimonio.total, Patrimonio.iva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Patrimonio INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                Proveedor ON Patrimonio.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE      "& _ 
+                "  (Patrimonio.Id = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -24672,8 +25226,8 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Presupuesto.numeroFactura, Presupuesto.fecha, Cliente.nombre, Clien"& _ 
-                "te.cif, Cliente.email, Presupuesto.Id"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Presupuesto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       Cliente ON Presupuesto.idCliente = Cliente.Id)"
+                "te.cif, Cliente.email, Presupuesto.Id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Presupuesto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "                         Cliente ON Presupuesto.idCliente = Cliente.Id)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -24871,31 +25425,31 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Producto.Codigo, Producto.Referencia, Producto.Descripción, LineaFa"& _ 
                 "cturaE.Cantidad, LineaFacturaE.Precio, LineaFacturaE.Total, FacturaE.iva, Factur"& _ 
-                "aE.km, FacturaE.matricula, FacturaE.modeloVehiculo, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         Fa"& _ 
-                "cturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseImp"& _ 
-                "onible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio, "& _ 
-                "Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         Clie"& _ 
-                "nte.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((LineaFa"& _ 
-                "cturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProducto "& _ 
-                "= Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "                FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFacturaE.id"& _ 
-                "Factura = FacturaE.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaE.Id = ?)"
+                "aE.km, FacturaE.matricula, FacturaE.modeloVehiculo, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         F"& _ 
+                "acturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseIm"& _ 
+                "ponible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio,"& _ 
+                " Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cl"& _ 
+                "iente.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((Line"& _ 
+                "aFacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProdu"& _ 
+                "cto = Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"   "& _ 
+                "                      FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFactu"& _ 
+                "raE.idFactura = FacturaE.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaE.Id = ?)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Producto.Codigo, Producto.Referencia, Producto.Descripción, LineaFa"& _ 
                 "cturaE.Cantidad, LineaFacturaE.Precio, LineaFacturaE.Total, FacturaE.iva, Factur"& _ 
-                "aE.km, FacturaE.matricula, FacturaE.modeloVehiculo, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         Fa"& _ 
-                "cturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseImp"& _ 
-                "onible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio, "& _ 
-                "Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         Clie"& _ 
-                "nte.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((LineaFa"& _ 
-                "cturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProducto "& _ 
-                "= Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "                FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFacturaE.id"& _ 
-                "Factura = FacturaE.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&" WHERE        "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FacturaE.fecha >= ? and FacturaE.fecha <="& _ 
-                " ?"
+                "aE.km, FacturaE.matricula, FacturaE.modeloVehiculo, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         F"& _ 
+                "acturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseIm"& _ 
+                "ponible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio,"& _ 
+                " Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cl"& _ 
+                "iente.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((Line"& _ 
+                "aFacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProdu"& _ 
+                "cto = Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"   "& _ 
+                "                      FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFactu"& _ 
+                "raE.idFactura = FacturaE.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" WHERE        "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FacturaE.fecha >= ? and FacturaE.f"& _ 
+                "echa <= ?"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -24903,16 +25457,16 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        Producto.Codigo, Producto.Referencia, Producto.Descripción, LineaFa"& _ 
                 "cturaE.Cantidad, LineaFacturaE.Precio, LineaFacturaE.Total, FacturaE.iva, Factur"& _ 
-                "aE.km, FacturaE.matricula, FacturaE.modeloVehiculo, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         Fa"& _ 
-                "cturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseImp"& _ 
-                "onible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio, "& _ 
-                "Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         Clie"& _ 
-                "nte.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((LineaFa"& _ 
-                "cturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProducto "& _ 
-                "= Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "                FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFacturaE.id"& _ 
-                "Factura = FacturaE.Id) "&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FacturaE.fecha >= ? and FacturaE.fecha <= ?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND "& _ 
-                "Cliente.Id = ?"
+                "aE.km, FacturaE.matricula, FacturaE.modeloVehiculo, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         F"& _ 
+                "acturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseIm"& _ 
+                "ponible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio,"& _ 
+                " Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cl"& _ 
+                "iente.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((Line"& _ 
+                "aFacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProdu"& _ 
+                "cto = Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"   "& _ 
+                "                      FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFactu"& _ 
+                "raE.idFactura = FacturaE.Id) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FacturaE.fecha >= ? and FacturaE.fecha <= "& _ 
+                "?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Cliente.Id = ?"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -25199,43 +25753,43 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Producto.Codigo, Producto.Referencia, Producto.Descripción, LineaFa"& _ 
                 "cturaR.Cantidad, LineaFacturaR.Precio, LineaFacturaR.Total, FacturaR.numeroFactu"& _ 
-                "ra, FacturaR.baseImponible, FacturaR.total AS Expr1, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         F"& _ 
-                "acturaR.contado, FacturaR.fecha, FacturaR.iva, Proveedor.nombre, Proveedor.cif, "& _ 
-                "Proveedor.domicilio, Proveedor.población, Proveedor.provincia, Proveedor.cp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            (((FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         LineaFacturaR ON Fac"& _ 
-                "turaR.Id = LineaFacturaR.idFactura) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Proveedo"& _ 
-                "r ON FacturaR.idProveedor = Proveedor.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Pr"& _ 
-                "oducto ON LineaFacturaR.idProducto = Producto.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaR.Id = ?)"& _ 
-                ""
+                "ra, FacturaR.baseImponible, FacturaR.total AS Expr1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
+                "FacturaR.contado, FacturaR.fecha, FacturaR.iva, Proveedor.nombre, Proveedor.cif,"& _ 
+                " Proveedor.domicilio, Proveedor.población, Proveedor.provincia, Proveedor.cp"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
+                "OM            (((FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         LineaFacturaR ON "& _ 
+                "FacturaR.Id = LineaFacturaR.idFactura) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Prov"& _ 
+                "eedor ON FacturaR.idProveedor = Proveedor.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
+                "   Producto ON LineaFacturaR.idProducto = Producto.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaR.I"& _ 
+                "d = ?)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        Producto.Codigo, Producto.Referencia, Producto.Descripción, LineaFa"& _ 
                 "cturaR.Cantidad, LineaFacturaR.Precio, LineaFacturaR.Total, FacturaR.numeroFactu"& _ 
-                "ra, FacturaR.baseImponible, FacturaR.total AS Expr1, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         F"& _ 
-                "acturaR.contado, FacturaR.fecha, FacturaR.iva, Proveedor.nombre, Proveedor.cif, "& _ 
-                "Proveedor.domicilio, Proveedor.población, Proveedor.provincia, Proveedor.cp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            (((FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         LineaFacturaR ON Fac"& _ 
-                "turaR.Id = LineaFacturaR.idFactura) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Proveedo"& _ 
-                "r ON FacturaR.idProveedor = Proveedor.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Pr"& _ 
-                "oducto ON LineaFacturaR.idProducto = Producto.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&" "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FacturaR.fecha >= ? a"& _ 
-                "nd FacturaR.fecha <= ?"
+                "ra, FacturaR.baseImponible, FacturaR.total AS Expr1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
+                "FacturaR.contado, FacturaR.fecha, FacturaR.iva, Proveedor.nombre, Proveedor.cif,"& _ 
+                " Proveedor.domicilio, Proveedor.población, Proveedor.provincia, Proveedor.cp"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
+                "OM            (((FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         LineaFacturaR ON "& _ 
+                "FacturaR.Id = LineaFacturaR.idFactura) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Prov"& _ 
+                "eedor ON FacturaR.idProveedor = Proveedor.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
+                "   Producto ON LineaFacturaR.idProducto = Producto.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FacturaR.fecha "& _ 
+                ">= ? and FacturaR.fecha <= ?"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        Producto.Codigo, Producto.Referencia, Producto.Descripción, LineaFa"& _ 
                 "cturaR.Cantidad, LineaFacturaR.Precio, LineaFacturaR.Total, FacturaR.numeroFactu"& _ 
-                "ra, FacturaR.baseImponible, FacturaR.total AS Expr1, "&Global.Microsoft.VisualBasic.ChrW(10)&"                         F"& _ 
-                "acturaR.contado, FacturaR.fecha, FacturaR.iva, Proveedor.nombre, Proveedor.cif, "& _ 
-                "Proveedor.domicilio, Proveedor.población, Proveedor.provincia, Proveedor.cp"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "            (((FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         LineaFacturaR ON Fac"& _ 
-                "turaR.Id = LineaFacturaR.idFactura) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Proveedo"& _ 
-                "r ON FacturaR.idProveedor = Proveedor.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                         Pr"& _ 
-                "oducto ON LineaFacturaR.idProducto = Producto.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&" "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FacturaR.fecha >= ? a"& _ 
-                "nd FacturaR.fecha <= ?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Proveedor.Id = ?"
+                "ra, FacturaR.baseImponible, FacturaR.total AS Expr1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
+                "FacturaR.contado, FacturaR.fecha, FacturaR.iva, Proveedor.nombre, Proveedor.cif,"& _ 
+                " Proveedor.domicilio, Proveedor.población, Proveedor.provincia, Proveedor.cp"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
+                "OM            (((FacturaR INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         LineaFacturaR ON "& _ 
+                "FacturaR.Id = LineaFacturaR.idFactura) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Prov"& _ 
+                "eedor ON FacturaR.idProveedor = Proveedor.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
+                "   Producto ON LineaFacturaR.idProducto = Producto.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FacturaR.fecha "& _ 
+                ">= ? and FacturaR.fecha <= ?"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND Proveedor.Id = ?"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha1", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -25272,17 +25826,17 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFacturasRfecha(ByVal dataTable As tallerDataSet.informeFacturaRDataTable, ByVal fecha As String, ByVal fecha1 As String) As Integer
+        Public Overloads Overridable Function FillByFacturasRfecha(ByVal dataTable As tallerDataSet.informeFacturaRDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (fecha Is Nothing) Then
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha,String)
             End If
-            If (fecha1 Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1,String)
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -25295,17 +25849,17 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByFacturasRfecha(ByVal fecha As String, ByVal fecha1 As String) As tallerDataSet.informeFacturaRDataTable
+        Public Overloads Overridable Function GetDataByFacturasRfecha(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date)) As tallerDataSet.informeFacturaRDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (fecha Is Nothing) Then
+            If (fecha.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
+            Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha,String)
             End If
-            If (fecha1 Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            If (fecha1.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1.Value,Date)
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(fecha1,String)
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Dim dataTable As tallerDataSet.informeFacturaRDataTable = New tallerDataSet.informeFacturaRDataTable()
             Me.Adapter.Fill(dataTable)
@@ -25513,10 +26067,10 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Patrimonio.Id, Patrimonio.numeroFactura, Patrimonio.identificador, "& _ 
                 "Patrimonio.concepto, Patrimonio.importe, Patrimonio.total, Patrimonio.iva, Patri"& _ 
-                "monio.fecha, Proveedor.nombre"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Patrimonio INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
-                "              Proveedor ON Patrimonio.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
-                "Patrimonio.identificador = ?) AND (Patrimonio.fecha >= ?) AND (Patrimonio.fecha "& _ 
-                "<= ?)"
+                "monio.fecha, Proveedor.nombre"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (Patrimonio INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                Proveedor ON Patrimonio.idProveedor = Proveedor.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE      "& _ 
+                "  (Patrimonio.identificador = ?) AND (Patrimonio.fecha >= ?) AND (Patrimonio.fec"& _ 
+                "ha <= ?)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("identificador", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "identificador", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("fecha", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fecha", Global.System.Data.DataRowVersion.Current, false, Nothing))

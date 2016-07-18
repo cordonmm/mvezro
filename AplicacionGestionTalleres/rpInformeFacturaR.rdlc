@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.46812cm</Width>
+              <Width>1.84909cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.46812cm</Width>
+              <Width>1.84909cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.96062cm</Width>
+              <Width>5.34159cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.10312cm</Width>
+              <Width>2.48409cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.91792cm</Width>
+              <Width>2.29889cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.88097cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -364,7 +364,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -390,14 +392,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Precio.Value</Value>
+                              <Value>=Fields!Precio.Value &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Precio</rd:DefaultName>
@@ -423,14 +427,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Total.Value</Value>
+                              <Value>=Fields!Total.Value &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Total</rd:DefaultName>
@@ -473,9 +479,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.44979cm</Top>
-        <Left>1.05833cm</Left>
         <Height>1.2cm</Height>
-        <Width>14.41792cm</Width>
+        <Width>16.7037cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -509,7 +514,9 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>nombre</rd:DefaultName>
@@ -538,7 +545,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>domicilio</rd:DefaultName>
@@ -568,7 +577,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>población</rd:DefaultName>
@@ -598,7 +609,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>cp</rd:DefaultName>
@@ -628,7 +641,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>provincia</rd:DefaultName>
@@ -857,7 +872,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Fields!numeroFactura.Value</Value>
+                  <Value>=Fields!numeroFactura.Value &amp;"-"&amp; Year(Fields!fecha.Value)</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                   </Style>
@@ -925,7 +940,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Fields!fecha.Value</Value>
+                  <Value>=FormatDateTime(Fields!fecha.Value, DateFormat.ShortDate)</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1007,11 +1022,13 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!baseImponible.Value</Value>
+                      <Value>=Fields!baseImponible.Value &amp; "€"</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>baseImponible1</rd:DefaultName>
@@ -1037,7 +1054,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!iva.Value</Value>
+                      <Value>=Round(First(Fields!baseImponible.Value, "DataSet1") * (Fields!iva.Value/100),2) &amp; "€"</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1104,7 +1121,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!Expr1.Value</Value>
+                      <Value>=Fields!Expr1.Value &amp; "€"</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>

@@ -364,7 +364,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -390,14 +392,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Round(Fields!Precio.Value,2)</Value>
+                              <Value>=Round(Fields!Precio.Value,2) &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Precio</rd:DefaultName>
@@ -423,14 +427,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Round(Fields!Total.Value,2)</Value>
+                              <Value>=Round(Fields!Total.Value,2) &amp; "€"</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Total</rd:DefaultName>
@@ -509,7 +515,9 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>nombre</rd:DefaultName>
@@ -538,7 +546,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>domicilio</rd:DefaultName>
@@ -568,7 +578,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>población</rd:DefaultName>
@@ -598,7 +610,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>cp</rd:DefaultName>
@@ -628,7 +642,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>provincia</rd:DefaultName>
@@ -857,7 +873,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Sum(Fields!numeroFactura.Value, "DataSet1")</Value>
+                  <Value>=Fields!numeroFactura.Value &amp; "-" &amp; Year(Fields!fecha.value)</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                   </Style>
@@ -1119,7 +1135,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!fecha.Value, "DataSet1")</Value>
+                  <Value>=FormatDateTime(Fields!fecha.Value,DateFormat.ShortDate )</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1201,11 +1217,13 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!baseImponible.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!baseImponible.Value, "DataSet1") &amp; "€"</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>baseImponible1</rd:DefaultName>
@@ -1231,7 +1249,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Round((First(Fields!baseImponible.Value, "DataSet1")*First(Fields!iva.Value, "DataSet1")/100),2)</Value>
+                      <Value>=Round((First(Fields!baseImponible.Value, "DataSet1")*First(Fields!iva.Value, "DataSet1")/100),2) &amp; "€"</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1298,7 +1316,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!totalFactura.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!totalFactura.Value, "DataSet1") &amp; "€"</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>

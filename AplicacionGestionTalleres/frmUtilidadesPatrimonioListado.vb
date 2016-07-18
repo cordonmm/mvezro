@@ -45,6 +45,15 @@
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        Dim frmInformeGastos As frmInformeGastos
+        frmInformeGastos = New frmInformeGastos
+        Dim array As ArrayList
+        array = New ArrayList
+
+        frmInformeGastos.Tag = ConsPatrimonioBindingSource.Filter
+
+        frmInformeGastos.Show()
+
 
     End Sub
 End Class

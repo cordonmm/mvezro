@@ -51,10 +51,10 @@ Partial Class frmFacturacionRecibidas
         Me.btnNuevoArticulo = New MetroFramework.Controls.MetroButton()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
         Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReferenciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripciónDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pvp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConsProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -74,6 +74,7 @@ Partial Class frmFacturacionRecibidas
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConsProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsProductoTableAdapter()
         Me.cmbProveedor = New System.Windows.Forms.ComboBox()
@@ -312,7 +313,7 @@ Partial Class frmFacturacionRecibidas
         Me.dgArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgArticulos.BackgroundColor = System.Drawing.SystemColors.WindowFrame
         Me.dgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FamiliaDataGridViewTextBoxColumn, Me.CodigoDataGridViewTextBoxColumn, Me.ReferenciaDataGridViewTextBoxColumn, Me.DescripciónDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.IdDataGridViewTextBoxColumn})
+        Me.dgArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FamiliaDataGridViewTextBoxColumn, Me.ReferenciaDataGridViewTextBoxColumn, Me.DescripciónDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.pvp, Me.StockDataGridViewTextBoxColumn, Me.IdDataGridViewTextBoxColumn})
         Me.dgArticulos.DataSource = Me.ConsProductoBindingSource
         Me.dgArticulos.Location = New System.Drawing.Point(25, 118)
         Me.dgArticulos.MultiSelect = False
@@ -329,13 +330,6 @@ Partial Class frmFacturacionRecibidas
         Me.FamiliaDataGridViewTextBoxColumn.HeaderText = "Familia"
         Me.FamiliaDataGridViewTextBoxColumn.Name = "FamiliaDataGridViewTextBoxColumn"
         Me.FamiliaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CodigoDataGridViewTextBoxColumn
-        '
-        Me.CodigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo"
-        Me.CodigoDataGridViewTextBoxColumn.HeaderText = "Codigo"
-        Me.CodigoDataGridViewTextBoxColumn.Name = "CodigoDataGridViewTextBoxColumn"
-        Me.CodigoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ReferenciaDataGridViewTextBoxColumn
         '
@@ -357,6 +351,13 @@ Partial Class frmFacturacionRecibidas
         Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
         Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
         Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'pvp
+        '
+        Me.pvp.DataPropertyName = "pvp"
+        Me.pvp.HeaderText = "pvp"
+        Me.pvp.Name = "pvp"
+        Me.pvp.ReadOnly = True
         '
         'StockDataGridViewTextBoxColumn
         '
@@ -475,7 +476,7 @@ Partial Class frmFacturacionRecibidas
         Me.dgLinea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgLinea.BackgroundColor = System.Drawing.SystemColors.WindowFrame
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.cantidad, Me.descripcion, Me.precio, Me.total})
+        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.cantidad, Me.descripcion, Me.precio, Me.Descuento, Me.total})
         Me.dgLinea.Location = New System.Drawing.Point(25, 30)
         Me.dgLinea.MultiSelect = False
         Me.dgLinea.Name = "dgLinea"
@@ -496,6 +497,7 @@ Partial Class frmFacturacionRecibidas
         '
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cantidad.DefaultCellStyle = DataGridViewCellStyle2
+        Me.cantidad.FillWeight = 50.0!
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
@@ -511,6 +513,12 @@ Partial Class frmFacturacionRecibidas
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
         '
         'total
         '
@@ -590,7 +598,8 @@ Partial Class frmFacturacionRecibidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1275, 871)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1275, 780)
         Me.Controls.Add(Me.btnAñadirProveedor)
         Me.Controls.Add(Me.cbContado)
         Me.Controls.Add(Me.btnEliminarLinea)
@@ -619,6 +628,7 @@ Partial Class frmFacturacionRecibidas
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.dtpFechaFac)
+        Me.KeyPreview = True
         Me.Name = "frmFacturacionRecibidas"
         Me.Text = "Facturas Recibidas"
         Me.GroupBox1.ResumeLayout(False)
@@ -672,13 +682,6 @@ Partial Class frmFacturacionRecibidas
     Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents ConsProductoBindingSource As BindingSource
     Friend WithEvents ConsProductoTableAdapter As tallerDataSetTableAdapters.ConsProductoTableAdapter
-    Friend WithEvents FamiliaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ReferenciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescripciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents cmbProveedor As ComboBox
     Friend WithEvents ProveedorBindingSource As BindingSource
     Friend WithEvents ProveedorTableAdapter As tallerDataSetTableAdapters.ProveedorTableAdapter
@@ -689,10 +692,18 @@ Partial Class frmFacturacionRecibidas
     Friend WithEvents cbContado As CheckBox
     Friend WithEvents ProductoTableAdapter As tallerDataSetTableAdapters.ProductoTableAdapter
     Friend WithEvents LineaFacturaRTableAdapter As tallerDataSetTableAdapters.LineaFacturaRTableAdapter
+    Friend WithEvents btnAñadirProveedor As MetroFramework.Controls.MetroButton
+    Friend WithEvents FamiliaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ReferenciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescripciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents pvp As DataGridViewTextBoxColumn
+    Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
-    Friend WithEvents btnAñadirProveedor As MetroFramework.Controls.MetroButton
 End Class

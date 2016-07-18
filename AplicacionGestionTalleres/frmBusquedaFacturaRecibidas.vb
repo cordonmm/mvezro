@@ -1,6 +1,11 @@
 ﻿Public Class frmBusquedaFacturaRecibidas
     Private Sub frmMantenimientoClientesListado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'TallerDataSet.ConsFacturaR' Puede moverla o quitarla según sea necesario.
+        If (bandera) Then
+            Me.ConsFacturaRTableAdapter.Connection.ConnectionString = cadenaB
+        Else
+            Me.ConsFacturaRTableAdapter.Connection.ConnectionString = cadenaA
+        End If
         Me.ConsFacturaRTableAdapter.Fill(Me.TallerDataSet.ConsFacturaR)
 
 
