@@ -140,14 +140,14 @@ Partial Class frmFacturacionEmitidas
         Me.txtVehiculo.Location = New System.Drawing.Point(771, 94)
         Me.txtVehiculo.Name = "txtVehiculo"
         Me.txtVehiculo.Size = New System.Drawing.Size(152, 25)
-        Me.txtVehiculo.TabIndex = 14
+        Me.txtVehiculo.TabIndex = 9
         '
         'txtIVA
         '
         Me.txtIVA.Location = New System.Drawing.Point(158, 94)
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.Size = New System.Drawing.Size(62, 25)
-        Me.txtIVA.TabIndex = 11
+        Me.txtIVA.TabIndex = 1
         '
         'txtFactura
         '
@@ -155,7 +155,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtFactura.Name = "txtFactura"
         Me.txtFactura.ReadOnly = True
         Me.txtFactura.Size = New System.Drawing.Size(112, 25)
-        Me.txtFactura.TabIndex = 10
+        Me.txtFactura.TabIndex = 100
         '
         'dtpFechaFac
         '
@@ -164,7 +164,7 @@ Partial Class frmFacturacionEmitidas
         Me.dtpFechaFac.Location = New System.Drawing.Point(252, 97)
         Me.dtpFechaFac.Name = "dtpFechaFac"
         Me.dtpFechaFac.Size = New System.Drawing.Size(175, 20)
-        Me.dtpFechaFac.TabIndex = 12
+        Me.dtpFechaFac.TabIndex = 3
         Me.dtpFechaFac.TabStop = False
         Me.dtpFechaFac.Value = New Date(2016, 6, 9, 0, 0, 0, 0)
         '
@@ -282,7 +282,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtMatricula.Location = New System.Drawing.Point(939, 94)
         Me.txtMatricula.Name = "txtMatricula"
         Me.txtMatricula.Size = New System.Drawing.Size(144, 25)
-        Me.txtMatricula.TabIndex = 15
+        Me.txtMatricula.TabIndex = 11
         '
         'lblMatricula
         '
@@ -298,7 +298,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtKM.Location = New System.Drawing.Point(1104, 94)
         Me.txtKM.Name = "txtKM"
         Me.txtKM.Size = New System.Drawing.Size(107, 25)
-        Me.txtKM.TabIndex = 16
+        Me.txtKM.TabIndex = 13
         '
         'lblKM
         '
@@ -335,7 +335,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtArticulo.Location = New System.Drawing.Point(25, 61)
         Me.txtArticulo.Name = "txtArticulo"
         Me.txtArticulo.Size = New System.Drawing.Size(466, 25)
-        Me.txtArticulo.TabIndex = 18
+        Me.txtArticulo.TabIndex = 15
         '
         'lblDescuento
         '
@@ -408,7 +408,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnNuevoArticulo.Location = New System.Drawing.Point(497, 61)
         Me.btnNuevoArticulo.Name = "btnNuevoArticulo"
         Me.btnNuevoArticulo.Size = New System.Drawing.Size(28, 25)
-        Me.btnNuevoArticulo.TabIndex = 107
+        Me.btnNuevoArticulo.TabIndex = 17
         Me.btnNuevoArticulo.Text = "+"
         '
         'MetroLabel1
@@ -587,7 +587,7 @@ Partial Class frmFacturacionEmitidas
         Me.cmbCliente.Location = New System.Drawing.Point(450, 95)
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(264, 21)
-        Me.cmbCliente.TabIndex = 13
+        Me.cmbCliente.TabIndex = 5
         Me.cmbCliente.ValueMember = "Id"
         '
         'ClienteBindingSource
@@ -647,7 +647,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnAñadirCliente.Location = New System.Drawing.Point(720, 94)
         Me.btnAñadirCliente.Name = "btnAñadirCliente"
         Me.btnAñadirCliente.Size = New System.Drawing.Size(24, 22)
-        Me.btnAñadirCliente.TabIndex = 108
+        Me.btnAñadirCliente.TabIndex = 7
         Me.btnAñadirCliente.Text = "+"
         '
         'frmFacturacionEmitidas

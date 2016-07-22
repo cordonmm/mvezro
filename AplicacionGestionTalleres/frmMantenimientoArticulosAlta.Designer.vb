@@ -59,7 +59,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.btnCancelar.Location = New System.Drawing.Point(597, 497)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
-        Me.btnCancelar.TabIndex = 74
+        Me.btnCancelar.TabIndex = 17
         Me.btnCancelar.Text = "Cancelar"
         '
         'btnAceptar
@@ -67,7 +67,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.btnAceptar.Location = New System.Drawing.Point(470, 497)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
-        Me.btnAceptar.TabIndex = 73
+        Me.btnAceptar.TabIndex = 15
         Me.btnAceptar.Text = "Aceptar"
         '
         'lblObservaciones
@@ -85,14 +85,14 @@ Partial Class frmMantenimientoArticulosAlta
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(676, 65)
-        Me.txtObservaciones.TabIndex = 72
+        Me.txtObservaciones.TabIndex = 13
         '
         'txtPVP
         '
         Me.txtPVP.Location = New System.Drawing.Point(385, 239)
         Me.txtPVP.Name = "txtPVP"
         Me.txtPVP.Size = New System.Drawing.Size(314, 25)
-        Me.txtPVP.TabIndex = 70
+        Me.txtPVP.TabIndex = 9
         '
         'lblPVP
         '
@@ -132,7 +132,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.txtReferencia.Location = New System.Drawing.Point(479, 99)
         Me.txtReferencia.Name = "txtReferencia"
         Me.txtReferencia.Size = New System.Drawing.Size(220, 25)
-        Me.txtReferencia.TabIndex = 67
+        Me.txtReferencia.TabIndex = 3
         '
         'lblReferencia
         '
@@ -148,7 +148,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.txtDescripcion.Location = New System.Drawing.Point(23, 165)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(676, 25)
-        Me.txtDescripcion.TabIndex = 68
+        Me.txtDescripcion.TabIndex = 5
         '
         'lblDescripcion
         '
@@ -163,6 +163,7 @@ Partial Class frmMantenimientoArticulosAlta
         '
         Me.txtCodigo.Location = New System.Drawing.Point(23, 97)
         Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(112, 25)
         Me.txtCodigo.TabIndex = 65
         '
@@ -180,7 +181,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.txtPrecioCosto.Location = New System.Drawing.Point(23, 239)
         Me.txtPrecioCosto.Name = "txtPrecioCosto"
         Me.txtPrecioCosto.Size = New System.Drawing.Size(313, 25)
-        Me.txtPrecioCosto.TabIndex = 69
+        Me.txtPrecioCosto.TabIndex = 7
         '
         'lblPrecioCosto
         '
@@ -209,7 +210,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.txtStock.Location = New System.Drawing.Point(22, 309)
         Me.txtStock.Name = "txtStock"
         Me.txtStock.Size = New System.Drawing.Size(113, 25)
-        Me.txtStock.TabIndex = 71
+        Me.txtStock.TabIndex = 11
         '
         'ProductoBindingSource
         '
@@ -233,6 +234,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.TableAdapterManager.LineaFacturaETableAdapter = Nothing
         Me.TableAdapterManager.LineaFacturaRTableAdapter = Nothing
         Me.TableAdapterManager.LineaPresupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.PatrimonioTableAdapter = Nothing
         Me.TableAdapterManager.PresupuestoTableAdapter = Nothing
         Me.TableAdapterManager.ProductoTableAdapter = Me.ProductoTableAdapter
         Me.TableAdapterManager.ProveedorTableAdapter = Nothing
@@ -250,7 +252,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.cmbFamilia.Location = New System.Drawing.Point(178, 99)
         Me.cmbFamilia.Name = "cmbFamilia"
         Me.cmbFamilia.Size = New System.Drawing.Size(256, 21)
-        Me.cmbFamilia.TabIndex = 97
+        Me.cmbFamilia.TabIndex = 1
         Me.cmbFamilia.ValueMember = "Id"
         '
         'frmMantenimientoArticulosAlta

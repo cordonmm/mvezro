@@ -61,7 +61,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.btnCancelar.Location = New System.Drawing.Point(711, 459)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
-        Me.btnCancelar.TabIndex = 93
+        Me.btnCancelar.TabIndex = 25
         Me.btnCancelar.Text = "Cancelar"
         '
         'btnAceptar
@@ -69,7 +69,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.btnAceptar.Location = New System.Drawing.Point(711, 419)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
-        Me.btnAceptar.TabIndex = 92
+        Me.btnAceptar.TabIndex = 23
         Me.btnAceptar.Text = "Aceptar"
         '
         'lblObservaciones
@@ -87,14 +87,14 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(641, 65)
-        Me.txtObservaciones.TabIndex = 90
+        Me.txtObservaciones.TabIndex = 21
         '
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(552, 341)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(261, 25)
-        Me.txtEmail.TabIndex = 85
+        Me.txtEmail.TabIndex = 19
         '
         'lblEmail
         '
@@ -137,7 +137,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtCP.Location = New System.Drawing.Point(552, 256)
         Me.txtCP.Name = "txtCP"
         Me.txtCP.Size = New System.Drawing.Size(149, 25)
-        Me.txtCP.TabIndex = 77
+        Me.txtCP.TabIndex = 11
         '
         'lblCP
         '
@@ -171,7 +171,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtDomicilio.Location = New System.Drawing.Point(23, 178)
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(790, 25)
-        Me.txtDomicilio.TabIndex = 71
+        Me.txtDomicilio.TabIndex = 5
         '
         'lblDomicilio
         '
@@ -187,7 +187,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtDNI.Location = New System.Drawing.Point(617, 102)
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(196, 25)
-        Me.txtDNI.TabIndex = 69
+        Me.txtDNI.TabIndex = 3
         '
         'lblDNI
         '
@@ -203,7 +203,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtNombre.Location = New System.Drawing.Point(176, 102)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(409, 25)
-        Me.txtNombre.TabIndex = 67
+        Me.txtNombre.TabIndex = 1
         '
         'lblNombre
         '
@@ -218,6 +218,7 @@ Partial Class frmMantenimientoClientesAlta
         '
         Me.txtCodigo.Location = New System.Drawing.Point(23, 102)
         Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(112, 25)
         Me.txtCodigo.TabIndex = 65
         '
@@ -237,7 +238,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtProvincia.Location = New System.Drawing.Point(307, 256)
         Me.txtProvincia.Name = "txtProvincia"
         Me.txtProvincia.Size = New System.Drawing.Size(164, 20)
-        Me.txtProvincia.TabIndex = 73
+        Me.txtProvincia.TabIndex = 9
         '
         'txtPoblacion
         '
@@ -246,7 +247,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtPoblacion.Location = New System.Drawing.Point(23, 256)
         Me.txtPoblacion.Name = "txtPoblacion"
         Me.txtPoblacion.Size = New System.Drawing.Size(237, 20)
-        Me.txtPoblacion.TabIndex = 72
+        Me.txtPoblacion.TabIndex = 7
         '
         'txtTlfFijo
         '
@@ -255,7 +256,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtTlfFijo.Mask = "000-000-000"
         Me.txtTlfFijo.Name = "txtTlfFijo"
         Me.txtTlfFijo.Size = New System.Drawing.Size(95, 23)
-        Me.txtTlfFijo.TabIndex = 82
+        Me.txtTlfFijo.TabIndex = 13
         Me.txtTlfFijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTlfFijo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -266,7 +267,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtTlfMovil.Mask = "000-000-000"
         Me.txtTlfMovil.Name = "txtTlfMovil"
         Me.txtTlfMovil.Size = New System.Drawing.Size(95, 23)
-        Me.txtTlfMovil.TabIndex = 83
+        Me.txtTlfMovil.TabIndex = 15
         Me.txtTlfMovil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTlfMovil.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -277,7 +278,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.txtFax.Mask = "000-000-000"
         Me.txtFax.Name = "txtFax"
         Me.txtFax.Size = New System.Drawing.Size(95, 23)
-        Me.txtFax.TabIndex = 94
+        Me.txtFax.TabIndex = 17
         Me.txtFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtFax.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '

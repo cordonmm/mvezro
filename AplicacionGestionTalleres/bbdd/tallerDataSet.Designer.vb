@@ -7875,6 +7875,8 @@ Partial Public Class tallerDataSet
         
         Private columntotalFactura As Global.System.Data.DataColumn
         
+        Private columndescripcionFamilia As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -8103,6 +8105,14 @@ Partial Public Class tallerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property descripcionFamiliaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndescripcionFamilia
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -8163,9 +8173,10 @@ Partial Public Class tallerDataSet
                     ByVal telefonoFijo As Integer,  _
                     ByVal telefonoMovil As Integer,  _
                     ByVal email As String,  _
-                    ByVal totalFactura As String) As informeFacturaERow
+                    ByVal totalFactura As String,  _
+                    ByVal descripcionFamilia As String) As informeFacturaERow
             Dim rowinformeFacturaERow As informeFacturaERow = CType(Me.NewRow,informeFacturaERow)
-            Dim columnValuesArray() As Object = New Object() {Codigo, Referencia, Descripción, Cantidad, Precio, Total, iva, km, matricula, modeloVehiculo, fecha, contado, baseImponible, numeroFactura, nombre, cif, domicilio, población, provincia, cp, telefonoFijo, telefonoMovil, email, totalFactura}
+            Dim columnValuesArray() As Object = New Object() {Codigo, Referencia, Descripción, Cantidad, Precio, Total, iva, km, matricula, modeloVehiculo, fecha, contado, baseImponible, numeroFactura, nombre, cif, domicilio, población, provincia, cp, telefonoFijo, telefonoMovil, email, totalFactura, descripcionFamilia}
             rowinformeFacturaERow.ItemArray = columnValuesArray
             Me.Rows.Add(rowinformeFacturaERow)
             Return rowinformeFacturaERow
@@ -8212,6 +8223,7 @@ Partial Public Class tallerDataSet
             Me.columntelefonoMovil = MyBase.Columns("telefonoMovil")
             Me.columnemail = MyBase.Columns("email")
             Me.columntotalFactura = MyBase.Columns("totalFactura")
+            Me.columndescripcionFamilia = MyBase.Columns("descripcionFamilia")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8265,6 +8277,8 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columnemail)
             Me.columntotalFactura = New Global.System.Data.DataColumn("totalFactura", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntotalFactura)
+            Me.columndescripcionFamilia = New Global.System.Data.DataColumn("descripcionFamilia", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndescripcionFamilia)
             Me.columnCodigo.MaxLength = 536870910
             Me.columnReferencia.MaxLength = 536870910
             Me.columnDescripción.MaxLength = 536870910
@@ -8278,6 +8292,7 @@ Partial Public Class tallerDataSet
             Me.columnprovincia.MaxLength = 255
             Me.columnemail.MaxLength = 255
             Me.columntotalFactura.MaxLength = 255
+            Me.columndescripcionFamilia.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13984,6 +13999,22 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property descripcionFamilia() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableinformeFacturaE.descripcionFamiliaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'descripcionFamilia' de la tabla 'informeFacturaE' es DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableinformeFacturaE.descripcionFamiliaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCodigoNull() As Boolean
             Return Me.IsNull(Me.tableinformeFacturaE.CodigoColumn)
         End Function
@@ -14268,6 +14299,18 @@ Partial Public Class tallerDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SettotalFacturaNull()
             Me(Me.tableinformeFacturaE.totalFacturaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsdescripcionFamiliaNull() As Boolean
+            Return Me.IsNull(Me.tableinformeFacturaE.descripcionFamiliaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetdescripcionFamiliaNull()
+            Me(Me.tableinformeFacturaE.descripcionFamiliaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -25407,6 +25450,7 @@ Namespace tallerDataSetTableAdapters
             tableMapping.ColumnMappings.Add("telefonoMovil", "telefonoMovil")
             tableMapping.ColumnMappings.Add("email", "email")
             tableMapping.ColumnMappings.Add("totalFactura", "totalFactura")
+            tableMapping.ColumnMappings.Add("descripcionFamilia", "descripcionFamilia")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -25429,11 +25473,13 @@ Namespace tallerDataSetTableAdapters
                 "acturaE.fecha, FacturaE.contado, FacturaE.total AS totalFactura, FacturaE.baseIm"& _ 
                 "ponible, FacturaE.numeroFactura, Cliente.nombre, Cliente.cif, Cliente.domicilio,"& _ 
                 " Cliente.población, Cliente.provincia, Cliente.cp, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cl"& _ 
-                "iente.telefonoFijo, Cliente.telefonoMovil, Cliente.email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ((Line"& _ 
-                "aFacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON LineaFacturaE.idProdu"& _ 
-                "cto = Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"   "& _ 
-                "                      FacturaE ON Cliente.Id = FacturaE.idCliente) ON LineaFactu"& _ 
-                "raE.idFactura = FacturaE.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (FacturaE.Id = ?)"
+                "iente.telefonoFijo, Cliente.telefonoMovil, Cliente.email, Familia.descripcion AS"& _ 
+                " descripcionFamilia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (((LineaFacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
+                "           Producto ON LineaFacturaE.idProducto = Producto.Id) INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                    (Cliente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         FacturaE ON Cl"& _ 
+                "iente.Id = FacturaE.idCliente) ON LineaFacturaE.idFactura = FacturaE.Id) INNER J"& _ 
+                "OIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Familia ON Producto.idFamilia = Familia.Id)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"& _ 
+                "        (FacturaE.Id = ?)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()

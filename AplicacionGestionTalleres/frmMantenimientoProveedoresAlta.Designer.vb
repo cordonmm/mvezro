@@ -67,7 +67,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(112, 25)
-        Me.txtCodigo.TabIndex = 10
+        Me.txtCodigo.TabIndex = 100
         '
         'lblCodigo
         '
@@ -83,7 +83,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtNombre.Location = New System.Drawing.Point(176, 102)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(409, 25)
-        Me.txtNombre.TabIndex = 11
+        Me.txtNombre.TabIndex = 1
         '
         'lblNombre
         '
@@ -99,7 +99,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtCIF.Location = New System.Drawing.Point(617, 102)
         Me.txtCIF.Name = "txtCIF"
         Me.txtCIF.Size = New System.Drawing.Size(196, 25)
-        Me.txtCIF.TabIndex = 12
+        Me.txtCIF.TabIndex = 3
         '
         'lblCIF
         '
@@ -115,7 +115,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtDomicilio.Location = New System.Drawing.Point(23, 178)
         Me.txtDomicilio.Name = "txtDomicilio"
         Me.txtDomicilio.Size = New System.Drawing.Size(790, 25)
-        Me.txtDomicilio.TabIndex = 13
+        Me.txtDomicilio.TabIndex = 5
         '
         'lblDomicilio
         '
@@ -149,7 +149,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtCP.Location = New System.Drawing.Point(617, 256)
         Me.txtCP.Name = "txtCP"
         Me.txtCP.Size = New System.Drawing.Size(196, 25)
-        Me.txtCP.TabIndex = 16
+        Me.txtCP.TabIndex = 11
         '
         'lblCP
         '
@@ -250,7 +250,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.btnCancelar.Location = New System.Drawing.Point(711, 528)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
-        Me.btnCancelar.TabIndex = 63
+        Me.btnCancelar.TabIndex = 27
         Me.btnCancelar.Text = "Cancelar"
         '
         'btnAceptar
@@ -258,7 +258,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.btnAceptar.Location = New System.Drawing.Point(711, 488)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
-        Me.btnAceptar.TabIndex = 62
+        Me.btnAceptar.TabIndex = 25
         Me.btnAceptar.Text = "Aceptar"
         '
         'txtPoblacion
@@ -266,14 +266,14 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtPoblacion.Location = New System.Drawing.Point(23, 256)
         Me.txtPoblacion.Name = "txtPoblacion"
         Me.txtPoblacion.Size = New System.Drawing.Size(230, 20)
-        Me.txtPoblacion.TabIndex = 14
+        Me.txtPoblacion.TabIndex = 7
         '
         'txtProvincia
         '
         Me.txtProvincia.Location = New System.Drawing.Point(307, 256)
         Me.txtProvincia.Name = "txtProvincia"
         Me.txtProvincia.Size = New System.Drawing.Size(230, 20)
-        Me.txtProvincia.TabIndex = 15
+        Me.txtProvincia.TabIndex = 9
         '
         'txtTlfFijo
         '
@@ -282,7 +282,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtTlfFijo.Mask = "000-000-000"
         Me.txtTlfFijo.Name = "txtTlfFijo"
         Me.txtTlfFijo.Size = New System.Drawing.Size(95, 23)
-        Me.txtTlfFijo.TabIndex = 17
+        Me.txtTlfFijo.TabIndex = 13
         Me.txtTlfFijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTlfFijo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -293,7 +293,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtTlfMovil.Mask = "000-000-000"
         Me.txtTlfMovil.Name = "txtTlfMovil"
         Me.txtTlfMovil.Size = New System.Drawing.Size(95, 23)
-        Me.txtTlfMovil.TabIndex = 18
+        Me.txtTlfMovil.TabIndex = 15
         Me.txtTlfMovil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTlfMovil.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -304,7 +304,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.txtFax.Mask = "000-000-000"
         Me.txtFax.Name = "txtFax"
         Me.txtFax.Size = New System.Drawing.Size(95, 23)
-        Me.txtFax.TabIndex = 19
+        Me.txtFax.TabIndex = 17
         Me.txtFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtFax.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
@@ -335,6 +335,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.TableAdapterManager.LineaFacturaETableAdapter = Nothing
         Me.TableAdapterManager.LineaFacturaRTableAdapter = Nothing
         Me.TableAdapterManager.LineaPresupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.PatrimonioTableAdapter = Nothing
         Me.TableAdapterManager.PresupuestoTableAdapter = Nothing
         Me.TableAdapterManager.ProductoTableAdapter = Nothing
         Me.TableAdapterManager.ProveedorTableAdapter = Me.ProveedorTableAdapter

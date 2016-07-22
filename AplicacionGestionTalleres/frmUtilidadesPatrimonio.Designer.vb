@@ -128,7 +128,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.btnImprimir.Location = New System.Drawing.Point(604, 201)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(102, 25)
-        Me.btnImprimir.TabIndex = 117
+        Me.btnImprimir.TabIndex = 17
         Me.btnImprimir.Text = "Imprimir"
         '
         'btnCancelar
@@ -136,7 +136,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.btnCancelar.Location = New System.Drawing.Point(823, 201)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
-        Me.btnCancelar.TabIndex = 115
+        Me.btnCancelar.TabIndex = 21
         Me.btnCancelar.Text = "Cancelar"
         '
         'btnAceptar
@@ -144,7 +144,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.btnAceptar.Location = New System.Drawing.Point(712, 201)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
-        Me.btnAceptar.TabIndex = 114
+        Me.btnAceptar.TabIndex = 18
         Me.btnAceptar.Text = "Aceptar"
         '
         'txtIVA
@@ -152,14 +152,15 @@ Partial Class frmUtilidadesPatrimonio
         Me.txtIVA.Location = New System.Drawing.Point(162, 90)
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.Size = New System.Drawing.Size(68, 25)
-        Me.txtIVA.TabIndex = 4
+        Me.txtIVA.TabIndex = 1
         '
         'txtFactura
         '
         Me.txtFactura.Location = New System.Drawing.Point(23, 90)
         Me.txtFactura.Name = "txtFactura"
+        Me.txtFactura.ReadOnly = True
         Me.txtFactura.Size = New System.Drawing.Size(112, 25)
-        Me.txtFactura.TabIndex = 2
+        Me.txtFactura.TabIndex = 100
         '
         'dtpFechaFac
         '
@@ -288,7 +289,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.cmbIdentificador.Location = New System.Drawing.Point(442, 89)
         Me.cmbIdentificador.Name = "cmbIdentificador"
         Me.cmbIdentificador.Size = New System.Drawing.Size(162, 21)
-        Me.cmbIdentificador.TabIndex = 135
+        Me.cmbIdentificador.TabIndex = 9
         '
         'frmUtilidadesPatrimonio
         '

@@ -520,9 +520,9 @@ Partial Class frmPresupuesto
         Me.lblTotalFactura.AutoSize = True
         Me.lblTotalFactura.Location = New System.Drawing.Point(402, 815)
         Me.lblTotalFactura.Name = "lblTotalFactura"
-        Me.lblTotalFactura.Size = New System.Drawing.Size(82, 19)
+        Me.lblTotalFactura.Size = New System.Drawing.Size(111, 19)
         Me.lblTotalFactura.TabIndex = 71
-        Me.lblTotalFactura.Text = "Total Factura"
+        Me.lblTotalFactura.Text = "Total Presupuesto"
         '
         'MetroLabel8
         '

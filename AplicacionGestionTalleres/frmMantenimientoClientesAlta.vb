@@ -62,6 +62,11 @@ Public Class frmMantenimientoClientesAlta
                     If (txtTlfFijo.Text = "") Then
                         txtTlfFijo.Text = 0
                     End If
+
+                    If (txtTlfMovil.Text = "") Then
+                        txtTlfMovil.Text = 0
+                    End If
+
                     If txtFax.Text = "" Then
                         txtFax.Text = 0
 
@@ -110,17 +115,20 @@ Public Class frmMantenimientoClientesAlta
         If (txtNombre.Text = "") Then
             res &= "El nombre del cliente es obligatorio" & vbCrLf
         End If
-        If (txtTlfMovil.Text = "") Then
-            res &= "El teléfono del cliente es obligatorio" & vbCrLf
+
+        'QUITAMOS LA OBLIGATORIEDAD DEL TELÉFONO MOVIL
+        'If (txtTlfMovil.Text = "") Then
+        'res &= "El teléfono del cliente es obligatorio" & vbCrLf
+        'End If
+
+        If (txtEmail.Text <> "") Then
+            Dim address As MailAddress
+            Try
+                address = New MailAddress(txtEmail.Text)
+            Catch ex As Exception
+                res &= "Debe introducir un correo válido" & vbCrLf
+            End Try
         End If
-        Dim address As MailAddress
-        Try
-            address = New MailAddress(txtEmail.Text)
-        Catch ex As Exception
-            res &= "Debe introducir un correo válido" & vbCrLf
-        End Try
-
-
 
         Return res
     End Function

@@ -67,6 +67,7 @@ Partial Class frmMantenimientoFamilias
         '
         Me.txtCode.Location = New System.Drawing.Point(142, 40)
         Me.txtCode.Name = "txtCode"
+        Me.txtCode.ReadOnly = True
         Me.txtCode.Size = New System.Drawing.Size(205, 23)
         Me.txtCode.TabIndex = 2
         '

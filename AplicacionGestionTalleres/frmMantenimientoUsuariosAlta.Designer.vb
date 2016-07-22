@@ -36,6 +36,7 @@ Partial Class frmMantenimientoUsuariosAlta
         '
         Me.MetroTextBox1.Location = New System.Drawing.Point(164, 75)
         Me.MetroTextBox1.Name = "MetroTextBox1"
+        Me.MetroTextBox1.ReadOnly = True
         Me.MetroTextBox1.Size = New System.Drawing.Size(214, 25)
         Me.MetroTextBox1.TabIndex = 84
         '
@@ -53,7 +54,7 @@ Partial Class frmMantenimientoUsuariosAlta
         Me.MetroTextBox2.Location = New System.Drawing.Point(164, 118)
         Me.MetroTextBox2.Name = "MetroTextBox2"
         Me.MetroTextBox2.Size = New System.Drawing.Size(214, 25)
-        Me.MetroTextBox2.TabIndex = 86
+        Me.MetroTextBox2.TabIndex = 1
         '
         'MetroLabel2
         '
@@ -69,7 +70,7 @@ Partial Class frmMantenimientoUsuariosAlta
         Me.MetroTextBox3.Location = New System.Drawing.Point(164, 162)
         Me.MetroTextBox3.Name = "MetroTextBox3"
         Me.MetroTextBox3.Size = New System.Drawing.Size(214, 25)
-        Me.MetroTextBox3.TabIndex = 88
+        Me.MetroTextBox3.TabIndex = 3
         '
         'MetroLabel3
         '
@@ -85,7 +86,7 @@ Partial Class frmMantenimientoUsuariosAlta
         Me.MetroButton2.Location = New System.Drawing.Point(276, 213)
         Me.MetroButton2.Name = "MetroButton2"
         Me.MetroButton2.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton2.TabIndex = 93
+        Me.MetroButton2.TabIndex = 7
         Me.MetroButton2.Text = "Cancelar"
         '
         'MetroButton1
@@ -93,7 +94,7 @@ Partial Class frmMantenimientoUsuariosAlta
         Me.MetroButton1.Location = New System.Drawing.Point(164, 213)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(102, 25)
-        Me.MetroButton1.TabIndex = 92
+        Me.MetroButton1.TabIndex = 5
         Me.MetroButton1.Text = "Guardar"
         '
         'frmMantenimientoUsuariosAlta
