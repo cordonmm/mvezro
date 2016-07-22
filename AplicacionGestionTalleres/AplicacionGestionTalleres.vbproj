@@ -60,7 +60,7 @@
     <OptionStrict>Off</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
+    <OptionInfer>Off</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>
@@ -117,6 +117,7 @@
     <Compile Include="bbdd\tallerDataSet.vb">
       <DependentUpon>tallerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Impresion.vb" />
     <Compile Include="frmInformeListadoFacturasE.Designer.vb">
       <DependentUpon>frmInformeListadoFacturasE.vb</DependentUpon>
     </Compile>
