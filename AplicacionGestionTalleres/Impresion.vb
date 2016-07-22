@@ -65,6 +65,7 @@ Public Class Impresion
         Dim instance As New Printing.PrinterSettings
         Dim impresora As String = instance.PrinterName
         'Const printerName As String = Impresora
+        Export(report)
 
         If m_streams Is Nothing Or m_streams.Count = 0 Then
 
