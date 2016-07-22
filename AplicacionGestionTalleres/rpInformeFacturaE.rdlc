@@ -264,6 +264,38 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="ReportParameter">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ReportParameter.Value</Value>
+                <Style>
+                  <FontSize>25pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ReportParameter</rd:DefaultName>
+        <Top>6.52229cm</Top>
+        <Left>6.64359cm</Left>
+        <Height>1.18208cm</Height>
+        <Width>7.99134cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>4.41875in</Height>
     <Style />
@@ -830,7 +862,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>totalFactura1</rd:DefaultName>
-          <Top>0.24722cm</Top>
+          <Top>0.56472cm</Top>
           <Left>15.1562cm</Left>
           <Height>0.6cm</Height>
           <Width>3.53188cm</Width>
@@ -859,7 +891,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>iva1</rd:DefaultName>
-          <Top>0.24722cm</Top>
+          <Top>0.56472cm</Top>
           <Left>7.45273cm</Left>
           <Height>0.6cm</Height>
           <Width>1.25046cm</Width>
@@ -891,7 +923,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>baseImponible1</rd:DefaultName>
-          <Top>0.2825cm</Top>
+          <Top>0.6cm</Top>
           <Left>1.89773cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
@@ -1049,7 +1081,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>iva</rd:DefaultName>
-          <Top>0.24722cm</Top>
+          <Top>0.56472cm</Top>
           <Left>5.57625cm</Left>
           <Height>0.6cm</Height>
           <Width>0.89014cm</Width>
@@ -1081,7 +1113,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.24722cm</Top>
+          <Top>0.56472cm</Top>
           <Left>6.49203cm</Left>
           <Height>0.6cm</Height>
           <Width>0.89014cm</Width>
@@ -1240,6 +1272,13 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ReportParameter">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>7032bad4-55ee-4265-a047-b7ac2ce74732</rd:ReportID>
 </Report>

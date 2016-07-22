@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Printing
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmInformeFacturaE
     Private Sub frmInformeFacturaE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,6 +20,18 @@ Public Class frmInformeFacturaE
         pg.Margins.Bottom = 40
         ReportViewer1.SetPageSettings(pg)
 
+
+
+        Dim imprimir As Impresion = New Impresion()
+        Dim imprimir2 As Impresion = New Impresion()
+
+        Me.ReportViewer1.LocalReport.SetParameters(New ReportParameter("ReportParameter", ""))
+
+        imprimir.Print(Me.ReportViewer1.LocalReport)
+
+        Me.ReportViewer1.LocalReport.SetParameters(New ReportParameter("ReportParameter", "COPIA"))
+
+        imprimir2.Print(Me.ReportViewer1.LocalReport)
 
 
         Me.ReportViewer1.RefreshReport()
