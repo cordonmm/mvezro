@@ -5,6 +5,7 @@ Imports System.Text
 Imports Microsoft.Reporting.WinForms
 
 Public Class Impresion
+    Implements IDisposable
 
 
     Private m_currentPageIndex As Integer
@@ -73,11 +74,11 @@ Public Class Impresion
 
         Dim printDoc As New PrintDocument()
 
-        printDoc.PrinterSettings.PrinterName = Impresora
+        printDoc.PrinterSettings.PrinterName = impresora
 
         If Not printDoc.PrinterSettings.IsValid Then
 
-            Dim msg As String = String.Format("No se ha podido encontrar la impresora", Impresora)
+            Dim msg As String = String.Format("No se ha podido encontrar la impresora", impresora)
 
             MessageBox.Show(msg)
 
@@ -91,6 +92,15 @@ Public Class Impresion
 
     End Sub
 
+    Public Sub Dispose() Implements IDisposable.Dispose
+        If (m_streams IsNot Nothing) Then
+
+            For Each stream As Stream In m_streams
+                stream.Close()
+            Next
 
 
+        End If
+
+    End Sub
 End Class
