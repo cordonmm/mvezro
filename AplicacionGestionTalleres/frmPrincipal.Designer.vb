@@ -76,7 +76,7 @@ Partial Class Form1
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(20, 60)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1201, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(1327, 24)
         Me.MenuStrip.TabIndex = 0
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -335,7 +335,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(453, 116)
+        Me.Label1.Location = New System.Drawing.Point(512, 258)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(366, 55)
         Me.Label1.TabIndex = 1
@@ -345,7 +345,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(375, 189)
+        Me.Label2.Location = New System.Drawing.Point(420, 328)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(516, 31)
         Me.Label2.TabIndex = 2
@@ -354,9 +354,9 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 279)
+        Me.PictureBox1.Location = New System.Drawing.Point(-5, 576)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1238, 177)
+        Me.PictureBox1.Size = New System.Drawing.Size(1369, 177)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
@@ -366,7 +366,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
-        Me.ClientSize = New System.Drawing.Size(1241, 458)
+        Me.ClientSize = New System.Drawing.Size(1367, 754)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
