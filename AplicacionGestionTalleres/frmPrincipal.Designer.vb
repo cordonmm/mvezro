@@ -66,7 +66,9 @@ Partial Class Form1
         Me.AaaaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -333,7 +335,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(452, 182)
+        Me.Label1.Location = New System.Drawing.Point(453, 116)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(366, 55)
         Me.Label1.TabIndex = 1
@@ -343,11 +345,21 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(374, 255)
+        Me.Label2.Location = New System.Drawing.Point(375, 189)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(516, 31)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "SERVICIO INTEGRAL DEL AUTOMÓVIL"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(1, 279)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1238, 177)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
@@ -355,6 +367,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(1241, 458)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip)
@@ -365,6 +378,7 @@ Partial Class Form1
         Me.Text = "Gestión de Taller M. Vezro"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -412,4 +426,5 @@ Partial Class Form1
     Friend WithEvents AaaaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

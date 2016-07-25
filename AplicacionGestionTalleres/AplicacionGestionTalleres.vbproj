@@ -523,6 +523,7 @@
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\ico-car-thug.ico" />
     <None Include="Resources\ico-car.ico" />
+    <Content Include="src\banner-mvezro.jpg" />
     <Content Include="taller.ico" />
     <Content Include="src\logoo.png" />
   </ItemGroup>
