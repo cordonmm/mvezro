@@ -23,15 +23,18 @@ Public Class frmInformeFacturaE
 
 
         Dim imprimir As Impresion = New Impresion()
-        Dim imprimir2 As Impresion = New Impresion()
 
         Me.ReportViewer1.LocalReport.SetParameters(New ReportParameter("ReportParameter", ""))
+        Using cls As New Impresion
+            cls.Print(Me.ReportViewer1.LocalReport)
+        End Using
 
-        imprimir.Print(Me.ReportViewer1.LocalReport)
 
         Me.ReportViewer1.LocalReport.SetParameters(New ReportParameter("ReportParameter", "COPIA"))
 
-        imprimir2.Print(Me.ReportViewer1.LocalReport)
+        Using imprimir2 As New Impresion
+            imprimir2.Print(Me.ReportViewer1.LocalReport)
+        End Using
 
 
         Me.ReportViewer1.RefreshReport()
