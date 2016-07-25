@@ -51,7 +51,7 @@ Partial Class frmInformeListadoFacturasE
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeListadoFacturasE.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(24, 64)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(681, 504)
+        Me.ReportViewer1.Size = New System.Drawing.Size(764, 504)
         Me.ReportViewer1.TabIndex = 0
         '
         'ConsFacturaETableAdapter
@@ -62,7 +62,7 @@ Partial Class frmInformeListadoFacturasE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(728, 591)
+        Me.ClientSize = New System.Drawing.Size(811, 591)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmInformeListadoFacturasE"

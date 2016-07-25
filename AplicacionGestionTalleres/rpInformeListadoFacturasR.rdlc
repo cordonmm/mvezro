@@ -6,25 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.04301cm</Width>
+              <Width>1.43988cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.22718cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.40638cm</Width>
+              <Width>4.46856cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.46531cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.25906cm</Width>
+              <Width>2.70715cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.17798cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.30114cm</Width>
+              <Width>1.61864cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.46531cm</Width>
@@ -180,42 +177,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Email</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#7292cc</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox11">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -223,7 +184,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Base Imp.</Value>
+                              <Value>B.I.</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -461,39 +422,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="email">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!email.Value</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>email</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="baseImponible">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -608,7 +536,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -622,9 +549,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.3175cm</Top>
+        <Top>0.60854cm</Top>
+        <Left>0.55178cm</Left>
         <Height>1.2cm</Height>
-        <Width>18.34537cm</Width>
+        <Width>17.39203cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -632,13 +560,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.95in</Height>
+    <Height>4.43958in</Height>
     <Style />
   </Body>
-  <Width>7.22259in</Width>
+  <Width>7.31088in</Width>
   <Page>
     <PageHeader>
-      <Height>4.68313cm</Height>
+      <Height>4.8948cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -663,8 +591,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
-          <Top>0.19264cm</Top>
-          <Left>0.83896cm</Left>
+          <Top>0.34683cm</Top>
+          <Left>0.55178cm</Left>
           <Height>0.86458cm</Height>
           <Width>7.73875cm</Width>
           <Style>
@@ -692,8 +620,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>1.23361cm</Top>
-          <Left>0.83896cm</Left>
+          <Top>1.3878cm</Top>
+          <Left>0.55178cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>1</ZIndex>
@@ -722,8 +650,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>2.01cm</Top>
-          <Left>0.83896cm</Left>
+          <Top>2.16419cm</Top>
+          <Left>0.55178cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>2</ZIndex>
@@ -752,8 +680,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>2.78639cm</Top>
-          <Left>0.83896cm</Left>
+          <Top>2.94058cm</Top>
+          <Left>0.55178cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>3</ZIndex>
@@ -782,11 +710,44 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>3.56278cm</Top>
-          <Left>0.83896cm</Left>
+          <Top>3.71697cm</Top>
+          <Left>0.55178cm</Left>
           <Height>0.6cm</Height>
           <Width>6.12479cm</Width>
           <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Listado de facturas recibidas</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>3.71697cm</Top>
+          <Left>7.61522cm</Left>
+          <Height>1.17783cm</Height>
+          <Width>10.95442cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -808,37 +769,6 @@
       <Height>2.48708cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="PageNumber">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!PageNumber</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.7112cm</Top>
-          <Left>15.16293cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

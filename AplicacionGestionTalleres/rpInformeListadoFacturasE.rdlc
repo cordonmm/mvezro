@@ -12,7 +12,7 @@
               <Width>2.21995cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.52475cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.17411cm</Width>
@@ -251,7 +251,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Base Imp.</Value>
+                              <Value>B.I.</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -652,8 +652,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
+        <Top>0.44979cm</Top>
+        <Left>0.70667cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.7037cm</Width>
+        <Width>17.72844cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -664,7 +666,7 @@
     <Height>4.41875in</Height>
     <Style />
   </Body>
-  <Width>6.57626in</Width>
+  <Width>7.44084in</Width>
   <Page>
     <PageHeader>
       <Height>5.50333cm</Height>
@@ -692,8 +694,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox20</rd:DefaultName>
-          <Top>0.7666cm</Top>
-          <Left>0.70667cm</Left>
+          <Top>0.47768cm</Top>
+          <Left>0.44094cm</Left>
           <Height>0.86458cm</Height>
           <Width>7.73875cm</Width>
           <Style>
@@ -721,8 +723,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>1.80757cm</Top>
-          <Left>0.70667cm</Left>
+          <Top>1.51865cm</Top>
+          <Left>0.44094cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>1</ZIndex>
@@ -751,8 +753,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>2.58396cm</Top>
-          <Left>0.70667cm</Left>
+          <Top>2.29504cm</Top>
+          <Left>0.44094cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>2</ZIndex>
@@ -781,8 +783,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>3.36035cm</Top>
-          <Left>0.70667cm</Left>
+          <Top>3.07143cm</Top>
+          <Left>0.44094cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>3</ZIndex>
@@ -811,11 +813,44 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>4.13674cm</Top>
-          <Left>0.70667cm</Left>
+          <Top>3.84782cm</Top>
+          <Left>0.44094cm</Left>
           <Height>0.6cm</Height>
           <Width>6.12479cm</Width>
           <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Listado de facturas emitidas</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>3.84782cm</Top>
+          <Left>7.50438cm</Left>
+          <Height>1.17783cm</Height>
+          <Width>10.95442cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -837,37 +872,6 @@
       <Height>1.98438cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="PageNumber">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!PageNumber</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.68474cm</Top>
-          <Left>13.81521cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

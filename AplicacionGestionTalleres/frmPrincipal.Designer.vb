@@ -48,7 +48,6 @@ Partial Class Form1
         Me.ListadoArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoFacturaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoFacturasRecibidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListadoGastosPatrimonioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoArtículosStocMininoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtilidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -190,7 +189,7 @@ Partial Class Form1
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoClientesToolStripMenuItem, Me.ListadoProveedoresToolStripMenuItem, Me.ListadoArtículosToolStripMenuItem, Me.ListadoFacturaciónToolStripMenuItem, Me.ListadoFacturasRecibidasToolStripMenuItem, Me.ListadoGastosPatrimonioToolStripMenuItem, Me.ListadoStockToolStripMenuItem, Me.ListadoArtículosStocMininoToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoClientesToolStripMenuItem, Me.ListadoProveedoresToolStripMenuItem, Me.ListadoArtículosToolStripMenuItem, Me.ListadoFacturaciónToolStripMenuItem, Me.ListadoFacturasRecibidasToolStripMenuItem, Me.ListadoStockToolStripMenuItem, Me.ListadoArtículosStocMininoToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -224,12 +223,6 @@ Partial Class Form1
         Me.ListadoFacturasRecibidasToolStripMenuItem.Name = "ListadoFacturasRecibidasToolStripMenuItem"
         Me.ListadoFacturasRecibidasToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.ListadoFacturasRecibidasToolStripMenuItem.Text = "Listado Facturas Recibidas"
-        '
-        'ListadoGastosPatrimonioToolStripMenuItem
-        '
-        Me.ListadoGastosPatrimonioToolStripMenuItem.Name = "ListadoGastosPatrimonioToolStripMenuItem"
-        Me.ListadoGastosPatrimonioToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.ListadoGastosPatrimonioToolStripMenuItem.Text = "Listado Gastos Patrimonio"
         '
         'ListadoStockToolStripMenuItem
         '
@@ -357,7 +350,6 @@ Partial Class Form1
     Friend WithEvents ListadoArtículosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoFacturaciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoFacturasRecibidasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListadoGastosPatrimonioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoStockToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoArtículosStocMininoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UtilidadesToolStripMenuItem As ToolStripMenuItem

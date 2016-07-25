@@ -76,7 +76,7 @@
         frmListadosRecibidas.Show()
     End Sub
 
-    Private Sub ListadoGastosPatrimonioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoGastosPatrimonioToolStripMenuItem.Click
+    Private Sub ListadoGastosPatrimonioToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim frmListadosGastos As frmListadosGastos
         frmListadosGastos = New frmListadosGastos
         frmListadosGastos.Show()
