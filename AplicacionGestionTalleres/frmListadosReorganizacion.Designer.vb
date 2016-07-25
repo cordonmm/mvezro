@@ -22,6 +22,7 @@ Partial Class frmListadosReorganizacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadosReorganizacion))
         Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
@@ -70,6 +71,7 @@ Partial Class frmListadosReorganizacion
         Me.Controls.Add(Me.MetroButton1)
         Me.Controls.Add(Me.MetroTextBox3)
         Me.Controls.Add(Me.MetroLabel4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadosReorganizacion"
         Me.Text = "Reorganización de Informes"
         Me.ResumeLayout(False)

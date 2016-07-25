@@ -23,6 +23,7 @@ Partial Class frmMantenimientoArticulosAlta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoArticulosAlta))
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.btnAceptar = New MetroFramework.Controls.MetroButton()
         Me.lblObservaciones = New MetroFramework.Controls.MetroLabel()
@@ -279,6 +280,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.Controls.Add(Me.txtObservaciones)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoArticulosAlta"
         Me.Text = "Nuevo Artículo"
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

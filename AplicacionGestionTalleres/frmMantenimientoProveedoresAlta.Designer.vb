@@ -23,6 +23,7 @@ Partial Class frmMantenimientoProveedoresAlta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoProveedoresAlta))
         Me.txtCodigo = New MetroFramework.Controls.MetroTextBox()
         Me.lblCodigo = New MetroFramework.Controls.MetroLabel()
         Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
@@ -388,6 +389,7 @@ Partial Class frmMantenimientoProveedoresAlta
         Me.Controls.Add(Me.txtObservaciones)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoProveedoresAlta"
         Me.Text = "Nuevo Proveedor"
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()

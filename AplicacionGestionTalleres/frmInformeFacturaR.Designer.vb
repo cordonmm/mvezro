@@ -23,35 +23,36 @@ Partial Class frmInformeFacturaR
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInformeFacturaR))
         Me.informeFacturaRBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.informeFacturaRTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.informeFacturaRTableAdapter()
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.informeFacturaRBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'informeFacturaRBindingSource
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.informeFacturaRBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeFacturaR.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(787, 475)
-        Me.ReportViewer1.TabIndex = 0
+        Me.informeFacturaRBindingSource.DataMember = "informeFacturaR"
+        Me.informeFacturaRBindingSource.DataSource = Me.tallerDataSet
         '
         'tallerDataSet
         '
         Me.tallerDataSet.DataSetName = "tallerDataSet"
         Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'informeFacturaRBindingSource
+        'ReportViewer1
         '
-        Me.informeFacturaRBindingSource.DataMember = "informeFacturaR"
-        Me.informeFacturaRBindingSource.DataSource = Me.tallerDataSet
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.informeFacturaRBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeFacturaR.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(787, 475)
+        Me.ReportViewer1.TabIndex = 0
         '
         'informeFacturaRTableAdapter
         '
@@ -63,10 +64,11 @@ Partial Class frmInformeFacturaR
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(860, 600)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmInformeFacturaR"
         Me.Text = "Factura recibida"
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.informeFacturaRBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

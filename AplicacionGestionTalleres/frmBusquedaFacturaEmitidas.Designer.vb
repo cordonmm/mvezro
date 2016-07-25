@@ -23,21 +23,22 @@ Partial Class frmBusquedaFacturaEmitidas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBusquedaFacturaEmitidas))
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.lblBuscar = New MetroFramework.Controls.MetroLabel()
         Me.dgFacturaEmitidas = New System.Windows.Forms.DataGridView()
-        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
-        Me.ConsFacturaEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ConsFacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsFacturaETableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumeroFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CifDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConsFacturaEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ConsFacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsFacturaETableAdapter()
         CType(Me.dgFacturaEmitidas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsFacturaEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBuscar
@@ -74,20 +75,6 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.dgFacturaEmitidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgFacturaEmitidas.Size = New System.Drawing.Size(965, 240)
         Me.dgFacturaEmitidas.TabIndex = 68
-        '
-        'TallerDataSet
-        '
-        Me.TallerDataSet.DataSetName = "tallerDataSet"
-        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ConsFacturaEBindingSource
-        '
-        Me.ConsFacturaEBindingSource.DataMember = "ConsFacturaE"
-        Me.ConsFacturaEBindingSource.DataSource = Me.TallerDataSet
-        '
-        'ConsFacturaETableAdapter
-        '
-        Me.ConsFacturaETableAdapter.ClearBeforeFill = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -132,6 +119,20 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'ConsFacturaEBindingSource
+        '
+        Me.ConsFacturaEBindingSource.DataMember = "ConsFacturaE"
+        Me.ConsFacturaEBindingSource.DataSource = Me.TallerDataSet
+        '
+        'TallerDataSet
+        '
+        Me.TallerDataSet.DataSetName = "tallerDataSet"
+        Me.TallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ConsFacturaETableAdapter
+        '
+        Me.ConsFacturaETableAdapter.ClearBeforeFill = True
+        '
         'frmBusquedaFacturaEmitidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -141,11 +142,12 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgFacturaEmitidas)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmBusquedaFacturaEmitidas"
         Me.Text = "Listado de Facturas"
         CType(Me.dgFacturaEmitidas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsFacturaEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

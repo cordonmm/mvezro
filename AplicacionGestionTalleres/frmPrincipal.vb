@@ -94,7 +94,7 @@
         frmListadosStockMinimo.Show()
     End Sub
 
-    Private Sub ReorganizaciónInformesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReorganizaciónInformesToolStripMenuItem.Click
+    Private Sub ReorganizaciónInformesToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim frmListadosReorganizacion As frmListadosReorganizacion
         frmListadosReorganizacion = New frmListadosReorganizacion
         frmListadosReorganizacion.Show()

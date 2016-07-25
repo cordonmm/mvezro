@@ -24,6 +24,7 @@ Partial Class frmMantenimientoArticulosListado
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoArticulosListado))
         Me.txtArticulo = New MetroFramework.Controls.MetroTextBox()
         Me.lblArticulo = New MetroFramework.Controls.MetroLabel()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
@@ -138,6 +139,7 @@ Partial Class frmMantenimientoArticulosListado
         Me.Controls.Add(Me.lblArticulo)
         Me.Controls.Add(Me.txtArticulo)
         Me.Controls.Add(Me.dgArticulos)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoArticulosListado"
         Me.Text = "Listado Artículos"
         CType(Me.dgArticulos, System.ComponentModel.ISupportInitialize).EndInit()

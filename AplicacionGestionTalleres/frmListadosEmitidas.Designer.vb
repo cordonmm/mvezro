@@ -23,6 +23,7 @@ Partial Class frmListadosEmitidas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadosEmitidas))
         Me.idCliente = New MetroFramework.Controls.MetroRadioButton()
         Me.todos = New MetroFramework.Controls.MetroRadioButton()
         Me.cmbCliente = New MetroFramework.Controls.MetroComboBox()
@@ -152,6 +153,7 @@ Partial Class frmListadosEmitidas
         Me.Controls.Add(Me.cmbCliente)
         Me.Controls.Add(Me.idCliente)
         Me.Controls.Add(Me.todos)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadosEmitidas"
         Me.Text = "Facturas Emitidas"
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

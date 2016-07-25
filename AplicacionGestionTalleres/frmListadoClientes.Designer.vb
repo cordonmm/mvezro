@@ -24,6 +24,7 @@ Partial Class frmListadoClientes
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadoClientes))
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -48,10 +49,10 @@ Partial Class frmListadoClientes
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.ClienteBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.Report2.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeClientes.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(23, 79)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(951, 564)
+        Me.ReportViewer1.Size = New System.Drawing.Size(757, 564)
         Me.ReportViewer1.TabIndex = 0
         '
         'ClienteTableAdapter
@@ -62,8 +63,9 @@ Partial Class frmListadoClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(997, 666)
+        Me.ClientSize = New System.Drawing.Size(802, 666)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadoClientes"
         Me.Text = "Listado de clientes"
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

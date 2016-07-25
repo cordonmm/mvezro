@@ -23,6 +23,7 @@ Partial Class frmUtilidadesPatrimonio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUtilidadesPatrimonio))
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
@@ -322,6 +323,7 @@ Partial Class frmUtilidadesPatrimonio
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroLabel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmUtilidadesPatrimonio"
         Me.Text = "Patrimonio"
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

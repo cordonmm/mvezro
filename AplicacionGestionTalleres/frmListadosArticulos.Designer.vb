@@ -23,6 +23,7 @@ Partial Class frmListadosArticulos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadosArticulos))
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.familia = New MetroFramework.Controls.MetroComboBox()
         Me.FamiliaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -140,6 +141,7 @@ Partial Class frmListadosArticulos
         Me.Controls.Add(Me.alfabetico)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.familia)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadosArticulos"
         Me.Text = "Listado Artículos"
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

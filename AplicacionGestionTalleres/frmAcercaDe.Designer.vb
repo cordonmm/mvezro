@@ -22,6 +22,7 @@ Partial Class frmAcercaDe
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAcercaDe))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
@@ -67,6 +68,7 @@ Partial Class frmAcercaDe
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.Color.LightCoral
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmAcercaDe"
         Me.Text = "Acerca de..."
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

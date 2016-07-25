@@ -277,7 +277,7 @@
         ConsProductoTableAdapter.Fill(Me.TallerDataSet.ConsProducto)
     End Sub
 
-    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) 
         If dtFactura IsNot Nothing Then
             Dim frmInformeFacturaR As frmInformeFacturaR
             frmInformeFacturaR = New frmInformeFacturaR

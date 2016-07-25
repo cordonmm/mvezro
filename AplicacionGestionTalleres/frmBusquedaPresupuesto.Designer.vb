@@ -23,6 +23,7 @@ Partial Class frmBusquedaPresupuesto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBusquedaPresupuesto))
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.lblBuscar = New MetroFramework.Controls.MetroLabel()
         Me.dgPresupuestos = New System.Windows.Forms.DataGridView()
@@ -148,6 +149,7 @@ Partial Class frmBusquedaPresupuesto
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgPresupuestos)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmBusquedaPresupuesto"
         Me.Text = "Listado de Facturas"
         CType(Me.dgPresupuestos, System.ComponentModel.ISupportInitialize).EndInit()

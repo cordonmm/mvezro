@@ -23,6 +23,7 @@ Partial Class frmMantenimientoClientesListado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoClientesListado))
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.lblBuscar = New MetroFramework.Controls.MetroLabel()
         Me.dgCliente = New System.Windows.Forms.DataGridView()
@@ -140,6 +141,7 @@ Partial Class frmMantenimientoClientesListado
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgCliente)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoClientesListado"
         Me.Text = "Listado de Clientes"
         CType(Me.dgCliente, System.ComponentModel.ISupportInitialize).EndInit()

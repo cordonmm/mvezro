@@ -24,13 +24,19 @@ Partial Class frmInformeGastos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInformeGastos))
+        Me.consPatrimonioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.consPatrimonioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.consPatrimonioTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.consPatrimonioTableAdapter()
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.consPatrimonioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'consPatrimonioBindingSource
+        '
+        Me.consPatrimonioBindingSource.DataMember = "consPatrimonio"
+        Me.consPatrimonioBindingSource.DataSource = Me.tallerDataSet
         '
         'tallerDataSet
         '
@@ -48,11 +54,6 @@ Partial Class frmInformeGastos
         Me.ReportViewer1.Size = New System.Drawing.Size(787, 475)
         Me.ReportViewer1.TabIndex = 0
         '
-        'consPatrimonioBindingSource
-        '
-        Me.consPatrimonioBindingSource.DataMember = "consPatrimonio"
-        Me.consPatrimonioBindingSource.DataSource = Me.tallerDataSet
-        '
         'consPatrimonioTableAdapter
         '
         Me.consPatrimonioTableAdapter.ClearBeforeFill = True
@@ -63,10 +64,11 @@ Partial Class frmInformeGastos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(860, 600)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmInformeGastos"
         Me.Text = "Gastos"
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.consPatrimonioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

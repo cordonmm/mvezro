@@ -24,14 +24,25 @@ Partial Class frmInformeStock
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInformeStock))
+        Me.ConsProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ConsProductoTableAdapter1 = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsProductoTableAdapter()
-        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
-        Me.ConsProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsProductoTableAdapter()
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ConsProductoBindingSource
+        '
+        Me.ConsProductoBindingSource.DataMember = "ConsProducto"
+        Me.ConsProductoBindingSource.DataSource = Me.tallerDataSet
+        '
+        'tallerDataSet
+        '
+        Me.tallerDataSet.DataSetName = "tallerDataSet"
+        Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -48,16 +59,6 @@ Partial Class frmInformeStock
         '
         Me.ConsProductoTableAdapter1.ClearBeforeFill = True
         '
-        'tallerDataSet
-        '
-        Me.tallerDataSet.DataSetName = "tallerDataSet"
-        Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ConsProductoBindingSource
-        '
-        Me.ConsProductoBindingSource.DataMember = "ConsProducto"
-        Me.ConsProductoBindingSource.DataSource = Me.tallerDataSet
-        '
         'ConsProductoTableAdapter
         '
         Me.ConsProductoTableAdapter.ClearBeforeFill = True
@@ -68,10 +69,11 @@ Partial Class frmInformeStock
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 603)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmInformeStock"
         Me.Text = "Informe stock"
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -23,6 +23,7 @@ Partial Class frmMantenimientoClientesAlta
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoClientesAlta))
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.btnAceptar = New MetroFramework.Controls.MetroButton()
         Me.lblObservaciones = New MetroFramework.Controls.MetroLabel()
@@ -328,6 +329,7 @@ Partial Class frmMantenimientoClientesAlta
         Me.Controls.Add(Me.txtObservaciones)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoClientesAlta"
         Me.Text = "Nuevo Cliente"
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()

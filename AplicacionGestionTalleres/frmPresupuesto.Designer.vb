@@ -28,6 +28,7 @@ Partial Class frmPresupuesto
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuesto))
         Me.btnImprimir = New MetroFramework.Controls.MetroButton()
         Me.btnEliminar = New MetroFramework.Controls.MetroButton()
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
@@ -682,6 +683,7 @@ Partial Class frmPresupuesto
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmPresupuesto"
         Me.Padding = New System.Windows.Forms.Padding(20, 65, 20, 22)
         Me.Text = "Presupuesto"

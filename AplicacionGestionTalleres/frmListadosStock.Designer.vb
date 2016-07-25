@@ -23,6 +23,7 @@ Partial Class frmListadosStock
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadosStock))
         Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.cmbFamilia = New MetroFramework.Controls.MetroComboBox()
@@ -110,6 +111,7 @@ Partial Class frmListadosStock
         Me.Controls.Add(Me.cmbFamilia)
         Me.Controls.Add(Me.familia)
         Me.Controls.Add(Me.todos)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadosStock"
         Me.Text = "Listado Stocks"
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

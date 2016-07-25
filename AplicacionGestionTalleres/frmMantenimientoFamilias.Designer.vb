@@ -23,6 +23,7 @@ Partial Class frmMantenimientoFamilias
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoFamilias))
         Me.lblCode = New MetroFramework.Controls.MetroLabel()
         Me.lblDescription = New MetroFramework.Controls.MetroLabel()
         Me.txtCode = New MetroFramework.Controls.MetroTextBox()
@@ -194,6 +195,7 @@ Partial Class frmMantenimientoFamilias
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.gbFamilia)
         Me.Controls.Add(Me.dgFamilias)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoFamilias"
         Me.Text = "Gestión de Familias"
         Me.gbFamilia.ResumeLayout(False)

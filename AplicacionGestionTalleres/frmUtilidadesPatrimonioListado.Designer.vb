@@ -23,6 +23,7 @@ Partial Class frmUtilidadesPatrimonioListado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUtilidadesPatrimonioListado))
         Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.dgPatrimonio = New System.Windows.Forms.DataGridView()
@@ -213,6 +214,7 @@ Partial Class frmUtilidadesPatrimonioListado
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.dgPatrimonio)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmUtilidadesPatrimonioListado"
         Me.Text = "Listado Patrimonio"
         CType(Me.dgPatrimonio, System.ComponentModel.ISupportInitialize).EndInit()

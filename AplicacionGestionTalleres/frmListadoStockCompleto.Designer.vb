@@ -23,37 +23,38 @@ Partial Class frmListadoStockCompleto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadoStockCompleto))
         Me.ProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProductoTableAdapter()
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'ProductoBindingSource
         '
-        Me.ReportViewer1.AutoSize = True
-        Me.ReportViewer1.DocumentMapWidth = 35
-        ReportDataSource3.Name = "DataSet1"
-        ReportDataSource3.Value = Me.ProductoBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.Report4.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(725, 335)
-        Me.ReportViewer1.TabIndex = 0
+        Me.ProductoBindingSource.DataMember = "Producto"
+        Me.ProductoBindingSource.DataSource = Me.tallerDataSet
         '
         'tallerDataSet
         '
         Me.tallerDataSet.DataSetName = "tallerDataSet"
         Me.tallerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ProductoBindingSource
+        'ReportViewer1
         '
-        Me.ProductoBindingSource.DataMember = "Producto"
-        Me.ProductoBindingSource.DataSource = Me.tallerDataSet
+        Me.ReportViewer1.AutoSize = True
+        Me.ReportViewer1.DocumentMapWidth = 35
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.ProductoBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.Report4.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(23, 63)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(725, 335)
+        Me.ReportViewer1.TabIndex = 0
         '
         'ProductoTableAdapter
         '
@@ -65,10 +66,11 @@ Partial Class frmListadoStockCompleto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(772, 456)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadoStockCompleto"
         Me.Text = "Listado de stock"
-        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tallerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

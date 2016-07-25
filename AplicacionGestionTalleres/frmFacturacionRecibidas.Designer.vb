@@ -25,6 +25,7 @@ Partial Class frmFacturacionRecibidas
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFacturacionRecibidas))
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.txtTotalFactura = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
@@ -34,7 +35,6 @@ Partial Class frmFacturacionRecibidas
         Me.txtBaseImponible = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.btnBuscar = New MetroFramework.Controls.MetroButton()
-        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
         Me.btnEliminar = New MetroFramework.Controls.MetroButton()
         Me.btnCancelar = New MetroFramework.Controls.MetroButton()
         Me.btnAceptar = New MetroFramework.Controls.MetroButton()
@@ -169,14 +169,6 @@ Partial Class frmFacturacionRecibidas
         Me.btnBuscar.Size = New System.Drawing.Size(102, 25)
         Me.btnBuscar.TabIndex = 40
         Me.btnBuscar.Text = "Buscar"
-        '
-        'btnImprimir
-        '
-        Me.btnImprimir.Location = New System.Drawing.Point(1109, 711)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(102, 25)
-        Me.btnImprimir.TabIndex = 38
-        Me.btnImprimir.Text = "Imprimir"
         '
         'btnEliminar
         '
@@ -623,11 +615,11 @@ Partial Class frmFacturacionRecibidas
         Me.Controls.Add(Me.txtBaseImponible)
         Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.btnBuscar)
-        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.dtpFechaFac)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "frmFacturacionRecibidas"
         Me.Text = "Facturas Recibidas"
@@ -653,7 +645,6 @@ Partial Class frmFacturacionRecibidas
     Friend WithEvents txtBaseImponible As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents btnBuscar As MetroFramework.Controls.MetroButton
-    Friend WithEvents btnImprimir As MetroFramework.Controls.MetroButton
     Friend WithEvents btnEliminar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnCancelar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnAceptar As MetroFramework.Controls.MetroButton

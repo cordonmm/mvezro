@@ -22,6 +22,7 @@ Partial Class frmListadosGastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadosGastos))
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -130,6 +131,7 @@ Partial Class frmListadosGastos
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroRadioButton1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadosGastos"
         Me.Text = "Gastos"
         Me.ResumeLayout(False)

@@ -23,6 +23,7 @@ Partial Class frmListadosRecibidas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListadosRecibidas))
         Me.fechaFin = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.fechaInicio = New System.Windows.Forms.DateTimePicker()
@@ -152,6 +153,7 @@ Partial Class frmListadosRecibidas
         Me.Controls.Add(Me.cmbProveedor)
         Me.Controls.Add(Me.idProveedor)
         Me.Controls.Add(Me.todos)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmListadosRecibidas"
         Me.Text = "Facturas Recibidas"
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

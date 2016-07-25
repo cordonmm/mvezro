@@ -24,11 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopiaSeguridadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RealizarCopiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RestaurarCopiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FamiliaArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +51,6 @@ Partial Class Form1
         Me.ListadoGastosPatrimonioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoArtículosStocMininoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReorganizaciónInformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtilidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónPatrimonioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevaEntradaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,44 +67,12 @@ Partial Class Form1
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FamiliaArtículosToolStripMenuItem, Me.PresupuestosToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(20, 60)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(1327, 24)
         Me.MenuStrip.TabIndex = 0
         Me.MenuStrip.Text = "MenuStrip"
-        '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopiaSeguridadToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'CopiaSeguridadToolStripMenuItem
-        '
-        Me.CopiaSeguridadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarCopiaToolStripMenuItem, Me.RestaurarCopiaToolStripMenuItem})
-        Me.CopiaSeguridadToolStripMenuItem.Name = "CopiaSeguridadToolStripMenuItem"
-        Me.CopiaSeguridadToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.CopiaSeguridadToolStripMenuItem.Text = "Copia Seguridad"
-        '
-        'RealizarCopiaToolStripMenuItem
-        '
-        Me.RealizarCopiaToolStripMenuItem.Name = "RealizarCopiaToolStripMenuItem"
-        Me.RealizarCopiaToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.RealizarCopiaToolStripMenuItem.Text = "Realizar Copia"
-        '
-        'RestaurarCopiaToolStripMenuItem
-        '
-        Me.RestaurarCopiaToolStripMenuItem.Name = "RestaurarCopiaToolStripMenuItem"
-        Me.RestaurarCopiaToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.RestaurarCopiaToolStripMenuItem.Text = "Restaurar Copia"
-        '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'FamiliaArtículosToolStripMenuItem
         '
@@ -228,7 +190,7 @@ Partial Class Form1
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoClientesToolStripMenuItem, Me.ListadoProveedoresToolStripMenuItem, Me.ListadoArtículosToolStripMenuItem, Me.ListadoFacturaciónToolStripMenuItem, Me.ListadoFacturasRecibidasToolStripMenuItem, Me.ListadoGastosPatrimonioToolStripMenuItem, Me.ListadoStockToolStripMenuItem, Me.ListadoArtículosStocMininoToolStripMenuItem, Me.ReorganizaciónInformesToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoClientesToolStripMenuItem, Me.ListadoProveedoresToolStripMenuItem, Me.ListadoArtículosToolStripMenuItem, Me.ListadoFacturaciónToolStripMenuItem, Me.ListadoFacturasRecibidasToolStripMenuItem, Me.ListadoGastosPatrimonioToolStripMenuItem, Me.ListadoStockToolStripMenuItem, Me.ListadoArtículosStocMininoToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -280,12 +242,6 @@ Partial Class Form1
         Me.ListadoArtículosStocMininoToolStripMenuItem.Name = "ListadoArtículosStocMininoToolStripMenuItem"
         Me.ListadoArtículosStocMininoToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
         Me.ListadoArtículosStocMininoToolStripMenuItem.Text = "Listado Artículos Stock Minino"
-        '
-        'ReorganizaciónInformesToolStripMenuItem
-        '
-        Me.ReorganizaciónInformesToolStripMenuItem.Name = "ReorganizaciónInformesToolStripMenuItem"
-        Me.ReorganizaciónInformesToolStripMenuItem.Size = New System.Drawing.Size(235, 22)
-        Me.ReorganizaciónInformesToolStripMenuItem.Text = "Reorganización Informes"
         '
         'UtilidadesToolStripMenuItem
         '
@@ -383,11 +339,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CopiaSeguridadToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RealizarCopiaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RestaurarCopiaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FamiliaArtículosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ArtículosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuarioToolStripMenuItem As ToolStripMenuItem
@@ -409,7 +360,6 @@ Partial Class Form1
     Friend WithEvents ListadoGastosPatrimonioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoStockToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListadoArtículosStocMininoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReorganizaciónInformesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UtilidadesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestiónPatrimonioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConfiguraciónToolStripMenuItem As ToolStripMenuItem

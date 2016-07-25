@@ -23,6 +23,7 @@ Partial Class frmPresupuestos1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestos1))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
@@ -272,7 +273,7 @@ Partial Class frmPresupuestos1
         Me.DateTimePicker1.Size = New System.Drawing.Size(175, 20)
         Me.DateTimePicker1.TabIndex = 80
         '
-        'frmPresupuestos
+        'frmPresupuestos1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -302,7 +303,8 @@ Partial Class frmPresupuestos1
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroLabel1)
-        Me.Name = "frmPresupuestos"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "frmPresupuestos1"
         Me.Text = "Presupuestos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
