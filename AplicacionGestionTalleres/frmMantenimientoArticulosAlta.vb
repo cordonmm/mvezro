@@ -14,6 +14,7 @@
             txtObservaciones.Text = dtProducto(0).Observaciones
             txtStock.Text = dtProducto(0).Stock
             txtPVP.Text = dtProducto(0).pvp
+            cmbFamilia.SelectedValue = dtProducto(0).idFamilia
             Me.Text = "Guardar Articulo"
         End If
 
@@ -31,6 +32,7 @@
                     dtProducto(0).Observaciones = txtObservaciones.Text
                     dtProducto(0).Stock = txtStock.Text
                     dtProducto(0).pvp = txtPVP.Text
+                    dtProducto(0).idFamilia = cmbFamilia.SelectedValue
                     Me.ProductoTableAdapter.Update(dtProducto)
                     If (MessageBox.Show("Articulo guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK) Then
                         Me.Close()

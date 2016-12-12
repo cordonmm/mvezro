@@ -6057,6 +6057,8 @@ Partial Public Class tallerDataSet
         
         Private columniva As Global.System.Data.DataColumn
         
+        Private columnmatricula As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -6165,6 +6167,14 @@ Partial Public Class tallerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property matriculaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnmatricula
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6201,9 +6211,9 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddConsFacturaERow(ByVal numeroFactura As Integer, ByVal fecha As Date, ByVal nombre As String, ByVal cif As String, ByVal email As String, ByVal baseImponible As String, ByVal total As String, ByVal iva As Integer) As ConsFacturaERow
+        Public Overloads Function AddConsFacturaERow(ByVal numeroFactura As Integer, ByVal fecha As Date, ByVal nombre As String, ByVal cif As String, ByVal email As String, ByVal baseImponible As String, ByVal total As String, ByVal iva As Integer, ByVal matricula As String) As ConsFacturaERow
             Dim rowConsFacturaERow As ConsFacturaERow = CType(Me.NewRow,ConsFacturaERow)
-            Dim columnValuesArray() As Object = New Object() {numeroFactura, fecha, nombre, cif, email, Nothing, baseImponible, total, iva}
+            Dim columnValuesArray() As Object = New Object() {numeroFactura, fecha, nombre, cif, email, Nothing, baseImponible, total, iva, matricula}
             rowConsFacturaERow.ItemArray = columnValuesArray
             Me.Rows.Add(rowConsFacturaERow)
             Return rowConsFacturaERow
@@ -6235,6 +6245,7 @@ Partial Public Class tallerDataSet
             Me.columnbaseImponible = MyBase.Columns("baseImponible")
             Me.columntotal = MyBase.Columns("total")
             Me.columniva = MyBase.Columns("iva")
+            Me.columnmatricula = MyBase.Columns("matricula")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6258,6 +6269,8 @@ Partial Public Class tallerDataSet
             MyBase.Columns.Add(Me.columntotal)
             Me.columniva = New Global.System.Data.DataColumn("iva", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columniva)
+            Me.columnmatricula = New Global.System.Data.DataColumn("matricula", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmatricula)
             Me.columnnombre.MaxLength = 255
             Me.columncif.MaxLength = 255
             Me.columnemail.MaxLength = 255
@@ -6266,6 +6279,7 @@ Partial Public Class tallerDataSet
             Me.columnId.AutoIncrementStep = -1
             Me.columnbaseImponible.MaxLength = 255
             Me.columntotal.MaxLength = 255
+            Me.columnmatricula.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12576,6 +12590,21 @@ Partial Public Class tallerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property matricula() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableConsFacturaE.matriculaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'matricula' de la tabla 'ConsFacturaE' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableConsFacturaE.matriculaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsnumeroFacturaNull() As Boolean
             Return Me.IsNull(Me.tableConsFacturaE.numeroFacturaColumn)
         End Function
@@ -12680,6 +12709,18 @@ Partial Public Class tallerDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetivaNull()
             Me(Me.tableConsFacturaE.ivaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsmatriculaNull() As Boolean
+            Return Me.IsNull(Me.tableConsFacturaE.matriculaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetmatriculaNull()
+            Me(Me.tableConsFacturaE.matriculaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -23735,6 +23776,8 @@ Namespace tallerDataSetTableAdapters
             tableMapping.ColumnMappings.Add("baseImponible", "baseImponible")
             tableMapping.ColumnMappings.Add("total", "total")
             tableMapping.ColumnMappings.Add("iva", "iva")
+            tableMapping.ColumnMappings.Add("fecha", "fecha")
+            tableMapping.ColumnMappings.Add("matricula", "matricula")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -23753,8 +23796,8 @@ Namespace tallerDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        FacturaE.numeroFactura, FacturaE.fecha, Cliente.nombre, Cliente.cif"& _ 
                 ", Cliente.email, FacturaE.Id, FacturaE.baseImponible, FacturaE.total, FacturaE.i"& _ 
-                "va"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Cliente ON Fa"& _ 
-                "cturaE.idCliente = Cliente.Id)"
+                "va, FacturaE.matricula"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            (FacturaE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
+                "       Cliente ON FacturaE.idCliente = Cliente.Id)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -23893,7 +23936,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFacturaEfechasCliente(ByVal dataTable As tallerDataSet.ConsFacturaEDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Integer) As Integer
+        Public Overloads Overridable Function FillByFacturaEfechasCliente(ByVal dataTable As tallerDataSet.ConsFacturaEDataTable, ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
             If (fecha.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
@@ -23905,7 +23948,11 @@ Namespace tallerDataSetTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id,Integer)
+            If (Id.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -23917,7 +23964,7 @@ Namespace tallerDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByFacturaEfechasCliente(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Integer) As tallerDataSet.ConsFacturaEDataTable
+        Public Overloads Overridable Function GetDataByFacturaEfechasCliente(ByVal fecha As Global.System.Nullable(Of Date), ByVal fecha1 As Global.System.Nullable(Of Date), ByVal Id As Global.System.Nullable(Of Integer)) As tallerDataSet.ConsFacturaEDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
             If (fecha.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(fecha.Value,Date)
@@ -23929,7 +23976,11 @@ Namespace tallerDataSetTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id,Integer)
+            If (Id.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Id.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As tallerDataSet.ConsFacturaEDataTable = New tallerDataSet.ConsFacturaEDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

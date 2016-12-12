@@ -60,8 +60,10 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -178,14 +180,14 @@ Partial Class Form1
         'FacturasEmitidasToolStripMenuItem
         '
         Me.FacturasEmitidasToolStripMenuItem.Name = "FacturasEmitidasToolStripMenuItem"
-        Me.FacturasEmitidasToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.FacturasEmitidasToolStripMenuItem.Text = "Facturas Emitidas"
+        Me.FacturasEmitidasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.FacturasEmitidasToolStripMenuItem.Text = "Facturas Venta"
         '
         'FacturasRecibidasToolStripMenuItem
         '
         Me.FacturasRecibidasToolStripMenuItem.Name = "FacturasRecibidasToolStripMenuItem"
-        Me.FacturasRecibidasToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.FacturasRecibidasToolStripMenuItem.Text = "Facturas Recibidas"
+        Me.FacturasRecibidasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.FacturasRecibidasToolStripMenuItem.Text = "Facturas Compra"
         '
         'InformesToolStripMenuItem
         '
@@ -284,7 +286,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(512, 258)
+        Me.Label1.Location = New System.Drawing.Point(496, 433)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(366, 55)
         Me.Label1.TabIndex = 1
@@ -294,7 +296,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(420, 328)
+        Me.Label2.Location = New System.Drawing.Point(423, 513)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(516, 31)
         Me.Label2.TabIndex = 2
@@ -310,12 +312,24 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(300, 129)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(690, 312)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(1367, 754)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -328,6 +342,7 @@ Partial Class Form1
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -369,4 +384,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

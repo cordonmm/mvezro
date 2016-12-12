@@ -13,9 +13,9 @@
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         If (IsNumeric(txtBuscar.Text)) Then
-            ConsFacturaRBindingSource.Filter = "numeroFactura = " & txtBuscar.Text & " or fecha like '%" & txtBuscar.Text & "%' or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+            ConsFacturaRBindingSource.Filter = "numeroFactura = " & txtBuscar.Text & " or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
         Else
-            ConsFacturaRBindingSource.Filter = "fecha like '%" & txtBuscar.Text & "%' or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+            ConsFacturaRBindingSource.Filter = " nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
         End If
     End Sub
 

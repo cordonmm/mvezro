@@ -48,6 +48,10 @@ Partial Class frmFacturacionRecibidas
         Me.lblIVA = New MetroFramework.Controls.MetroLabel()
         Me.lblFactura = New MetroFramework.Controls.MetroLabel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtReferencia = New System.Windows.Forms.TextBox()
+        Me.txtFamilia = New System.Windows.Forms.TextBox()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.lblReferencia = New MetroFramework.Controls.MetroLabel()
         Me.btnNuevoArticulo = New MetroFramework.Controls.MetroButton()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
         Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,12 +64,10 @@ Partial Class frmFacturacionRecibidas
         Me.ConsProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.btnAñadir = New MetroFramework.Controls.MetroButton()
-        Me.txtArticulo = New MetroFramework.Controls.MetroTextBox()
         Me.txtDescuento = New MetroFramework.Controls.MetroTextBox()
-        Me.lblArticulo = New MetroFramework.Controls.MetroLabel()
+        Me.lblFamilia = New MetroFramework.Controls.MetroLabel()
         Me.txtPVP = New MetroFramework.Controls.MetroTextBox()
         Me.lblCantidad = New MetroFramework.Controls.MetroLabel()
-        Me.txtCantidad = New MetroFramework.Controls.MetroTextBox()
         Me.lblPVP = New MetroFramework.Controls.MetroLabel()
         Me.lblDescuento = New MetroFramework.Controls.MetroLabel()
         Me.gbLineas = New System.Windows.Forms.GroupBox()
@@ -270,15 +272,17 @@ Partial Class frmFacturacionRecibidas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtReferencia)
+        Me.GroupBox1.Controls.Add(Me.txtFamilia)
+        Me.GroupBox1.Controls.Add(Me.txtCantidad)
+        Me.GroupBox1.Controls.Add(Me.lblReferencia)
         Me.GroupBox1.Controls.Add(Me.btnNuevoArticulo)
         Me.GroupBox1.Controls.Add(Me.dgArticulos)
         Me.GroupBox1.Controls.Add(Me.btnAñadir)
-        Me.GroupBox1.Controls.Add(Me.txtArticulo)
         Me.GroupBox1.Controls.Add(Me.txtDescuento)
-        Me.GroupBox1.Controls.Add(Me.lblArticulo)
+        Me.GroupBox1.Controls.Add(Me.lblFamilia)
         Me.GroupBox1.Controls.Add(Me.txtPVP)
         Me.GroupBox1.Controls.Add(Me.lblCantidad)
-        Me.GroupBox1.Controls.Add(Me.txtCantidad)
         Me.GroupBox1.Controls.Add(Me.lblPVP)
         Me.GroupBox1.Controls.Add(Me.lblDescuento)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -289,9 +293,39 @@ Partial Class frmFacturacionRecibidas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Añadir artículo"
         '
+        'txtReferencia
+        '
+        Me.txtReferencia.Location = New System.Drawing.Point(211, 61)
+        Me.txtReferencia.Name = "txtReferencia"
+        Me.txtReferencia.Size = New System.Drawing.Size(168, 26)
+        Me.txtReferencia.TabIndex = 23
+        '
+        'txtFamilia
+        '
+        Me.txtFamilia.Location = New System.Drawing.Point(25, 61)
+        Me.txtFamilia.Name = "txtFamilia"
+        Me.txtFamilia.Size = New System.Drawing.Size(168, 26)
+        Me.txtFamilia.TabIndex = 22
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(513, 60)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(100, 26)
+        Me.txtCantidad.TabIndex = 26
+        '
+        'lblReferencia
+        '
+        Me.lblReferencia.AutoSize = True
+        Me.lblReferencia.Location = New System.Drawing.Point(211, 38)
+        Me.lblReferencia.Name = "lblReferencia"
+        Me.lblReferencia.Size = New System.Drawing.Size(70, 19)
+        Me.lblReferencia.TabIndex = 57
+        Me.lblReferencia.Text = "Referencia"
+        '
         'btnNuevoArticulo
         '
-        Me.btnNuevoArticulo.Location = New System.Drawing.Point(384, 60)
+        Me.btnNuevoArticulo.Location = New System.Drawing.Point(399, 61)
         Me.btnNuevoArticulo.Name = "btnNuevoArticulo"
         Me.btnNuevoArticulo.Size = New System.Drawing.Size(35, 26)
         Me.btnNuevoArticulo.TabIndex = 24
@@ -384,13 +418,6 @@ Partial Class frmFacturacionRecibidas
         Me.btnAñadir.TabIndex = 32
         Me.btnAñadir.Text = "Añadir"
         '
-        'txtArticulo
-        '
-        Me.txtArticulo.Location = New System.Drawing.Point(25, 61)
-        Me.txtArticulo.Name = "txtArticulo"
-        Me.txtArticulo.Size = New System.Drawing.Size(353, 25)
-        Me.txtArticulo.TabIndex = 22
-        '
         'txtDescuento
         '
         Me.txtDescuento.Location = New System.Drawing.Point(852, 61)
@@ -398,14 +425,14 @@ Partial Class frmFacturacionRecibidas
         Me.txtDescuento.Size = New System.Drawing.Size(157, 25)
         Me.txtDescuento.TabIndex = 30
         '
-        'lblArticulo
+        'lblFamilia
         '
-        Me.lblArticulo.AutoSize = True
-        Me.lblArticulo.Location = New System.Drawing.Point(25, 38)
-        Me.lblArticulo.Name = "lblArticulo"
-        Me.lblArticulo.Size = New System.Drawing.Size(55, 19)
-        Me.lblArticulo.TabIndex = 52
-        Me.lblArticulo.Text = "Artículo"
+        Me.lblFamilia.AutoSize = True
+        Me.lblFamilia.Location = New System.Drawing.Point(25, 38)
+        Me.lblFamilia.Name = "lblFamilia"
+        Me.lblFamilia.Size = New System.Drawing.Size(50, 19)
+        Me.lblFamilia.TabIndex = 52
+        Me.lblFamilia.Text = "Familia"
         '
         'txtPVP
         '
@@ -422,13 +449,6 @@ Partial Class frmFacturacionRecibidas
         Me.lblCantidad.Size = New System.Drawing.Size(62, 19)
         Me.lblCantidad.TabIndex = 53
         Me.lblCantidad.Text = "Cantidad"
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Location = New System.Drawing.Point(513, 61)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(124, 25)
-        Me.txtCantidad.TabIndex = 26
         '
         'lblPVP
         '
@@ -591,7 +611,7 @@ Partial Class frmFacturacionRecibidas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1275, 780)
+        Me.ClientSize = New System.Drawing.Size(1377, 780)
         Me.Controls.Add(Me.btnAñadirProveedor)
         Me.Controls.Add(Me.cbContado)
         Me.Controls.Add(Me.btnEliminarLinea)
@@ -622,7 +642,7 @@ Partial Class frmFacturacionRecibidas
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "frmFacturacionRecibidas"
-        Me.Text = "Facturas Recibidas"
+        Me.Text = "Facturas Compras"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgArticulos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -660,12 +680,10 @@ Partial Class frmFacturacionRecibidas
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgArticulos As DataGridView
     Friend WithEvents btnAñadir As MetroFramework.Controls.MetroButton
-    Friend WithEvents txtArticulo As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtDescuento As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents lblArticulo As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblFamilia As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtPVP As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblCantidad As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtCantidad As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblPVP As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblDescuento As MetroFramework.Controls.MetroLabel
     Friend WithEvents gbLineas As GroupBox
@@ -697,4 +715,8 @@ Partial Class frmFacturacionRecibidas
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
+    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtCantidad As TextBox
+    Friend WithEvents txtFamilia As TextBox
+    Friend WithEvents txtReferencia As TextBox
 End Class

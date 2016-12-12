@@ -6,10 +6,10 @@
 
     End Sub
 
-    Private Sub txtArticulo_Click(sender As Object, e As EventArgs) Handles txtArticulo.TextChanged
 
-        ConsProductoBindingSource.Filter = "descripción like '%" & txtArticulo.Text & "%' or referencia like '%" & txtArticulo.Text & "%' or familia like '%" & txtArticulo.Text & "%'"
+    Private Sub MetroTextBox13_TextChanged(sender As Object, e As EventArgs) Handles txtFamilia.TextChanged, txtReferencia.TextChanged
 
+        ConsProductoBindingSource.Filter = "referencia like '%" & txtReferencia.Text & "%' and familia like '%" & txtFamilia.Text & "%'"
 
     End Sub
 
@@ -22,7 +22,7 @@
 
     End Sub
 
-    Private Sub txtArticulo_Click_1(sender As Object, e As EventArgs) Handles txtArticulo.Click
+    Private Sub txtArticulo_Click_1(sender As Object, e As EventArgs) Handles txtFamilia.Click
 
     End Sub
 End Class

@@ -72,8 +72,9 @@ Public Class frmFacturacionEmitidas
         End If
     End Sub
 
-    Private Sub MetroTextBox13_TextChanged(sender As Object, e As EventArgs) Handles txtArticulo.TextChanged
-        ConsProductoBindingSource.Filter = "descripción like '%" & txtArticulo.Text & "%' or referencia like '%" & txtArticulo.Text & "%' or familia like '%" & txtArticulo.Text & "%'"
+    Private Sub MetroTextBox13_TextChanged(sender As Object, e As EventArgs) Handles txtFamilia.TextChanged, txtReferencia.TextChanged
+
+        ConsProductoBindingSource.Filter = "referencia like '%" & txtReferencia.Text & "%' and familia like '%" & txtFamilia.Text & "%'"
 
     End Sub
 
@@ -138,7 +139,7 @@ Public Class frmFacturacionEmitidas
     Private Sub actualizarTotales()
         Dim baseImponible As Double = 0.0
         For Each row As DataGridViewRow In dgLinea.Rows
-            baseImponible += row.Cells(4).Value
+            baseImponible += row.Cells(5).Value
         Next
         If (Not IsNumeric(txtBaseImponible.Text)) Then
             txtBaseImponible.Text = "0.0"
@@ -324,7 +325,44 @@ Public Class frmFacturacionEmitidas
 
     End Sub
 
-    Private Sub gbArticulo_Enter(sender As Object, e As EventArgs) Handles gbArticulo.Enter
+    Private Sub FamiliaKeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtCantidad.KeyDown, txtFamilia.KeyDown, txtReferencia.KeyDown, txtPVP.KeyDown, txtDescuento.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If txtCantidad.Text = "" Then
+                txtCantidad.Focus()
+
+            Else
+                btnAnadir_Click(Me, Nothing)
+                txtReferencia.Text = ""
+                txtFamilia.Focus()
+
+            End If
+
+        End If
+        If e.KeyCode = Keys.Up Then
+            Dim index As Integer = dgArticulos.SelectedRows(0).Index
+            If index = 0 Then
+                index = 1
+            End If
+            dgArticulos.Rows(index).Selected = False
+
+            dgArticulos.Rows(index - 1).Selected = True
+            dgArticulos.FirstDisplayedScrollingRowIndex = index - 1
+
+        End If
+        If e.KeyCode = Keys.Down Then
+            Dim index As Integer = dgArticulos.SelectedRows(0).Index
+            If index = dgArticulos.Rows.Count Then
+                index = dgArticulos.Rows.Count
+            End If
+            dgArticulos.Rows(index).Selected = False
+
+            dgArticulos.Rows(index + 1).Selected = True
+            dgArticulos.FirstDisplayedScrollingRowIndex = index + 1
+
+
+        End If
 
     End Sub
+
+
 End Class

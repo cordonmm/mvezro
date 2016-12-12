@@ -25,7 +25,7 @@ Partial Class frmMantenimientoArticulosListado
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMantenimientoArticulosListado))
-        Me.txtArticulo = New MetroFramework.Controls.MetroTextBox()
+        Me.txtFamilia = New MetroFramework.Controls.MetroTextBox()
         Me.lblArticulo = New MetroFramework.Controls.MetroLabel()
         Me.dgArticulos = New System.Windows.Forms.DataGridView()
         Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,26 +36,28 @@ Partial Class frmMantenimientoArticulosListado
         Me.ConsProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ConsProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsProductoTableAdapter()
+        Me.lblReferencia = New MetroFramework.Controls.MetroLabel()
+        Me.txtReferencia = New MetroFramework.Controls.MetroTextBox()
         CType(Me.dgArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtArticulo
+        'txtFamilia
         '
-        Me.txtArticulo.Location = New System.Drawing.Point(159, 72)
-        Me.txtArticulo.Name = "txtArticulo"
-        Me.txtArticulo.Size = New System.Drawing.Size(302, 25)
-        Me.txtArticulo.TabIndex = 73
+        Me.txtFamilia.Location = New System.Drawing.Point(84, 72)
+        Me.txtFamilia.Name = "txtFamilia"
+        Me.txtFamilia.Size = New System.Drawing.Size(249, 25)
+        Me.txtFamilia.TabIndex = 73
         '
         'lblArticulo
         '
         Me.lblArticulo.AutoSize = True
         Me.lblArticulo.Location = New System.Drawing.Point(23, 72)
         Me.lblArticulo.Name = "lblArticulo"
-        Me.lblArticulo.Size = New System.Drawing.Size(97, 19)
+        Me.lblArticulo.Size = New System.Drawing.Size(50, 19)
         Me.lblArticulo.TabIndex = 72
-        Me.lblArticulo.Text = "Buscar Articulo"
+        Me.lblArticulo.Text = "Familia"
         '
         'dgArticulos
         '
@@ -130,14 +132,32 @@ Partial Class frmMantenimientoArticulosListado
         '
         Me.ConsProductoTableAdapter.ClearBeforeFill = True
         '
+        'lblReferencia
+        '
+        Me.lblReferencia.AutoSize = True
+        Me.lblReferencia.Location = New System.Drawing.Point(384, 72)
+        Me.lblReferencia.Name = "lblReferencia"
+        Me.lblReferencia.Size = New System.Drawing.Size(70, 19)
+        Me.lblReferencia.TabIndex = 74
+        Me.lblReferencia.Text = "Referencia"
+        '
+        'txtReferencia
+        '
+        Me.txtReferencia.Location = New System.Drawing.Point(471, 72)
+        Me.txtReferencia.Name = "txtReferencia"
+        Me.txtReferencia.Size = New System.Drawing.Size(249, 25)
+        Me.txtReferencia.TabIndex = 75
+        '
         'frmMantenimientoArticulosListado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(1017, 408)
+        Me.Controls.Add(Me.txtReferencia)
+        Me.Controls.Add(Me.lblReferencia)
         Me.Controls.Add(Me.lblArticulo)
-        Me.Controls.Add(Me.txtArticulo)
+        Me.Controls.Add(Me.txtFamilia)
         Me.Controls.Add(Me.dgArticulos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMantenimientoArticulosListado"
@@ -150,7 +170,7 @@ Partial Class frmMantenimientoArticulosListado
 
     End Sub
 
-    Friend WithEvents txtArticulo As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtFamilia As MetroFramework.Controls.MetroTextBox
     Friend WithEvents lblArticulo As MetroFramework.Controls.MetroLabel
     Friend WithEvents dgArticulos As DataGridView
     Friend WithEvents TallerDataSet As tallerDataSet
@@ -161,4 +181,6 @@ Partial Class frmMantenimientoArticulosListado
     Friend WithEvents DescripciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PvpDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtReferencia As MetroFramework.Controls.MetroTextBox
 End Class

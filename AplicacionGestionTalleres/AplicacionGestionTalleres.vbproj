@@ -482,6 +482,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="rpGastos.rdlc" />
+    <EmbeddedResource Include="rpInformePresupestoE.rdlc" />
     <EmbeddedResource Include="rpInformeListadoFacturasE.rdlc" />
     <EmbeddedResource Include="rpInformeListadoFacturasR.rdlc" />
     <EmbeddedResource Include="rpInformeStock.rdlc" />
@@ -521,8 +522,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MetroFramework.txt" />
-    <None Include="Resources\ico-car-thug.ico" />
-    <None Include="Resources\ico-car.ico" />
+    <None Include="Resources\ico-car-thug.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ico-car.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="src\banner-mvezro.jpg" />
     <Content Include="taller.ico" />
     <Content Include="src\logoo.png" />

@@ -13,9 +13,16 @@
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         If (IsNumeric(txtBuscar.Text)) Then
-            ConsFacturaEBindingSource.Filter = "numeroFactura = " & txtBuscar.Text & " or fecha like '%" & txtBuscar.Text & "%' or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+            ConsFacturaEBindingSource.Filter = "numeroFactura = " & txtBuscar.Text & " or nombre like '%" & txtBuscar.Text & "%' or matricula like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
         Else
-            ConsFacturaEBindingSource.Filter = "fecha like '%" & txtBuscar.Text & "%' or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+            ConsFacturaEBindingSource.Filter = "nombre like '%" & txtBuscar.Text & "%' or matricula like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+        End If
+        If chkFiltrar.Checked Then
+            If (dtpFechaInicio.Value.ToShortDateString > dtpFechaFin.Value.ToShortDateString) Then
+                MessageBox.Show("La fecha de inicio debe ser menor que la de fin", "Error Fechas", MessageBoxButtons.OK)
+            Else
+                ConsFacturaEBindingSource.Filter &= "and (fecha >='" & dtpFechaInicio.Value.ToShortDateString & "' and fecha <='" & dtpFechaFin.Value.ToShortDateString & "')"
+            End If
         End If
     End Sub
 

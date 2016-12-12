@@ -6,8 +6,11 @@ Public Class frmInformeFacturaE
         'TODO: esta línea de código carga datos en la tabla 'tallerDataSet.informeFacturaE' Puede moverla o quitarla según sea necesario.
         If bandera Then
             Me.informeFacturaETableAdapter.Connection.ConnectionString = cadenaB
+            Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformePresupuestoE.rdlc"
+
         Else
             Me.informeFacturaETableAdapter.Connection.ConnectionString = cadenaA
+            Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AplicacionGestionTalleres.rpInformeFacturaE.rdlc"
         End If
         If IsNumeric(Me.Tag) Then
             Me.informeFacturaETableAdapter.Fill(Me.tallerDataSet.informeFacturaE, Me.Tag)
