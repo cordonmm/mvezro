@@ -36,7 +36,7 @@ Public Class frmFacturacionEmitidas
             cmbCliente.SelectedValue = dtFactura(0).idCliente
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, row.descripcion, row.Precio, row.descuento, row.Total)
             Next
 
             Me.Text = "Guardar Factura"
@@ -193,7 +193,7 @@ Public Class frmFacturacionEmitidas
                     LineaFacturaETableAdapter.BorrarLineas(dtFactura(0).Id)
                     For Each row As DataGridViewRow In dgLinea.Rows
                         ProductoTableAdapter.UpdateStock(row.Cells(0).Value, row.Cells(1).Value)
-                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), dtFactura(0).Id, Convert.ToDouble(row.Cells(4).Value))
+                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), dtFactura(0).Id, Convert.ToDouble(row.Cells(4).Value), row.Cells(2).Value)
 
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
@@ -215,7 +215,7 @@ Public Class frmFacturacionEmitidas
                     For Each row As DataGridViewRow In dgLinea.Rows
 
                         ProductoTableAdapter.UpdateStock(row.Cells(0).Value, row.Cells(1).Value)
-                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), idFactura, Convert.ToDouble(row.Cells(4).Value))
+                        Me.TallerDataSet.LineaFacturaE.AddLineaFacturaERow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), idFactura, Convert.ToDouble(row.Cells(4).Value), row.Cells(2).Value)
                     Next
                     Me.LineaFacturaETableAdapter.Update(Me.TallerDataSet.LineaFacturaE)
                     If (MessageBox.Show("Factura guardada correctamente ,¿Desea imprimirla?", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK) Then
@@ -272,7 +272,7 @@ Public Class frmFacturacionEmitidas
             cmbCliente.SelectedValue = dtFactura(0).idCliente
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaETableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, row.descripcion, row.Precio, row.descuento, row.Total)
             Next
             Me.Tag = frmBusquedaFacturaEmitidas.Tag
             Me.Text = "Guardar Factura"

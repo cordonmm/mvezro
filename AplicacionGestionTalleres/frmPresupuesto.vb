@@ -29,7 +29,7 @@ Public Class frmPresupuesto
             cmbCliente.SelectedValue = dtFactura(0).idCliente
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaPresupuestoRow In LineaPresupuestoTableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, row.descripcion, row.Precio, row.Total)
             Next
 
             Me.Text = "Guardar Presupuesto"
@@ -145,8 +145,6 @@ Public Class frmPresupuesto
         Dim val As String = validar()
         If (val = "") Then
             Try
-                PresupuestoTableAdapter.Connection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\Temp\taller2.mdb"
-                LineaPresupuestoTableAdapter.Connection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\Temp\taller2.mdb"
                 actualizarTotales()
                 If (dtFactura IsNot Nothing) Then
                     dtFactura(0).fecha = dtpFechaFac.Value.ToShortDateString
@@ -164,7 +162,7 @@ Public Class frmPresupuesto
 
                     LineaPresupuestoTableAdapter.BorrarLineas(dtFactura(0).Id)
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaPresupuesto.AddLineaPresupuestoRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), dtFactura(0).Id)
+                        Me.TallerDataSet.LineaPresupuesto.AddLineaPresupuestoRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), dtFactura(0).Id,row.Cells(1).Value)
 
                     Next
                     Me.LineaPresupuestoTableAdapter.Update(Me.TallerDataSet.LineaPresupuesto)
@@ -185,7 +183,7 @@ Public Class frmPresupuesto
                     Dim idFactura As Integer = PresupuestoTableAdapter.GetId(txtFactura.Text)
 
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaPresupuesto.AddLineaPresupuestoRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), idFactura)
+                        Me.TallerDataSet.LineaPresupuesto.AddLineaPresupuestoRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(4).Value), idFactura, row.Cells(2).Value)
                     Next
                     Me.LineaPresupuestoTableAdapter.Update(Me.TallerDataSet.LineaPresupuesto)
 
@@ -239,7 +237,7 @@ Public Class frmPresupuesto
             cmbCliente.SelectedValue = dtFactura(0).idCliente
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaPresupuestoRow In LineaPresupuestoTableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, row.descripcion, row.Precio, row.Total)
             Next
             Me.Tag = frmBusquedaPresupuesto.Tag
             Me.Text = "Guardar Presupuesto"

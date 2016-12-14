@@ -24,8 +24,6 @@ Partial Class frmBusquedaPresupuesto
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBusquedaPresupuesto))
-        Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
-        Me.lblBuscar = New MetroFramework.Controls.MetroLabel()
         Me.dgPresupuestos = New System.Windows.Forms.DataGridView()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumeroFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,27 +35,18 @@ Partial Class frmBusquedaPresupuesto
         Me.TallerDataSet1 = New AplicacionGestionTalleres.tallerDataSet()
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ConsPresupuestoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.consPresupuestoTableAdapter()
+        Me.chkFiltrar = New System.Windows.Forms.CheckBox()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.lblBuscar = New MetroFramework.Controls.MetroLabel()
+        Me.txtBuscar = New MetroFramework.Controls.MetroTextBox()
         CType(Me.dgPresupuestos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsPresupuestoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Location = New System.Drawing.Point(159, 72)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(302, 25)
-        Me.txtBuscar.TabIndex = 70
-        '
-        'lblBuscar
-        '
-        Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.Location = New System.Drawing.Point(23, 72)
-        Me.lblBuscar.Name = "lblBuscar"
-        Me.lblBuscar.Size = New System.Drawing.Size(93, 19)
-        Me.lblBuscar.TabIndex = 69
-        Me.lblBuscar.Text = "Buscar Factura"
         '
         'dgPresupuestos
         '
@@ -140,18 +129,83 @@ Partial Class frmBusquedaPresupuesto
         '
         Me.ConsPresupuestoTableAdapter.ClearBeforeFill = True
         '
+        'chkFiltrar
+        '
+        Me.chkFiltrar.AutoSize = True
+        Me.chkFiltrar.Location = New System.Drawing.Point(945, 74)
+        Me.chkFiltrar.Name = "chkFiltrar"
+        Me.chkFiltrar.Size = New System.Drawing.Size(51, 17)
+        Me.chkFiltrar.TabIndex = 97
+        Me.chkFiltrar.Text = "Filtrar"
+        Me.chkFiltrar.UseVisualStyleBackColor = True
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(743, 73)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(15, 19)
+        Me.MetroLabel1.TabIndex = 95
+        Me.MetroLabel1.Text = "y"
+        '
+        'dtpFechaInicio
+        '
+        Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaInicio.Location = New System.Drawing.Point(562, 72)
+        Me.dtpFechaInicio.Name = "dtpFechaInicio"
+        Me.dtpFechaInicio.Size = New System.Drawing.Size(175, 20)
+        Me.dtpFechaInicio.TabIndex = 94
+        '
+        'dtpFechaFin
+        '
+        Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaFin.Location = New System.Drawing.Point(764, 72)
+        Me.dtpFechaFin.Name = "dtpFechaFin"
+        Me.dtpFechaFin.Size = New System.Drawing.Size(175, 20)
+        Me.dtpFechaFin.TabIndex = 96
+        '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.Location = New System.Drawing.Point(517, 73)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(39, 19)
+        Me.MetroLabel3.TabIndex = 93
+        Me.MetroLabel3.Text = "Entre"
+        '
+        'lblBuscar
+        '
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Location = New System.Drawing.Point(23, 72)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(122, 19)
+        Me.lblBuscar.TabIndex = 91
+        Me.lblBuscar.Text = "Buscar Presupuesto"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Location = New System.Drawing.Point(159, 72)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(302, 25)
+        Me.txtBuscar.TabIndex = 92
+        '
         'frmBusquedaPresupuesto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(1035, 420)
+        Me.Controls.Add(Me.chkFiltrar)
+        Me.Controls.Add(Me.MetroLabel1)
+        Me.Controls.Add(Me.dtpFechaInicio)
+        Me.Controls.Add(Me.dtpFechaFin)
+        Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.dgPresupuestos)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmBusquedaPresupuesto"
-        Me.Text = "Listado de Facturas"
+        Me.Text = "Listado de Presupuestos"
         CType(Me.dgPresupuestos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsPresupuestoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TallerDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -160,9 +214,6 @@ Partial Class frmBusquedaPresupuesto
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txtBuscar As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents lblBuscar As MetroFramework.Controls.MetroLabel
     Friend WithEvents dgPresupuestos As DataGridView
     Friend WithEvents TallerDataSet As tallerDataSet
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -174,4 +225,11 @@ Partial Class frmBusquedaPresupuesto
     Friend WithEvents TallerDataSet1 As tallerDataSet
     Friend WithEvents ConsPresupuestoBindingSource As BindingSource
     Friend WithEvents ConsPresupuestoTableAdapter As tallerDataSetTableAdapters.consPresupuestoTableAdapter
+    Friend WithEvents chkFiltrar As CheckBox
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents dtpFechaInicio As DateTimePicker
+    Friend WithEvents dtpFechaFin As DateTimePicker
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblBuscar As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtBuscar As MetroFramework.Controls.MetroTextBox
 End Class

@@ -5,12 +5,22 @@
 
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged, chkFiltrar.CheckedChanged
+
         If (IsNumeric(txtBuscar.Text)) Then
-            ConsPresupuestoBindingSource.Filter = "numeroFactura = " & txtBuscar.Text & " or fecha like '%" & txtBuscar.Text & "%' or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+            ConsPresupuestoBindingSource.Filter = "(numeroFactura = " & txtBuscar.Text & " or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%')"
         Else
-            ConsPresupuestoBindingSource.Filter = "fecha like '%" & txtBuscar.Text & "%' or nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
+            ConsPresupuestoBindingSource.Filter = "(nombre like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%')"
         End If
+        If chkFiltrar.Checked Then
+            If (dtpFechaInicio.Value > dtpFechaFin.Value) Then
+                MessageBox.Show("La fecha de inicio debe ser menor que la de fin", "Error Fechas", MessageBoxButtons.OK)
+                chkFiltrar.Checked = False
+            Else
+                ConsPresupuestoBindingSource.Filter &= "and (fecha >='" & dtpFechaInicio.Value.ToShortDateString & "' and fecha <='" & dtpFechaFin.Value.ToShortDateString & "')"
+            End If
+        End If
+
     End Sub
 
     Private Sub dgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPresupuestos.CellDoubleClick

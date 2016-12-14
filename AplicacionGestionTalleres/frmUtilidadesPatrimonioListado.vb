@@ -30,7 +30,7 @@
             ConsPatrimonioBindingSource.Filter = "(nombre like '%" & txtBuscar.Text & "%' or concepto like '%" & txtBuscar.Text & "%' or identificador like '%" & txtBuscar.Text & "%')"
         End If
         If chkFiltrar.Checked Then
-            If (dtpFechaInicio.Value.ToShortDateString > dtpFechaFin.Value.ToShortDateString) Then
+            If (dtpFechaInicio.Value > dtpFechaFin.Value) Then
                 MessageBox.Show("La fecha de inicio debe ser menor que la de fin", "Error Fechas", MessageBoxButtons.OK)
             Else
                 ConsPatrimonioBindingSource.Filter &= "and (fecha >='" & dtpFechaInicio.Value.ToShortDateString & "' and fecha <='" & dtpFechaFin.Value.ToShortDateString & "')"

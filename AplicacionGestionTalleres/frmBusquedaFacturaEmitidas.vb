@@ -11,7 +11,7 @@
 
     End Sub
 
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged, chkFiltrar.CheckedChanged
         If (IsNumeric(txtBuscar.Text)) Then
             ConsFacturaEBindingSource.Filter = "numeroFactura = " & txtBuscar.Text & " or nombre like '%" & txtBuscar.Text & "%' or matricula like '%" & txtBuscar.Text & "%' or cif like '%" & txtBuscar.Text & "%' or email like '%" & txtBuscar.Text & "%'"
         Else
@@ -43,4 +43,7 @@
 
     End Sub
 
+    Private Sub chkFiltrar_CheckedChanged(sender As Object, e As EventArgs) Handles chkFiltrar.CheckedChanged
+
+    End Sub
 End Class

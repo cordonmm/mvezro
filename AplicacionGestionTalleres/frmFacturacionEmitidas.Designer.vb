@@ -177,13 +177,11 @@ Partial Class frmFacturacionEmitidas
         Me.dgLinea.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgLinea.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgLinea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgLinea.BackgroundColor = System.Drawing.SystemColors.WindowFrame
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.cantidad, Me.descripcion, Me.precio, Me.Descuento, Me.total})
         Me.dgLinea.Location = New System.Drawing.Point(25, 30)
         Me.dgLinea.Name = "dgLinea"
-        Me.dgLinea.ReadOnly = True
         Me.dgLinea.RowHeadersVisible = False
         Me.dgLinea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgLinea.Size = New System.Drawing.Size(1019, 215)
@@ -193,7 +191,6 @@ Partial Class frmFacturacionEmitidas
         '
         Me.idProducto.HeaderText = "idProducto"
         Me.idProducto.Name = "idProducto"
-        Me.idProducto.ReadOnly = True
         Me.idProducto.Visible = False
         '
         'cantidad
@@ -203,13 +200,13 @@ Partial Class frmFacturacionEmitidas
         Me.cantidad.FillWeight = 50.0!
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 113
         '
         'descripcion
         '
+        Me.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.descripcion.HeaderText = "Descripción"
         Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
         '
         'precio
         '
@@ -218,13 +215,13 @@ Partial Class frmFacturacionEmitidas
         Me.precio.DefaultCellStyle = DataGridViewCellStyle3
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
+        Me.precio.Width = 120
         '
         'Descuento
         '
         Me.Descuento.HeaderText = "Descuento"
         Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 120
         '
         'total
         '
@@ -233,7 +230,7 @@ Partial Class frmFacturacionEmitidas
         Me.total.DefaultCellStyle = DataGridViewCellStyle4
         Me.total.HeaderText = "Total"
         Me.total.Name = "total"
-        Me.total.ReadOnly = True
+        Me.total.Width = 120
         '
         'lblVehiculo
         '
@@ -676,7 +673,7 @@ Partial Class frmFacturacionEmitidas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1244, 780)
+        Me.ClientSize = New System.Drawing.Size(1255, 896)
         Me.Controls.Add(Me.btnAñadirCliente)
         Me.Controls.Add(Me.cbContado)
         Me.Controls.Add(Me.MetroLabel2)
@@ -785,15 +782,15 @@ Partial Class frmFacturacionEmitidas
     Friend WithEvents ProductoTableAdapter As tallerDataSetTableAdapters.ProductoTableAdapter
     Friend WithEvents btnNuevoArticulo As MetroFramework.Controls.MetroButton
     Friend WithEvents btnAñadirCliente As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtReferencia As TextBox
+    Friend WithEvents txtFamilia As TextBox
+    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblFamilia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtCantidad As TextBox
     Friend WithEvents idProducto As DataGridViewTextBoxColumn
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
-    Friend WithEvents txtReferencia As TextBox
-    Friend WithEvents txtFamilia As TextBox
-    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
-    Friend WithEvents lblFamilia As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtCantidad As TextBox
 End Class

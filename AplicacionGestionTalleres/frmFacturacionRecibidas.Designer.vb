@@ -295,21 +295,21 @@ Partial Class frmFacturacionRecibidas
         '
         'txtReferencia
         '
-        Me.txtReferencia.Location = New System.Drawing.Point(211, 61)
+        Me.txtReferencia.Location = New System.Drawing.Point(256, 60)
         Me.txtReferencia.Name = "txtReferencia"
-        Me.txtReferencia.Size = New System.Drawing.Size(168, 26)
+        Me.txtReferencia.Size = New System.Drawing.Size(219, 26)
         Me.txtReferencia.TabIndex = 23
         '
         'txtFamilia
         '
         Me.txtFamilia.Location = New System.Drawing.Point(25, 61)
         Me.txtFamilia.Name = "txtFamilia"
-        Me.txtFamilia.Size = New System.Drawing.Size(168, 26)
+        Me.txtFamilia.Size = New System.Drawing.Size(212, 26)
         Me.txtFamilia.TabIndex = 22
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(513, 60)
+        Me.txtCantidad.Location = New System.Drawing.Point(549, 60)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 26)
         Me.txtCantidad.TabIndex = 26
@@ -317,7 +317,7 @@ Partial Class frmFacturacionRecibidas
         'lblReferencia
         '
         Me.lblReferencia.AutoSize = True
-        Me.lblReferencia.Location = New System.Drawing.Point(211, 38)
+        Me.lblReferencia.Location = New System.Drawing.Point(256, 38)
         Me.lblReferencia.Name = "lblReferencia"
         Me.lblReferencia.Size = New System.Drawing.Size(70, 19)
         Me.lblReferencia.TabIndex = 57
@@ -325,7 +325,7 @@ Partial Class frmFacturacionRecibidas
         '
         'btnNuevoArticulo
         '
-        Me.btnNuevoArticulo.Location = New System.Drawing.Point(399, 61)
+        Me.btnNuevoArticulo.Location = New System.Drawing.Point(481, 60)
         Me.btnNuevoArticulo.Name = "btnNuevoArticulo"
         Me.btnNuevoArticulo.Size = New System.Drawing.Size(35, 26)
         Me.btnNuevoArticulo.TabIndex = 24
@@ -444,7 +444,7 @@ Partial Class frmFacturacionRecibidas
         'lblCantidad
         '
         Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Location = New System.Drawing.Point(513, 38)
+        Me.lblCantidad.Location = New System.Drawing.Point(549, 38)
         Me.lblCantidad.Name = "lblCantidad"
         Me.lblCantidad.Size = New System.Drawing.Size(62, 19)
         Me.lblCantidad.TabIndex = 53
@@ -485,14 +485,12 @@ Partial Class frmFacturacionRecibidas
         Me.dgLinea.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgLinea.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgLinea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgLinea.BackgroundColor = System.Drawing.SystemColors.WindowFrame
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.cantidad, Me.descripcion, Me.precio, Me.Descuento, Me.total})
         Me.dgLinea.Location = New System.Drawing.Point(25, 30)
         Me.dgLinea.MultiSelect = False
         Me.dgLinea.Name = "dgLinea"
-        Me.dgLinea.ReadOnly = True
         Me.dgLinea.RowHeadersVisible = False
         Me.dgLinea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgLinea.Size = New System.Drawing.Size(1019, 215)
@@ -502,41 +500,45 @@ Partial Class frmFacturacionRecibidas
         '
         Me.id.HeaderText = "ID"
         Me.id.Name = "id"
-        Me.id.ReadOnly = True
         Me.id.Visible = False
+        Me.id.Width = 50
         '
         'cantidad
         '
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cantidad.DefaultCellStyle = DataGridViewCellStyle2
-        Me.cantidad.FillWeight = 50.0!
+        Me.cantidad.FillWeight = 22.84264!
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 150
         '
         'descripcion
         '
+        Me.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.descripcion.FillWeight = 387.0073!
         Me.descripcion.HeaderText = "Descripción"
         Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
         '
         'precio
         '
+        Me.precio.FillWeight = 25.83185!
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
+        Me.precio.Width = 120
         '
         'Descuento
         '
+        Me.Descuento.FillWeight = 7.159113!
         Me.Descuento.HeaderText = "Descuento"
         Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 120
         '
         'total
         '
+        Me.total.FillWeight = 7.159113!
         Me.total.HeaderText = "Total"
         Me.total.Name = "total"
-        Me.total.ReadOnly = True
+        Me.total.Width = 120
         '
         'ConsProductoTableAdapter
         '
@@ -611,7 +613,7 @@ Partial Class frmFacturacionRecibidas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1377, 780)
+        Me.ClientSize = New System.Drawing.Size(1388, 882)
         Me.Controls.Add(Me.btnAñadirProveedor)
         Me.Controls.Add(Me.cbContado)
         Me.Controls.Add(Me.btnEliminarLinea)
@@ -709,14 +711,14 @@ Partial Class frmFacturacionRecibidas
     Friend WithEvents pvp As DataGridViewTextBoxColumn
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtCantidad As TextBox
+    Friend WithEvents txtFamilia As TextBox
+    Friend WithEvents txtReferencia As TextBox
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
-    Friend WithEvents lblReferencia As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtCantidad As TextBox
-    Friend WithEvents txtFamilia As TextBox
-    Friend WithEvents txtReferencia As TextBox
 End Class

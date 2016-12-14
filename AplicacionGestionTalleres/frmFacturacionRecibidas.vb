@@ -34,7 +34,7 @@
             cmbProveedor.SelectedValue = dtFactura(0).idProveedor
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaRRow In LineaFacturaRTableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, row.descripcion, row.Precio, row.descuento, row.Total)
             Next
 
             Me.Text = "Guardar Factura"
@@ -191,7 +191,7 @@
 
                     LineaFacturaRTableAdapter.BorrarLineas(dtFactura(0).Id)
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), dtFactura(0).Id, Convert.ToDouble(row.Cells(4).Value))
+                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), dtFactura(0).Id, Convert.ToDouble(row.Cells(4).Value), row.Cells(2).Value)
 
                     Next
                     Me.LineaFacturaRTableAdapter.Update(Me.TallerDataSet.LineaFacturaR)
@@ -209,7 +209,7 @@
                     Dim idFactura As Integer = FacturaRTableAdapter.GetId(txtFactura.Text)
 
                     For Each row As DataGridViewRow In dgLinea.Rows
-                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), idFactura, Convert.ToDouble(row.Cells(5).Value))
+                        Me.TallerDataSet.LineaFacturaR.AddLineaFacturaRRow(row.Cells(0).Value, row.Cells(1).Value, Convert.ToDouble(row.Cells(3).Value), Convert.ToDouble(row.Cells(5).Value), idFactura, Convert.ToDouble(row.Cells(5).Value), row.Cells(2).Value)
                     Next
                     Me.LineaFacturaRTableAdapter.Update(Me.TallerDataSet.LineaFacturaR)
 
@@ -258,7 +258,7 @@
             cmbProveedor.SelectedValue = dtFactura(0).idProveedor
             dgLinea.Rows.Clear()
             For Each row As tallerDataSet.LineaFacturaERow In LineaFacturaRTableAdapter.GetDataByFac(dtFactura(0).Id).Rows
-                dgLinea.Rows.Add(row.idProducto, row.Cantidad, ProductoTableAdapter.GetDataBy(row.idProducto)(0).Descripción, row.Precio, row.descuento, row.Total)
+                dgLinea.Rows.Add(row.idProducto, row.Cantidad, row.descripcion, row.Precio, row.descuento, row.Total)
             Next
             Me.Tag = frmBusquedaFacturaEmitidas.Tag
             Me.Text = "Guardar Factura"
@@ -346,6 +346,10 @@
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub dgLinea_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgLinea.CellContentClick
 
     End Sub
 End Class

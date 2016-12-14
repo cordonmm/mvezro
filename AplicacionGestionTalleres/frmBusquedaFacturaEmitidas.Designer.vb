@@ -25,6 +25,13 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBusquedaFacturaEmitidas))
         Me.dgFacturaEmitidas = New System.Windows.Forms.DataGridView()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumeroFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CifDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConsFacturaEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDataSet = New AplicacionGestionTalleres.tallerDataSet()
         Me.ConsFacturaETableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ConsFacturaETableAdapter()
@@ -35,13 +42,6 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CifDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgFacturaEmitidas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsFacturaEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +65,56 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.dgFacturaEmitidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgFacturaEmitidas.Size = New System.Drawing.Size(965, 240)
         Me.dgFacturaEmitidas.TabIndex = 68
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdDataGridViewTextBoxColumn.Visible = False
+        '
+        'NumeroFacturaDataGridViewTextBoxColumn
+        '
+        Me.NumeroFacturaDataGridViewTextBoxColumn.DataPropertyName = "numeroFactura"
+        Me.NumeroFacturaDataGridViewTextBoxColumn.HeaderText = "Número"
+        Me.NumeroFacturaDataGridViewTextBoxColumn.Name = "NumeroFacturaDataGridViewTextBoxColumn"
+        Me.NumeroFacturaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'matricula
+        '
+        Me.matricula.DataPropertyName = "matricula"
+        Me.matricula.HeaderText = "Matricula"
+        Me.matricula.Name = "matricula"
+        Me.matricula.ReadOnly = True
+        '
+        'FechaDataGridViewTextBoxColumn
+        '
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
+        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Cliente"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CifDataGridViewTextBoxColumn
+        '
+        Me.CifDataGridViewTextBoxColumn.DataPropertyName = "cif"
+        Me.CifDataGridViewTextBoxColumn.HeaderText = "CIF Cliente"
+        Me.CifDataGridViewTextBoxColumn.Name = "CifDataGridViewTextBoxColumn"
+        Me.CifDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email Cliente"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ConsFacturaEBindingSource
         '
@@ -139,56 +189,6 @@ Partial Class frmBusquedaFacturaEmitidas
         Me.MetroLabel3.Size = New System.Drawing.Size(39, 19)
         Me.MetroLabel3.TabIndex = 86
         Me.MetroLabel3.Text = "Entre"
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdDataGridViewTextBoxColumn.Visible = False
-        '
-        'NumeroFacturaDataGridViewTextBoxColumn
-        '
-        Me.NumeroFacturaDataGridViewTextBoxColumn.DataPropertyName = "numeroFactura"
-        Me.NumeroFacturaDataGridViewTextBoxColumn.HeaderText = "Número"
-        Me.NumeroFacturaDataGridViewTextBoxColumn.Name = "NumeroFacturaDataGridViewTextBoxColumn"
-        Me.NumeroFacturaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'matricula
-        '
-        Me.matricula.DataPropertyName = "matricula"
-        Me.matricula.HeaderText = "Matricula"
-        Me.matricula.Name = "matricula"
-        Me.matricula.ReadOnly = True
-        '
-        'FechaDataGridViewTextBoxColumn
-        '
-        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "fecha"
-        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
-        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
-        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Cliente"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CifDataGridViewTextBoxColumn
-        '
-        Me.CifDataGridViewTextBoxColumn.DataPropertyName = "cif"
-        Me.CifDataGridViewTextBoxColumn.HeaderText = "CIF Cliente"
-        Me.CifDataGridViewTextBoxColumn.Name = "CifDataGridViewTextBoxColumn"
-        Me.CifDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmailDataGridViewTextBoxColumn
-        '
-        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email Cliente"
-        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
-        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
         '
         'frmBusquedaFacturaEmitidas
         '
