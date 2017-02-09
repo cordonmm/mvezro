@@ -333,6 +333,8 @@ Public Class frmFacturacionEmitidas
             Else
                 btnAnadir_Click(Me, Nothing)
                 txtReferencia.Text = ""
+                txtPVP.Text = ""
+
                 txtFamilia.Focus()
 
             End If

@@ -15,8 +15,9 @@
             txtStock.Text = dtProducto(0).Stock
             txtPVP.Text = dtProducto(0).pvp
             cmbFamilia.SelectedValue = dtProducto(0).idFamilia
+            chkObsoleto.Checked = dtProducto(0).obsoleto
             Me.Text = "Guardar Articulo"
-        End If
+            End If
 
     End Sub
 
@@ -33,6 +34,7 @@
                     dtProducto(0).Stock = txtStock.Text
                     dtProducto(0).pvp = txtPVP.Text
                     dtProducto(0).idFamilia = cmbFamilia.SelectedValue
+                    dtProducto(0).obsoleto = chkObsoleto.Checked
                     Me.ProductoTableAdapter.Update(dtProducto)
                     If (MessageBox.Show("Articulo guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information) = DialogResult.OK) Then
                         Me.Close()
@@ -40,7 +42,7 @@
 
 
                 Else
-                    Me.TallerDataSet.Producto.AddProductoRow(txtCodigo.Text, txtReferencia.Text, txtDescripcion.Text, Convert.ToDouble(txtPrecioCosto.Text), txtObservaciones.Text, cmbFamilia.SelectedValue, Convert.ToInt32(txtStock.Text), Convert.ToDouble(txtPVP.Text))
+                    Me.TallerDataSet.Producto.AddProductoRow(txtCodigo.Text, txtReferencia.Text, txtDescripcion.Text, Convert.ToDouble(txtPrecioCosto.Text), txtObservaciones.Text, cmbFamilia.SelectedValue, Convert.ToInt32(txtStock.Text), Convert.ToDouble(txtPVP.Text), chkObsoleto.Checked)
                     Me.ProductoTableAdapter.Update(Me.TallerDataSet.Producto)
                     MessageBox.Show("Articulo guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     limpiar()
@@ -95,5 +97,7 @@
 
     End Sub
 
+    Private Sub lblPrecioCosto_Click(sender As Object, e As EventArgs) Handles lblPrecioCosto.Click
 
+    End Sub
 End Class

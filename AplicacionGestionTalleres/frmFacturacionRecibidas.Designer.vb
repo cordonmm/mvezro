@@ -112,7 +112,7 @@ Partial Class frmFacturacionRecibidas
         Me.txtTotalFactura.Location = New System.Drawing.Point(402, 830)
         Me.txtTotalFactura.Name = "txtTotalFactura"
         Me.txtTotalFactura.Size = New System.Drawing.Size(131, 25)
-        Me.txtTotalFactura.TabIndex = 54
+        Me.txtTotalFactura.TabIndex = 38
         '
         'MetroLabel10
         '
@@ -137,7 +137,7 @@ Partial Class frmFacturacionRecibidas
         Me.txtIVATotal.Location = New System.Drawing.Point(212, 830)
         Me.txtIVATotal.Name = "txtIVATotal"
         Me.txtIVATotal.Size = New System.Drawing.Size(112, 25)
-        Me.txtIVATotal.TabIndex = 50
+        Me.txtIVATotal.TabIndex = 36
         '
         'MetroLabel7
         '
@@ -153,7 +153,7 @@ Partial Class frmFacturacionRecibidas
         Me.txtBaseImponible.Location = New System.Drawing.Point(23, 830)
         Me.txtBaseImponible.Name = "txtBaseImponible"
         Me.txtBaseImponible.Size = New System.Drawing.Size(112, 25)
-        Me.txtBaseImponible.TabIndex = 48
+        Me.txtBaseImponible.TabIndex = 35
         '
         'MetroLabel6
         '
@@ -169,7 +169,7 @@ Partial Class frmFacturacionRecibidas
         Me.btnBuscar.Location = New System.Drawing.Point(1109, 754)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(102, 25)
-        Me.btnBuscar.TabIndex = 40
+        Me.btnBuscar.TabIndex = 110
         Me.btnBuscar.Text = "Buscar"
         '
         'btnEliminar
@@ -348,7 +348,7 @@ Partial Class frmFacturacionRecibidas
         Me.dgArticulos.RowHeadersVisible = False
         Me.dgArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgArticulos.Size = New System.Drawing.Size(1163, 240)
-        Me.dgArticulos.TabIndex = 34
+        Me.dgArticulos.TabIndex = 102
         '
         'FamiliaDataGridViewTextBoxColumn
         '
@@ -475,7 +475,7 @@ Partial Class frmFacturacionRecibidas
         Me.gbLineas.Location = New System.Drawing.Point(23, 515)
         Me.gbLineas.Name = "gbLineas"
         Me.gbLineas.Size = New System.Drawing.Size(1060, 264)
-        Me.gbLineas.TabIndex = 42
+        Me.gbLineas.TabIndex = 106
         Me.gbLineas.TabStop = False
         Me.gbLineas.Text = "Líneas"
         '
@@ -571,7 +571,7 @@ Partial Class frmFacturacionRecibidas
         Me.btnEliminarLinea.Location = New System.Drawing.Point(1109, 527)
         Me.btnEliminarLinea.Name = "btnEliminarLinea"
         Me.btnEliminarLinea.Size = New System.Drawing.Size(102, 25)
-        Me.btnEliminarLinea.TabIndex = 36
+        Me.btnEliminarLinea.TabIndex = 107
         Me.btnEliminarLinea.Text = "Eliminar Linea"
         '
         'ConfiguracionTableAdapter
@@ -588,7 +588,7 @@ Partial Class frmFacturacionRecibidas
         Me.cbContado.Location = New System.Drawing.Point(624, 830)
         Me.cbContado.Name = "cbContado"
         Me.cbContado.Size = New System.Drawing.Size(116, 17)
-        Me.cbContado.TabIndex = 58
+        Me.cbContado.TabIndex = 40
         Me.cbContado.Text = "Pagada al contado"
         Me.cbContado.UseVisualStyleBackColor = True
         '

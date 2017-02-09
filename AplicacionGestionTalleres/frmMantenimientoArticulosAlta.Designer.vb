@@ -49,6 +49,7 @@ Partial Class frmMantenimientoArticulosAlta
         Me.ProductoTableAdapter = New AplicacionGestionTalleres.tallerDataSetTableAdapters.ProductoTableAdapter()
         Me.TableAdapterManager = New AplicacionGestionTalleres.tallerDataSetTableAdapters.TableAdapterManager()
         Me.cmbFamilia = New System.Windows.Forms.ComboBox()
+        Me.chkObsoleto = New System.Windows.Forms.CheckBox()
         CType(Me.FamiliaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,9 +190,9 @@ Partial Class frmMantenimientoArticulosAlta
         Me.lblPrecioCosto.AutoSize = True
         Me.lblPrecioCosto.Location = New System.Drawing.Point(23, 215)
         Me.lblPrecioCosto.Name = "lblPrecioCosto"
-        Me.lblPrecioCosto.Size = New System.Drawing.Size(120, 19)
+        Me.lblPrecioCosto.Size = New System.Drawing.Size(140, 19)
         Me.lblPrecioCosto.TabIndex = 94
-        Me.lblPrecioCosto.Text = "Precio Costo + IVA"
+        Me.lblPrecioCosto.Text = "Precio Costo( Sin IVA )"
         '
         'FamiliaTableAdapter
         '
@@ -256,12 +257,23 @@ Partial Class frmMantenimientoArticulosAlta
         Me.cmbFamilia.TabIndex = 1
         Me.cmbFamilia.ValueMember = "Id"
         '
+        'chkObsoleto
+        '
+        Me.chkObsoleto.AutoSize = True
+        Me.chkObsoleto.Location = New System.Drawing.Point(385, 309)
+        Me.chkObsoleto.Name = "chkObsoleto"
+        Me.chkObsoleto.Size = New System.Drawing.Size(68, 17)
+        Me.chkObsoleto.TabIndex = 97
+        Me.chkObsoleto.Text = "Obsoleto"
+        Me.chkObsoleto.UseVisualStyleBackColor = True
+        '
         'frmMantenimientoArticulosAlta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
         Me.ClientSize = New System.Drawing.Size(736, 570)
+        Me.Controls.Add(Me.chkObsoleto)
         Me.Controls.Add(Me.lblCodigo)
         Me.Controls.Add(Me.txtCodigo)
         Me.Controls.Add(Me.lblFamilia)
@@ -317,4 +329,5 @@ Partial Class frmMantenimientoArticulosAlta
     Friend WithEvents ProductoTableAdapter As tallerDataSetTableAdapters.ProductoTableAdapter
     Friend WithEvents TableAdapterManager As tallerDataSetTableAdapters.TableAdapterManager
     Friend WithEvents cmbFamilia As ComboBox
+    Friend WithEvents chkObsoleto As CheckBox
 End Class

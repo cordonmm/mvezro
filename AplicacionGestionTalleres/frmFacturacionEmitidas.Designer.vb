@@ -111,7 +111,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnImprimir.Location = New System.Drawing.Point(1109, 715)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(102, 25)
-        Me.btnImprimir.TabIndex = 25
+        Me.btnImprimir.TabIndex = 100
         Me.btnImprimir.Text = "Imprimir"
         '
         'btnEliminar
@@ -119,7 +119,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnEliminar.Location = New System.Drawing.Point(1112, 841)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(102, 25)
-        Me.btnEliminar.TabIndex = 33
+        Me.btnEliminar.TabIndex = 36
         Me.btnEliminar.Text = "Eliminar"
         '
         'btnCancelar
@@ -127,7 +127,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnCancelar.Location = New System.Drawing.Point(981, 841)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(102, 25)
-        Me.btnCancelar.TabIndex = 32
+        Me.btnCancelar.TabIndex = 33
         Me.btnCancelar.Text = "Cancelar"
         '
         'btnAceptar
@@ -135,7 +135,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnAceptar.Location = New System.Drawing.Point(846, 841)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(102, 25)
-        Me.btnAceptar.TabIndex = 31
+        Me.btnAceptar.TabIndex = 32
         Me.btnAceptar.Text = "Guardar"
         '
         'txtVehiculo
@@ -185,7 +185,7 @@ Partial Class frmFacturacionEmitidas
         Me.dgLinea.RowHeadersVisible = False
         Me.dgLinea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgLinea.Size = New System.Drawing.Size(1019, 215)
-        Me.dgLinea.TabIndex = 29
+        Me.dgLinea.TabIndex = 106
         '
         'idProducto
         '
@@ -387,21 +387,21 @@ Partial Class frmFacturacionEmitidas
         Me.txtCantidad.Location = New System.Drawing.Point(597, 61)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 26)
-        Me.txtCantidad.TabIndex = 79
+        Me.txtCantidad.TabIndex = 17
         '
         'txtReferencia
         '
         Me.txtReferencia.Location = New System.Drawing.Point(263, 60)
         Me.txtReferencia.Name = "txtReferencia"
         Me.txtReferencia.Size = New System.Drawing.Size(213, 26)
-        Me.txtReferencia.TabIndex = 76
+        Me.txtReferencia.TabIndex = 16
         '
         'txtFamilia
         '
         Me.txtFamilia.Location = New System.Drawing.Point(25, 61)
         Me.txtFamilia.Name = "txtFamilia"
         Me.txtFamilia.Size = New System.Drawing.Size(220, 26)
-        Me.txtFamilia.TabIndex = 75
+        Me.txtFamilia.TabIndex = 15
         '
         'lblReferencia
         '
@@ -426,7 +426,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnNuevoArticulo.Location = New System.Drawing.Point(497, 61)
         Me.btnNuevoArticulo.Name = "btnNuevoArticulo"
         Me.btnNuevoArticulo.Size = New System.Drawing.Size(28, 25)
-        Me.btnNuevoArticulo.TabIndex = 17
+        Me.btnNuevoArticulo.TabIndex = 103
         Me.btnNuevoArticulo.Text = "+"
         '
         'MetroLabel1
@@ -455,7 +455,7 @@ Partial Class frmFacturacionEmitidas
         Me.dgArticulos.RowHeadersVisible = False
         Me.dgArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgArticulos.Size = New System.Drawing.Size(1163, 240)
-        Me.dgArticulos.TabIndex = 23
+        Me.dgArticulos.TabIndex = 105
         '
         'FamiliaDataGridViewTextBoxColumn
         '
@@ -510,7 +510,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnBuscar.Location = New System.Drawing.Point(1109, 746)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(102, 25)
-        Me.btnBuscar.TabIndex = 27
+        Me.btnBuscar.TabIndex = 101
         Me.btnBuscar.Text = "Buscar"
         '
         'gbLineas
@@ -581,7 +581,7 @@ Partial Class frmFacturacionEmitidas
         Me.txtBaseImponible.Name = "txtBaseImponible"
         Me.txtBaseImponible.ReadOnly = True
         Me.txtBaseImponible.Size = New System.Drawing.Size(112, 25)
-        Me.txtBaseImponible.TabIndex = 28
+        Me.txtBaseImponible.TabIndex = 24
         '
         'lblBaseImponible
         '
@@ -622,7 +622,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnEliminarLinea.Location = New System.Drawing.Point(1109, 568)
         Me.btnEliminarLinea.Name = "btnEliminarLinea"
         Me.btnEliminarLinea.Size = New System.Drawing.Size(102, 25)
-        Me.btnEliminarLinea.TabIndex = 24
+        Me.btnEliminarLinea.TabIndex = 99
         Me.btnEliminarLinea.Text = "Eliminar linea"
         '
         'ConfiguracionTableAdapter1
@@ -648,7 +648,7 @@ Partial Class frmFacturacionEmitidas
         Me.cbContado.Location = New System.Drawing.Point(598, 845)
         Me.cbContado.Name = "cbContado"
         Me.cbContado.Size = New System.Drawing.Size(116, 17)
-        Me.cbContado.TabIndex = 76
+        Me.cbContado.TabIndex = 31
         Me.cbContado.Text = "Pagada al contado"
         Me.cbContado.UseVisualStyleBackColor = True
         '
@@ -665,7 +665,7 @@ Partial Class frmFacturacionEmitidas
         Me.btnAñadirCliente.Location = New System.Drawing.Point(720, 94)
         Me.btnAñadirCliente.Name = "btnAñadirCliente"
         Me.btnAñadirCliente.Size = New System.Drawing.Size(24, 22)
-        Me.btnAñadirCliente.TabIndex = 7
+        Me.btnAñadirCliente.TabIndex = 101
         Me.btnAñadirCliente.Text = "+"
         '
         'frmFacturacionEmitidas
